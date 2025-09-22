@@ -1,0 +1,39 @@
+# Web scraping
+selenium
+undetected-chromedriver==3.5.5   # helps bypass bot detection
+requests==2.32.3
+fake-useragent==1.5.1
+
+# Proxy handling
+httpx==0.27.2
+pysocks==1.7.1
+
+# DB ORM
+SQLAlchemy==2.0.35
+alembic==1.13.2
+# psycopg2-binary==2.9.9      
+# for Postgres 
+ 
+mysqlclient==2.2.4 
+# for MySQL)
+
+# File handling
+openpyxl==3.1.5
+pandas==2.2.2
+
+# Logging & configs
+PyYAML==6.0.2
+loguru==0.7.2
+
+# Scheduling / Retry
+APScheduler==3.10.4
+tenacity==8.5.0
+
+# Testing
+pytest==8.3.2
+pytest-mock==3.14.0
+
+python-dotenv==1.0.1
+
+cryptography==41.0.4
+tzdata>=2024.1
