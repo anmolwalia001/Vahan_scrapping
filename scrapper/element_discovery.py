@@ -33,7 +33,7 @@ class ElementDiscoverer:
         """Discover all elements on the Vahan portal"""
         results = {}
         
-        with BrowserManager(headless=False) as browser:
+        with BrowserManager(headless=False, use_proxy=False, stealth=False) as browser:
             logger.info("Starting element discovery...")
             
             # Navigate to page
@@ -546,3 +546,89 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# scrapper/browser.py
+import logging
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import WebDriverException
+import time
+import random
+
+logger = logging.getLogger("app.browser")
+
+
+class BrowserManager:
+    def __init__(self, headless: bool = True, use_proxy: bool = False, stealth: bool = False):
+        """
+        Manage browser sessions with optional proxy and stealth.
+        Defaults are plain Chrome (safe for Vahan).
+        """
+        self.headless = headless
+        self.use_proxy = use_proxy
+        self.stealth = stealth
+        self.driver = None
+
+    def __enter__(self):
+        self.driver = self._create_driver()
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        if self.driver:
+            try:
+                self.driver.quit()
+            except Exception as e:
+                logger.warning(f"Error closing driver: {e}")
+
+    def _create_driver(self):
+        """Create Chrome WebDriver instance."""
+        chrome_options = Options()
+        if self.headless:
+            chrome_options.add_argument("--headless=new")  # modern headless mode
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+        chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+
+        # Optional proxy
+        if self.use_proxy:
+            proxy = self._get_proxy()
+            if proxy:
+                chrome_options.add_argument(f"--proxy-server={proxy}")
+                logger.info(f"Using proxy: {proxy}")
+
+        # Optional stealth
+        if self.stealth:
+            try:
+                import undetected_chromedriver as uc
+                logger.info("Launching undetected_chromedriver (stealth mode enabled)")
+                return uc.Chrome(options=chrome_options)
+            except ImportError:
+                logger.warning("undetected_chromedriver not installed, fallback to normal driver")
+
+        # Default: plain Chrome
+        logger.info("Launching plain Chrome browser")
+        return webdriver.Chrome(options=chrome_options)
+
+    def _get_proxy(self):
+        """
+        Placeholder for proxy pool fetch.
+        Right now returns None (so Vahan runs plain).
+        """
+        return None
+
+    def get_driver(self):
+        return self.driver
+
+    def navigate_with_retry(self, url: str, retries: int = 3, delay: int = 5) -> bool:
+        """Try navigating to a URL with retries."""
+        for attempt in range(1, retries + 1):
+            try:
+                self.driver.get(url)
+                time.sleep(2)  # let the page start loading
+                return True
+            except WebDriverException as e:
+                logger.warning(f"Navigation failed (attempt {attempt}/{retries}): {e}")
+                time.sleep(delay)
+        return False

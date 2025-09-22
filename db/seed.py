@@ -339,6 +339,57 @@ STATE_GA = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Gujarat
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_GJ = {
+  "state": "Gujarat",
+  "state_code": "GJ",
+  "extraction_date": "2025-07-29T13:51:04.344947",
+  "total_rtos": 38,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(37/37)"},
+    {"name":"AAHWA","code":"GJ30","value":"30","full_text":"AAHWA - GJ30( 17-MAR-2017 )"},
+    {"name":"AHMEDABAD","code":"GJ1","value":"1","full_text":"AHMEDABAD - GJ1( 22-MAY-2017 )"},
+    {"name":"AHMEDABAD EAST","code":"GJ27","value":"27","full_text":"AHMEDABAD EAST - GJ27( 16-MAY-2017 )"},
+    {"name":"Ahmedabad (Rural), Bawla ARTO","code":"GJ38","value":"38","full_text":"Ahmedabad (Rural), Bawla ARTO - GJ38( 29-APR-2017 )"},
+    {"name":"AMRELI","code":"GJ14","value":"14","full_text":"AMRELI - GJ14( 16-MAY-2017 )"},
+    {"name":"ANAND","code":"GJ23","value":"23","full_text":"ANAND - GJ23( 21-FEB-2017 )"},
+    {"name":"BANASKANTHA","code":"GJ8","value":"8","full_text":"BANASKANTHA - GJ8( 09-MAY-2017 )"},
+    {"name":"BARDOLI","code":"GJ19","value":"19","full_text":"BARDOLI - GJ19( 25-APR-2017 )"},
+    {"name":"BHARUCH","code":"GJ16","value":"16","full_text":"BHARUCH - GJ16( 09-MAY-2017 )"},
+    {"name":"BHAVNAGAR","code":"GJ4","value":"4","full_text":"BHAVNAGAR - GJ4( 16-MAY-2017 )"},
+    {"name":"BOTAD","code":"GJ33","value":"33","full_text":"BOTAD - GJ33( 21-MAR-2017 )"},
+    {"name":"CHHOTAUDAIPUR","code":"GJ34","value":"34","full_text":"CHHOTAUDAIPUR - GJ34( 17-MAR-2017 )"},
+    {"name":"DAHOD","code":"GJ20","value":"20","full_text":"DAHOD - GJ20( 09-MAY-2017 )"},
+    {"name":"GANDHINAGAR","code":"GJ18","value":"18","full_text":"GANDHINAGAR - GJ18( 21-MAR-2017 )"},
+    {"name":"JAMNAGAR","code":"GJ10","value":"10","full_text":"JAMNAGAR - GJ10( 25-APR-2017 )"},
+    {"name":"JUNAGADH","code":"GJ11","value":"11","full_text":"JUNAGADH - GJ11( 25-APR-2017 )"},
+    {"name":"KACHCHH","code":"GJ12","value":"12","full_text":"KACHCHH - GJ12( 24-JUL-2017 )"},
+    {"name":"KACHCHH EAST","code":"GJ39","value":"39","full_text":"KACHCHH EAST - GJ39( 12-SEP-2022 )"},
+    {"name":"KHAMBHALIYA","code":"GJ37","value":"37","full_text":"KHAMBHALIYA - GJ37( 25-APR-2017 )"},
+    {"name":"KHEDA","code":"GJ7","value":"7","full_text":"KHEDA - GJ7( 17-MAR-2017 )"},
+    {"name":"LUNAVADA","code":"GJ35","value":"35","full_text":"LUNAVADA - GJ35( 25-APR-2017 )"},
+    {"name":"MEHSANA","code":"GJ2","value":"2","full_text":"MEHSANA - GJ2( 21-MAR-2017 )"},
+    {"name":"MODASA","code":"GJ31","value":"31","full_text":"MODASA - GJ31( 17-MAR-2017 )"},
+    {"name":"MORBI","code":"GJ36","value":"36","full_text":"MORBI - GJ36( 25-APR-2017 )"},
+    {"name":"NARMADA","code":"GJ22","value":"22","full_text":"NARMADA - GJ22( 25-APR-2017 )"},
+    {"name":"NAVSARI","code":"GJ21","value":"21","full_text":"NAVSARI - GJ21( 25-APR-2017 )"},
+    {"name":"PANCHMAHAL","code":"GJ17","value":"17","full_text":"PANCHMAHAL - GJ17( 16-MAY-2017 )"},
+    {"name":"PATAN","code":"GJ24","value":"24","full_text":"PATAN - GJ24( 21-MAR-2017 )"},
+    {"name":"PORBANDAR","code":"GJ25","value":"25","full_text":"PORBANDAR - GJ25( 25-APR-2017 )"},
+    {"name":"RAJKOT","code":"GJ3","value":"3","full_text":"RAJKOT - GJ3( 13-JUL-2017 )"},
+    {"name":"SABARKANTHA","code":"GJ9","value":"9","full_text":"SABARKANTHA - GJ9( 09-MAY-2017 )"},
+    {"name":"SURAT","code":"GJ5","value":"5","full_text":"SURAT - GJ5( 24-JUL-2017 )"},
+    {"name":"SURENDRANAGAR","code":"GJ13","value":"13","full_text":"SURENDRANAGAR - GJ13( 16-MAY-2017 )"},
+    {"name":"TAPI","code":"GJ26","value":"26","full_text":"TAPI - GJ26( 25-APR-2017 )"},
+    {"name":"VADODARA","code":"GJ6","value":"6","full_text":"VADODARA - GJ6( 13-JUL-2017 )"},
+    {"name":"VALSAD","code":"GJ15","value":"15","full_text":"VALSAD - GJ15( 09-MAY-2017 )"},
+    {"name":"VERAVAL","code":"GJ32","value":"32","full_text":"VERAVAL - GJ32( 21-MAR-2017 )"}
+  ]
+}
+
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Ladakh
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_LA = {
@@ -580,6 +631,10 @@ def run_seed():
 
         print("🔧 Seeding RTOS for GA (Goa)")
         seed_state_rtos(db, portal_ids, STATE_GA)
+
+        print("🔧 Seeding RTOS for GJ (Gujarat)")
+        seed_state_rtos(db, portal_ids, STATE_GJ)
+
 
         print("🔧 Seeding RTOS for LA (Ladakh)")
         seed_state_rtos(db, portal_ids, STATE_LA)
