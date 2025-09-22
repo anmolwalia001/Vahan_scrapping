@@ -163,6 +163,23 @@ ALL_STATE_ONLY_RTO = {
   ]
 }
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Chandigarh
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_CH = {
+  "state": "Chandigarh",
+  "state_code": "CH",
+  "extraction_date": "2025-07-29T13:45:08.603262",
+  "total_rtos": 2,
+  "rtos": [
+    {"name": "All Vahan4 Running Office", "code": "ALL", "value": "-1",
+     "full_text": "All Vahan4 Running Office(1/1)"},
+    {"name": "CHANDIGARH UT (RLA AND STA)", "code": "CH1", "value": "1",
+     "full_text": "CHANDIGARH UT (RLA AND STA) - CH1( 08-JAN-2018 )"}
+  ]
+}
+
+
 STATE_AN = {  # Andaman & Nicobar
   "state": "Andaman & Nicobar Island",
   "state_code": "AN",
@@ -634,6 +651,9 @@ def run_seed():
 
         print("🔧 Seeding RTOS for GJ (Gujarat)")
         seed_state_rtos(db, portal_ids, STATE_GJ)
+
+        print("🔧 Seeding RTOS for CH (Chandigarh)")
+        seed_state_rtos(db, portal_ids, STATE_CH)
 
 
         print("🔧 Seeding RTOS for LA (Ladakh)")
