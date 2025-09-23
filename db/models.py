@@ -25,6 +25,7 @@ class PortalSite(Base):
     fields = relationship("PortalField", back_populates="site")
 
 
+# what it stores: “there is a field called X on the site, and here’s how to find/click it.”
 class PortalField(Base):
     __tablename__ = "portal_field"
 
@@ -42,6 +43,8 @@ class PortalField(Base):
     options = relationship("PortalFieldOption", back_populates="field")
 
 
+
+# what it stores: the options inside a field (like dropdown items).
 class PortalFieldOption(Base):
     __tablename__ = "portal_field_option"
 
@@ -60,6 +63,8 @@ class PortalFieldOption(Base):
 # 2) Scheduler
 # ============================================================
 
+
+# what it stores: a recurring job definition—when to run and where (which site)
 class JobTemplate(Base):
     __tablename__ = "job_template"
 
