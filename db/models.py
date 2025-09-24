@@ -1,5 +1,7 @@
+# db/models.py
 from sqlalchemy import (
-    Column, String, Integer, BigInteger, Text, Enum, DateTime, JSON, ForeignKey, Boolean, TIMESTAMP
+    Column, String, Integer, BigInteger, Text, DateTime, JSON, ForeignKey,
+    Boolean, TIMESTAMP, Float, Enum as SAEnum
 )
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.sql import func
@@ -17,7 +19,8 @@ class PortalSite(Base):
     name = Column(String(120), nullable=False)
     base_url = Column(String(300), nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
-    robots_policy = Column(Enum("unknown", "allowed", "disallowed"), nullable=False, default="unknown")
+    robots_policy = Column(SAEnum("unknown", "allowed", "disallowed", name="robots_policy_enum"),
+                           nullable=False, default="unknown")
     notes = Column(Text, nullable=True)
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
@@ -25,7 +28,6 @@ class PortalSite(Base):
     fields = relationship("PortalField", back_populates="site")
 
 
-# what it stores: “there is a field called X on the site, and here’s how to find/click it.”
 class PortalField(Base):
     __tablename__ = "portal_field"
 
@@ -33,7 +35,8 @@ class PortalField(Base):
     site_id = Column(BigInteger, ForeignKey("portal_site.id"), nullable=False)
     field_name = Column(String(100), nullable=False)  # state, rto, year, x_axis, y_axis, etc.
     selector = Column(String(300))
-    ui_type = Column(Enum("select", "input", "button", "checkbox", "other"), nullable=False, default="select")
+    ui_type = Column(SAEnum("select", "input", "button", "checkbox", "other", name="ui_type_enum"),
+                     nullable=False, default="select")
     depends_on_id = Column(BigInteger, ForeignKey("portal_field.id"))
     version_tag = Column(String(64))
     last_seen_at = Column(DateTime)
@@ -43,14 +46,12 @@ class PortalField(Base):
     options = relationship("PortalFieldOption", back_populates="field")
 
 
-
-# what it stores: the options inside a field (like dropdown items).
 class PortalFieldOption(Base):
     __tablename__ = "portal_field_option"
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     field_id = Column(BigInteger, ForeignKey("portal_field.id"), nullable=False)
-    value_code = Column(String(128), nullable=False)   # option value
+    value_code = Column(String(128), nullable=False)
     label = Column(String(200), nullable=False)
     parent_code = Column(String(128))
     is_active = Column(Boolean, default=True, nullable=False)
@@ -63,8 +64,6 @@ class PortalFieldOption(Base):
 # 2) Scheduler
 # ============================================================
 
-
-# what it stores: a recurring job definition—when to run and where (which site)
 class JobTemplate(Base):
     __tablename__ = "job_template"
 
@@ -87,9 +86,11 @@ class WorkerNode(Base):
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     name = Column(String(120), nullable=False, unique=True)
-    kind = Column(Enum("browser", "parser", "orchestrator"), default="browser", nullable=False)
+    kind = Column(SAEnum("browser", "parser", "orchestrator", name="worker_kind_enum"),
+                  default="browser", nullable=False)
     max_conc = Column(Integer, default=1, nullable=False)
-    status = Column(Enum("active", "draining", "offline"), default="active", nullable=False)
+    status = Column(SAEnum("active", "draining", "offline", name="worker_status_enum"),
+                    default="active", nullable=False)
     last_heartbeat = Column(DateTime)
     created_at = Column(TIMESTAMP, server_default=func.now())
 
@@ -166,7 +167,7 @@ class AxisFilter(Base):
     __tablename__ = "axis_filter"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    axis = Column(Enum("X", "Y"), nullable=False)
+    axis = Column(SAEnum("X", "Y", name="axis_enum"), nullable=False)
     filter = Column(String(100), nullable=False)
 
 
@@ -179,7 +180,7 @@ class VehicleFilter(Base):
     is_active = Column(Boolean, default=True, nullable=False)
 
 # ============================================================
-# 5) Files + Extraction + Logs
+# 5) Files + Extraction + Logs (low-level extraction artifacts)
 # ============================================================
 
 class File(Base):
@@ -207,7 +208,9 @@ class ExtractionRTO(Base):
     year_value = Column(Integer)
     vehicle_filter_id = Column(Integer, ForeignKey("vehicle_filter.id"))
     extraction_date = Column(DateTime, nullable=False)
-    status = Column(Enum("queued", "running", "success", "error", "rate_limited"), default="queued")
+    status = Column(SAEnum("queued", "running", "success", "error", "rate_limited",
+                           name="extraction_rto_status_enum"),
+                    default="queued")
     file_id = Column(BigInteger, ForeignKey("files.id"))
     extraction_data = Column(JSON)
     created_at = Column(TIMESTAMP, server_default=func.now())
@@ -219,7 +222,7 @@ class ExtractionLog(Base):
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     extraction_rto_id = Column(BigInteger, ForeignKey("extraction_rto.id"), nullable=False)
-    level = Column(Enum("debug", "info", "warn", "error"), default="info")
+    level = Column(SAEnum("debug", "info", "warn", "error", name="log_level_enum"), default="info")
     log_info = Column(String(100))
     message = Column(Text, nullable=False)
     meta = Column(JSON)
@@ -251,3 +254,71 @@ class JobTemplateFilter(Base):
     template_id = Column(BigInteger, ForeignKey("job_template.id"), nullable=False)
     filter_set_id = Column(BigInteger, ForeignKey("filter_sets.id"), nullable=False)
     priority = Column(Integer, default=5, nullable=False)
+
+# ============================================================
+# 7) High-level Extraction Job & Result (used by services/extraction_service.py)
+# ============================================================
+
+class ExtractionJob(Base):
+    """
+    High-level orchestration job. Your services/extraction_service.py:
+      - creates a job row at start
+      - updates end_time/status/counters at finish
+    """
+    __tablename__ = "extraction_jobs"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    start_time = Column(DateTime, nullable=False, server_default=func.now())
+    end_time = Column(DateTime, nullable=True)
+
+    status = Column(SAEnum(
+        "pending", "in_progress", "completed", "failed", "paused",
+        name="extraction_job_status_enum"
+    ), nullable=False, default="in_progress")
+
+    # arbitrary config blob saved when job starts
+    config = Column(JSON, nullable=True)
+
+    # counters updated at the end
+    total_files_downloaded = Column(Integer, nullable=False, default=0)
+    total_errors = Column(Integer, nullable=False, default=0)
+
+    # overall summary stats (e.g., states_processed, total_rtos, etc.)
+    summary = Column(JSON, nullable=True)
+
+    created_at = Column(TIMESTAMP, server_default=func.now())
+    updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+    # optional: per-state/per-batch results
+    results = relationship(
+        "ExtractionResult",
+        back_populates="job",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
+
+
+class ExtractionResult(Base):
+    """
+    Optional per-state (or per-batch) rollup rows tied to an ExtractionJob.
+    Not strictly required by your current code, but imported and useful.
+    """
+    __tablename__ = "extraction_results"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    job_id = Column(BigInteger, ForeignKey("extraction_jobs.id", ondelete="CASCADE"), nullable=False)
+
+    # Useful rollup fields (aligns with summary fields in your service)
+    state_id = Column(BigInteger, ForeignKey("states.id"), nullable=True)
+    state_code = Column(String(10), nullable=True)
+    state_name = Column(String(100), nullable=True)
+
+    rtos_processed = Column(Integer, nullable=False, default=0)
+    files_downloaded = Column(Integer, nullable=False, default=0)
+    failures = Column(Integer, nullable=False, default=0)
+    duration_minutes = Column(Float, nullable=True)
+    errors = Column(JSON, nullable=True)
+
+    created_at = Column(TIMESTAMP, server_default=func.now())
+
+    job = relationship("ExtractionJob", back_populates="results")

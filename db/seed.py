@@ -26,7 +26,7 @@ from db.models import (
     PortalSite, PortalField, PortalFieldOption,
     State, RTO,
     AxisFilter, VehicleFilter,
-    UserAgentPool, UserAgent, ProxyPool, ProxyEndpoint
+    UserAgentPool, UserAgent, ProxyPool, ProxyEndpoint, JobTemplate
 )
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -615,6 +615,60 @@ def seed_state_rtos(session: Session, portal_ids: Dict, state_blob: Dict):
 
     st.total_rto = real_count
 
+def seed_job_templates(session: Session, site: PortalSite):
+    """
+    Create a few example job templates pointing at the Vahan Analytics site.
+    These are just for testing the scheduler/runner; tweak cron_expr as needed.
+    """
+    templates = [
+        dict(
+            name="Daily Goa: Maker × MonthWise",
+            site_id=site.id,
+            cron_expr="30 3 * * *",         # every day 03:30 IST
+            timezone="Asia/Kolkata",
+            enabled=True,
+            notes="Run Goa (GA) jobs with Y=Maker, X=Month Wise for all configured filter sets."
+        ),
+        dict(
+            name="Hourly Smoke Test",
+            site_id=site.id,
+            cron_expr="15 * * * *",         # at minute 15 past every hour
+            timezone="Asia/Kolkata",
+            enabled=False,                  # disabled by default; enable when needed
+            notes="Quick health-check job to verify selectors/page availability."
+        ),
+        dict(
+            name="Weekly AP Audit",
+            site_id=site.id,
+            cron_expr="0 4 * * 1",          # Mondays 04:00 IST
+            timezone="Asia/Kolkata",
+            enabled=True,
+            notes="Andhra Pradesh audit run to compare weekly diffs."
+        ),
+    ]
+
+    created = []
+    for t in templates:
+        # Use (name, site_id) as a natural key so it’s idempotent
+        row, is_new = get_or_create(
+            session, JobTemplate,
+            name=t["name"], site_id=t["site_id"],
+            defaults=dict(
+                cron_expr=t["cron_expr"],
+                timezone=t.get("timezone", "Asia/Kolkata"),
+                enabled=t.get("enabled", True),
+                notes=t.get("notes"),
+            )
+        )
+        # Keep the latest config if the row already exists
+        row.cron_expr = t["cron_expr"]
+        row.timezone = t.get("timezone", "Asia/Kolkata")
+        row.enabled = t.get("enabled", True)
+        row.notes = t.get("notes")
+        created.append((row, is_new))
+    return created
+
+
 
 def run_seed():
     db: Session = SessionLocal()
@@ -658,6 +712,9 @@ def run_seed():
 
         print("🔧 Seeding RTOS for LA (Ladakh)")
         seed_state_rtos(db, portal_ids, STATE_LA)
+
+        print("🔧 Seeding example job templates")
+        seed_job_templates(db, portal_ids["site"])
 
         # If you want to keep a cache of the aggregate “All States” → “All RTOs”:
         # We DO NOT insert these as real states/rtos, but we do cache dropdown options.
