@@ -29,7 +29,7 @@ class VahanBrowser:
     Integrates with services layer and element caching
     """
     
-    def __init__(self, headless: bool = False, use_proxy: bool = False, stealth: bool = False):
+    def __init__(self, headless: bool = False, use_proxy: bool = False, stealth: bool = False, user_agent=None):
         """
         Initialize Vahan browser manager
         
@@ -45,8 +45,10 @@ class VahanBrowser:
         self.wait = None
         self.element_cache = ElementCache()
         
-        # Download configuration
         self.temp_download_dir = None
+
+        if user_agent:
+            self.chrome_options.add_argument(f'--user-agent={user_agent}')
         
         logger.info(f"VahanBrowser initialized - headless: {headless}, stealth: {stealth}")
 
@@ -179,7 +181,8 @@ class VahanBrowser:
             if not state_dropdown_id:
                 logger.error("Could not find state dropdown")
                 return False
-            
+        
+            self._log_step(f"select_state start 👌👌👌: {state_name}")
             # Select state
             success = self._select_primefaces_dropdown(state_dropdown_id, state_name)
             
@@ -187,6 +190,8 @@ class VahanBrowser:
                 logger.info(f"Successfully selected state: {state_name}")
                 self._wait_for_ajax()
                 time.sleep(2)
+                self.ensure_axes()
+                self._log_step(f"select_state done 👌👌👌: {state_name}")
                 return True
             else:
                 logger.error(f"Failed to select state: {state_name}")
@@ -200,12 +205,16 @@ class VahanBrowser:
         """Select RTO from dropdown"""
         try:
             logger.info(f"Selecting RTO: {rto_text}")
+
+            self._log_step(f"select_rto start 🌲🌲🌲:  {rto_text}")
             
             success = self._select_primefaces_dropdown("selectedRto", rto_text)
             
             if success:
                 logger.info(f"Successfully selected RTO: {rto_text}")
                 self._wait_for_ajax()
+                self.ensure_axes()
+                self._log_step(f"select_rto done 🌲🌲🌲:  {rto_text}")
                 return True
             else:
                 logger.error(f"Failed to select RTO: {rto_text}")
@@ -226,8 +235,11 @@ class VahanBrowser:
         for sel in selectors:
             try:
                 btn = self.wait.until(EC.element_to_be_clickable((By.XPATH, sel)))
+                self._log_step("refresh click start 🔄🔄🔄")
                 self.driver.execute_script("arguments[0].click();", btn)
                 self._wait_for_ajax()
+                self.ensure_axes()
+                self._log_step("refresh done 🔄🔄🔄")
                 return True
             except:
                 continue
@@ -320,7 +332,8 @@ class VahanBrowser:
                     
                     if toggle.is_displayed():
                         self.driver.execute_script("arguments[0].click();", toggle)
-                        time.sleep(1)
+                        self._wait_for_ajax()
+                        time.sleep(0.5)
                         break
                 except:
                     continue
@@ -346,6 +359,8 @@ class VahanBrowser:
                         
                         if not checkbox.is_selected():
                             self.driver.execute_script("arguments[0].click();", checkbox)
+                            self._wait_for_ajax()
+                            time.sleep(0.5)
                             checkbox_found = True
                             success_count += 1
                             
@@ -594,6 +609,49 @@ class VahanBrowser:
             time.sleep(0.5)
         
         return False
+    
+    def _read_selected_from_dropdown(self, dropdown_id: str) -> Optional[str]:
+        """
+        Read the visible label of a PrimeFaces dropdown after selection.
+        Works for <div id="..."> based PF dropdowns where the label is in a child span.
+        """
+        try:
+            root = self.driver.find_element(By.ID, dropdown_id)
+            # Typical PF markup: <label/span> inside the root; fallback to textContent
+            try:
+                label_el = root.find_element(By.CSS_SELECTOR, ".ui-selectonemenu-label")
+                return label_el.text.strip()
+            except:
+                return root.text.strip()
+        except Exception:
+            return None
+
+    def set_axis_and_verify(self, y_axis: str, x_axis: str) -> bool:
+        """
+        Set Y and X axis and verify the UI actually reflects those values.
+        """
+        if not self.set_axis(y_axis, x_axis):
+            return False
+
+        self._wait_for_ajax()
+        time.sleep(0.5)
+
+        y_selected = self._read_selected_from_dropdown("yaxisVar")
+        x_selected = self._read_selected_from_dropdown("xaxisVar")
+
+        if (y_selected or "").strip().lower() != y_axis.strip().lower():
+            logger.error(f"Y-axis mismatch. Expected '{y_axis}', got '{y_selected}'")
+            return False
+
+        if (x_selected or "").strip().lower() != x_axis.strip().lower():
+            logger.error(f"X-axis mismatch. Expected '{x_axis}', got '{x_selected}'")
+            return False
+        
+        self._desired_y_axis = y_axis
+        self._desired_x_axis = x_axis
+
+        logger.info(f"Axis verified: Y='{y_selected}', X='{x_selected}'")
+        return True
 
     def _clear_temp_downloads(self):
         """Clear temporary download directory"""
@@ -605,6 +663,33 @@ class VahanBrowser:
                         os.remove(file_path)
         except Exception as e:
             logger.warning(f"Error clearing temp downloads: {e}")
+
+    def ensure_axes(self) -> bool:
+        """If desired axes are known, verify the UI still shows them; if not, set again."""
+        if not (self._desired_y_axis and self._desired_x_axis):
+            return True  # nothing to enforce yet
+
+        self._wait_for_ajax()
+        time.sleep(0.3)
+
+        y_selected = self._read_selected_from_dropdown("yaxisVar")
+        x_selected = self._read_selected_from_dropdown("xaxisVar")
+
+        if (y_selected or "").strip().lower() == self._desired_y_axis.strip().lower() and \
+            (x_selected or "").strip().lower() == self._desired_x_axis.strip().lower():
+            return True
+
+        logger.warning(
+            f"Axes drifted. Re-applying... "
+            f"(have: Y='{y_selected}', X='{x_selected}'; want: Y='{self._desired_y_axis}', X='{self._desired_x_axis}')"
+        )
+        return self.set_axis_and_verify(self._desired_y_axis, self._desired_x_axis)
+
+
+    def _log_step(self, label: str):
+        """Tiny helper to log a timestamped step for throttle diagnostics."""
+        print(f"[THROTTLE] {label} @ {datetime.now().isoformat(timespec='seconds')}")
+
 
     def get_driver(self):
         """Get the WebDriver instance"""
@@ -636,6 +721,8 @@ class BrowserManager:
         self.stealth = stealth
         self.driver = None
         self._vahan_browser = None
+        self._desired_y_axis = None
+        self._desired_x_axis = None
 
     def __enter__(self):
         self._vahan_browser = VahanBrowser(self.headless, self.use_proxy, self.stealth)

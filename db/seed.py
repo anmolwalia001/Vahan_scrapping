@@ -192,7 +192,7 @@ STATE_AN = {  # Andaman & Nicobar
     {"name":"Car Nicobar","code":"AN211","value":"211","full_text":"Car Nicobar - AN211( 23-FEB-2023 )"},
     {"name":"Diglipur","code":"AN204","value":"204","full_text":"Diglipur - AN204( 09-NOV-2021 )"},
     {"name":"Ferrargunj","code":"AN200","value":"200","full_text":"Ferrargunj - AN200( 12-OCT-2021 )"},
-    {"name":"Little Andaman","code":"AN207","value":"207","full_text":"Little Andaman  - AN207( 17-FEB-2025 )"},
+    {"name":"Little Andaman","code":"AN207","value":"207","full_text":"Little Andaman - AN207( 17-FEB-2025 )"},
     {"name":"Mayabunder","code":"AN203","value":"203","full_text":"Mayabunder - AN203( 09-NOV-2021 )"},
     {"name":"Port Blair DTO","code":"AN1","value":"1","full_text":"Port Blair DTO - AN1( 15-AUG-2020 )"},
     {"name":"Rangat","code":"AN202","value":"202","full_text":"Rangat - AN202( 17-NOV-2021 )"},
@@ -314,7 +314,7 @@ STATE_DL = {
     {"name":"LADO SARAI FITNESS CENTER","code":"DL201","value":"201","full_text":"LADO SARAI FITNESS CENTER - DL201( 18-JAN-2017 )"},
     {"name":"LONI ROAD","code":"DL5","value":"5","full_text":"LONI ROAD - DL5( 09-SEP-2015 )"},
     {"name":"MALL ROAD","code":"DL1","value":"1","full_text":"MALL ROAD - DL1( 12-OCT-2015 )"},
-    {"name":"MAYUR VIHAR","code":"DL7","value":"7","full_text":"MAYUR VIHAR  - DL7( 29-JUN-2015 )"},
+    {"name":"MAYUR VIHAR","code":"DL7","value":"7","full_text":"MAYUR VIHAR - DL7( 29-JUN-2015 )"},
     {"name":"RAJA GARDEN FITNESS CENTER","code":"DL204","value":"204","full_text":"RAJA GARDEN FITNESS CENTER - DL204( 18-JAN-2017 )"},
     {"name":"RAJOURI GARDEN","code":"DL10","value":"10","full_text":"RAJOURI GARDEN - DL10( 12-AUG-2015 )"},
     {"name":"RAJPUR ROAD/VIU BURARI","code":"DL51","value":"51","full_text":"RAJPUR ROAD/VIU BURARI - DL51( 08-APR-2016 )"},
@@ -404,6 +404,317 @@ STATE_GJ = {
     {"name":"VERAVAL","code":"GJ32","value":"32","full_text":"VERAVAL - GJ32( 21-MAR-2017 )"}
   ]
 }
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Bihar
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_BR = {
+  "state": "Bihar",
+  "state_code": "BR",
+  "extraction_date": "2025-07-29T13:42:19.603107",
+  "total_rtos": 50,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(48/48)"},
+    {"name":"ARARIA","code":"BR38","value":"38","full_text":"ARARIA - BR38( 30-JAN-2018 )"},
+    {"name":"ARAWAL","code":"BR56","value":"56","full_text":"ARAWAL - BR56( 22-MAY-2017 )"},
+    {"name":"AURANGABAD","code":"BR26","value":"26","full_text":"AURANGABAD - BR26( 13-JUN-2017 )"},
+    {"name":"BANKA","code":"BR51","value":"51","full_text":"BANKA - BR51( 06-FEB-2018 )"},
+    {"name":"BEGUSARAI","code":"BR9","value":"9","full_text":"BEGUSARAI - BR9( 23-JAN-2018 )"},
+    {"name":"BETTIAH","code":"BR22","value":"22","full_text":"BETTIAH - BR22( 22-SEP-2017 )"},
+    {"name":"BHABHUA","code":"BR45","value":"45","full_text":"BHABHUA - BR45( 23-JAN-2018 )"},
+    {"name":"BHAGALPUR","code":"BR10","value":"10","full_text":"BHAGALPUR - BR10( 07-FEB-2018 )"},
+    {"name":"BHAGALPUR RTA","code":"BR103","value":"103","full_text":"BHAGALPUR RTA - BR103( 13-DEC-2018 )"},
+    {"name":"BHOJPUR","code":"BR3","value":"3","full_text":"BHOJPUR - BR3( 15-FEB-2018 )"},
+    {"name":"BUXUR","code":"BR44","value":"44","full_text":"BUXUR - BR44( 01-FEB-2018 )"},
+    {"name":"CHAPARA","code":"BR4","value":"4","full_text":"CHAPARA - BR4( 29-JAN-2018 )"},
+    {"name":"CHAPRA RTA","code":"BR109","value":"109","full_text":"CHAPRA RTA - BR109( 13-DEC-2018 )"},
+    {"name":"DARBHANGA","code":"BR7","value":"7","full_text":"DARBHANGA - BR7( 30-JAN-2018 )"},
+    {"name":"DARBHANGA RTA","code":"BR102","value":"102","full_text":"DARBHANGA RTA - BR102( 13-DEC-2018 )"},
+    {"name":"GAYA","code":"BR2","value":"2","full_text":"GAYA - BR2( 06-SEP-2017 )"},
+    {"name":"GAYA RTA","code":"BR107","value":"107","full_text":"GAYA RTA - BR107( 13-DEC-2018 )"},
+    {"name":"GOPALGANJ","code":"BR28","value":"28","full_text":"GOPALGANJ - BR28( 08-JUN-2017 )"},
+    {"name":"JAMUI","code":"BR46","value":"46","full_text":"JAMUI - BR46( 07-JUN-2017 )"},
+    {"name":"JEHANABAD","code":"BR25","value":"25","full_text":"JEHANABAD - BR25( 26-MAY-2017 )"},
+    {"name":"KATIHAR","code":"BR39","value":"39","full_text":"KATIHAR - BR39( 23-JAN-2018 )"},
+    {"name":"KHAGARIA","code":"BR34","value":"34","full_text":"KHAGARIA - BR34( 01-FEB-2018 )"},
+    {"name":"KISHANGANJ","code":"BR37","value":"37","full_text":"KISHANGANJ - BR37( 07-FEB-2018 )"},
+    {"name":"LAKHISARAI","code":"BR53","value":"53","full_text":"LAKHISARAI - BR53( 27-JAN-2017 )"},
+    {"name":"MADHEPURA","code":"BR43","value":"43","full_text":"MADHEPURA - BR43( 02-JUN-2017 )"},
+    {"name":"MADHUBANI","code":"BR32","value":"32","full_text":"MADHUBANI - BR32( 01-FEB-2018 )"},
+    {"name":"MOTIHARI","code":"BR5","value":"5","full_text":"MOTIHARI - BR5( 05-JUL-2017 )"},
+    {"name":"M/S MURARI AUTO,Patna","code":"BR201","value":"201","full_text":"M/S MURARI AUTO,Patna - BR201( 19-DEC-2019 )"},
+    {"name":"MUNGER","code":"BR8","value":"8","full_text":"MUNGER - BR8( 06-FEB-2018 )"},
+    {"name":"MUNGER RTA","code":"BR104","value":"104","full_text":"MUNGER RTA - BR104( 13-DEC-2018 )"},
+    {"name":"MUZAFFARPUR","code":"BR6","value":"6","full_text":"MUZAFFARPUR - BR6( 01-FEB-2018 )"},
+    {"name":"MUZAFFARPUR RTA","code":"BR106","value":"106","full_text":"MUZAFFARPUR RTA - BR106( 13-DEC-2018 )"},
+    {"name":"NALANDA","code":"BR21","value":"21","full_text":"NALANDA - BR21( 01-FEB-2018 )"},
+    {"name":"NAWADA","code":"BR27","value":"27","full_text":"NAWADA - BR27( 30-JAN-2018 )"},
+    {"name":"PATNA","code":"BR1","value":"1","full_text":"PATNA - BR1( 02-FEB-2018 )"},
+    {"name":"PATNA RTA","code":"BR101","value":"101","full_text":"PATNA RTA - BR101( 13-DEC-2018 )"},
+    {"name":"PURNEA","code":"BR11","value":"11","full_text":"PURNEA - BR11( 23-JAN-2018 )"},
+    {"name":"PURNEA RTA","code":"BR108","value":"108","full_text":"PURNEA RTA - BR108( 13-DEC-2018 )"},
+    {"name":"ROHTAS","code":"BR24","value":"24","full_text":"ROHTAS - BR24( 09-FEB-2018 )"},
+    {"name":"SAHARSA","code":"BR19","value":"19","full_text":"SAHARSA - BR19( 29-JAN-2018 )"},
+    {"name":"SAHARSA RTA","code":"BR105","value":"105","full_text":"SAHARSA RTA - BR105( 13-DEC-2018 )"},
+    {"name":"SAMASTIPUR","code":"BR33","value":"33","full_text":"SAMASTIPUR - BR33( 06-JUL-2017 )"},
+    {"name":"SHEIKHPURA","code":"BR52","value":"52","full_text":"SHEIKHPURA - BR52( 17-JUL-2017 )"},
+    {"name":"SHEOHAR","code":"BR55","value":"55","full_text":"SHEOHAR - BR55( 07-JUN-2017 )"},
+    {"name":"SITAMARHI","code":"BR30","value":"30","full_text":"SITAMARHI - BR30( 29-JAN-2018 )"},
+    {"name":"SIWAN","code":"BR29","value":"29","full_text":"SIWAN - BR29( 29-JAN-2018 )"},
+    {"name":"STA BIHAR","code":"BR999","value":"999","full_text":"STA BIHAR - BR999( 20-NOV-2019 )"},
+    {"name":"SUPAUL","code":"BR50","value":"50","full_text":"SUPAUL - BR50( 29-JAN-2018 )"},
+    {"name":"VAISHALI","code":"BR31","value":"31","full_text":"VAISHALI - BR31( 13-FEB-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Chhattisgarh
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_CG = {
+  "state": "Chhattisgarh",
+  "state_code": "CG",
+  "extraction_date": "2025-07-29T13:44:08.606443",
+  "total_rtos": 32,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(31/31)"},
+    {"name":"AIG(F/P) PHQ","code":"CG3","value":"3","full_text":"AIG(F/P) PHQ - CG3( 22-APR-2025 )"},
+    {"name":"Ambikapur RTO","code":"CG15","value":"15","full_text":"Ambikapur RTO - CG15( 27-DEC-2018 )"},
+    {"name":"BAIKUNTHPUR DTO","code":"CG16","value":"16","full_text":"BAIKUNTHPUR DTO - CG16( 20-DEC-2018 )"},
+    {"name":"Baloda Bazar DTO","code":"CG22","value":"22","full_text":"Baloda Bazar DTO - CG22( 20-SEP-2018 )"},
+    {"name":"Balod DTO","code":"CG24","value":"24","full_text":"Balod DTO - CG24( 04-SEP-2018 )"},
+    {"name":"Balrampur DTO","code":"CG30","value":"30","full_text":"Balrampur DTO - CG30( 21-DEC-2018 )"},
+    {"name":"Bemetara DTO","code":"CG25","value":"25","full_text":"Bemetara DTO - CG25( 20-SEP-2018 )"},
+    {"name":"Bijapur DTO","code":"CG20","value":"20","full_text":"Bijapur DTO - CG20( 07-AUG-2018 )"},
+    {"name":"Bilaspur RTO","code":"CG10","value":"10","full_text":"Bilaspur RTO - CG10( 29-AUG-2018 )"},
+    {"name":"Dantewada DTO","code":"CG18","value":"18","full_text":"Dantewada DTO - CG18( 27-AUG-2018 )"},
+    {"name":"Dhamtari DTO","code":"CG5","value":"5","full_text":"Dhamtari DTO - CG5( 31-AUG-2018 )"},
+    {"name":"DURG RTO","code":"CG7","value":"7","full_text":"DURG RTO - CG7( 01-OCT-2018 )"},
+    {"name":"Gariyaband DTO","code":"CG23","value":"23","full_text":"Gariyaband DTO - CG23( 04-SEP-2018 )"},
+    {"name":"Gaurela-Pendra-Marwahi DTO","code":"CG31","value":"31","full_text":"Gaurela-Pendra-Marwahi DTO - CG31( 09-APR-2021 )"},
+    {"name":"JAGDALPUR RTO","code":"CG17","value":"17","full_text":"JAGDALPUR RTO - CG17( 01-OCT-2018 )"},
+    {"name":"Janjgir Champa DTO","code":"CG11","value":"11","full_text":"Janjgir Champa DTO - CG11( 27-AUG-2018 )"},
+    {"name":"Jashpur DTO","code":"CG14","value":"14","full_text":"Jashpur DTO - CG14( 21-DEC-2018 )"},
+    {"name":"KANKER DTO","code":"CG19","value":"19","full_text":"KANKER DTO - CG19( 22-SEP-2018 )"},
+    {"name":"KAWARDHA DTO","code":"CG9","value":"9","full_text":"KAWARDHA DTO - CG9( 20-SEP-2018 )"},
+    {"name":"KONDAGAON DTO","code":"CG27","value":"27","full_text":"KONDAGAON DTO - CG27( 22-SEP-2018 )"},
+    {"name":"Korba DTO","code":"CG12","value":"12","full_text":"Korba DTO - CG12( 25-AUG-2018 )"},
+    {"name":"Mahasamund DTO","code":"CG6","value":"6","full_text":"Mahasamund DTO - CG6( 27-MAR-2018 )"},
+    {"name":"Mungeli DTO","code":"CG28","value":"28","full_text":"Mungeli DTO - CG28( 27-JUL-2018 )"},
+    {"name":"Narayanpur DTO","code":"CG21","value":"21","full_text":"Narayanpur DTO - CG21( 07-AUG-2018 )"},
+    {"name":"Raigarh DTO","code":"CG13","value":"13","full_text":"Raigarh DTO - CG13( 27-AUG-2018 )"},
+    {"name":"Raipur RTO","code":"CG4","value":"4","full_text":"Raipur RTO - CG4( 28-SEP-2018 )"},
+    {"name":"Rajnandgaon ARTO","code":"CG8","value":"8","full_text":"Rajnandgaon ARTO - CG8( 30-AUG-2018 )"},
+    {"name":"RTA TC NAWA RAIPUR","code":"CG998","value":"998","full_text":"RTA TC NAWA RAIPUR - CG998( 06-JUL-2020 )"},
+    {"name":"State Transport Authority","code":"CG99","value":"99","full_text":"State Transport Authority - CG99( 01-JAN-2019 )"},
+    {"name":"Sukma DTO","code":"CG26","value":"26","full_text":"Sukma DTO - CG26( 04-SEP-2018 )"},
+    {"name":"Surajpur DTO","code":"CG29","value":"29","full_text":"Surajpur DTO - CG29( 20-DEC-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Assam
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_AS = {
+  "state": "Assam",
+  "state_code": "AS",
+  "extraction_date": "2025-07-29T13:40:01.008529",
+  "total_rtos": 37,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(33/33)"},
+    {"name":"BARPETA","code":"AS15","value":"15","full_text":"BARPETA - AS15( 29-DEC-2016 )"},
+    {"name":"BASKA","code":"AS28","value":"28","full_text":"BASKA - AS28( 13-NOV-2017 )"},
+    {"name":"BISWANATH CHARIALI","code":"AS32","value":"32","full_text":"BISWANATH CHARIALI - AS32( 08-AUG-2019 )"},
+    {"name":"BONGAIGAON","code":"AS19","value":"19","full_text":"BONGAIGAON - AS19( 24-APR-2017 )"},
+    {"name":"CACHAR","code":"AS11","value":"11","full_text":"CACHAR - AS11( 05-MAY-2017 )"},
+    {"name":"CHARAIDEO","code":"AS33","value":"33","full_text":"CHARAIDEO - AS33( 17-JAN-2020 )"},
+    {"name":"CHIRANG","code":"AS26","value":"26","full_text":"CHIRANG - AS26( 25-SEP-2017 )"},
+    {"name":"DARRANG","code":"AS13","value":"13","full_text":"DARRANG - AS13( 04-MAY-2018 )"},
+    {"name":"DHEMAJI","code":"AS22","value":"22","full_text":"DHEMAJI - AS22( 05-OCT-2017 )"},
+    {"name":"DHUBRI","code":"AS17","value":"17","full_text":"DHUBRI - AS17( 05-MAY-2017 )"},
+    {"name":"DIBRUGARH","code":"AS6","value":"6","full_text":"DIBRUGARH - AS6( 16-FEB-2017 )"},
+    {"name":"DIMA HASAO","code":"AS8","value":"8","full_text":"DIMA HASAO - AS8( 18-APR-2017 )"},
+    {"name":"GOALPARA","code":"AS18","value":"18","full_text":"GOALPARA - AS18( 09-NOV-2016 )"},
+    {"name":"GOLAGHAT","code":"AS5","value":"5","full_text":"GOLAGHAT - AS5( 03-MAY-2017 )"},
+    {"name":"HAILAKANDI","code":"AS24","value":"24","full_text":"HAILAKANDI - AS24( 11-MAR-2019 )"},
+    {"name":"HOJAI","code":"AS31","value":"31","full_text":"HOJAI - AS31( 09-DEC-2019 )"},
+    {"name":"JORHAT","code":"AS3","value":"3","full_text":"JORHAT - AS3( 25-APR-2017 )"},
+    {"name":"KAMRUP","code":"AS1","value":"1","full_text":"KAMRUP - AS1( 17-NOV-2016 )"},
+    {"name":"KAMRUP(RURAL)","code":"AS25","value":"25","full_text":"KAMRUP(RURAL) - AS25( 24-NOV-2016 )"},
+    {"name":"KARBI ANGLONG","code":"AS9","value":"9","full_text":"KARBI ANGLONG - AS9( 09-APR-2019 )"},
+    {"name":"KARIMGANJ","code":"AS10","value":"10","full_text":"KARIMGANJ - AS10( 20-JUL-2017 )"},
+    {"name":"KOKRAJHAR","code":"AS16","value":"16","full_text":"KOKRAJHAR - AS16( 24-APR-2017 )"},
+    {"name":"LAKHIMPUR","code":"AS7","value":"7","full_text":"LAKHIMPUR - AS7( 05-OCT-2017 )"},
+    {"name":"MAJULI","code":"AS29","value":"29","full_text":"MAJULI - AS29( 09-JUL-2019 )"},
+    {"name":"MORIGAON","code":"AS21","value":"21","full_text":"MORIGAON - AS21( 07-APR-2018 )"},
+    {"name":"NAGAON","code":"AS2","value":"2","full_text":"NAGAON - AS2( 19-APR-2017 )"},
+    {"name":"NALBARI","code":"AS14","value":"14","full_text":"NALBARI - AS14( 15-DEC-2016 )"},
+    {"name":"NIAIMT,CACHAR","code":"AS200","value":"200","full_text":"NIAIMT,CACHAR - AS200( 21-OCT-2019 )"},
+    {"name":"NIAIMT,HAILAKANDI","code":"AS202","value":"202","full_text":"NIAIMT,HAILAKANDI - AS202( 21-OCT-2019 )"},
+    {"name":"NIAIMT,KARIMGANJ","code":"AS201","value":"201","full_text":"NIAIMT,KARIMGANJ - AS201( 21-OCT-2019 )"},
+    {"name":"SIVASAGAR","code":"AS4","value":"4","full_text":"SIVASAGAR - AS4( 02-MAY-2017 )"},
+    {"name":"SONITPUR","code":"AS12","value":"12","full_text":"SONITPUR - AS12( 05-JAN-2017 )"},
+    {"name":"SOUTH SALMARA","code":"AS34","value":"34","full_text":"SOUTH SALMARA - AS34( 20-DEC-2019 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"AS999","value":"999","full_text":"STATE TRANSPORT AUTHORITY - AS999( 24-SEP-2018 )"},
+    {"name":"TINSUKIA","code":"AS23","value":"23","full_text":"TINSUKIA - AS23( 23-FEB-2017 )"},
+    {"name":"UDALGURI","code":"AS27","value":"27","full_text":"UDALGURI - AS27( 17-AUG-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Rajasthan
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_RJ = {
+  "state": "Rajasthan",
+  "state_code": "RJ",
+  "extraction_date": "2025-07-29T14:34:02.816735",
+  "total_rtos": 143,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(59/59)"},
+    {"name":"ABU ROAD DTO","code":"RJ38","value":"38","full_text":"ABU ROAD DTO - RJ38( 07-JAN-2019 )"},
+    {"name":"Adinath Fitness Center","code":"RJ260","value":"260","full_text":"Adinath Fitness Center - RJ260( 01-JAN-2021 )"},
+    {"name":"Agarwal Fitness Center","code":"RJ225","value":"225","full_text":"Agarwal Fitness Center - RJ225( 15-JAN-2020 )"},
+    {"name":"AJMER RTO","code":"RJ1","value":"1","full_text":"AJMER RTO - RJ1( 13-APR-2017 )"},
+    {"name":"A&L Company","code":"RJ267","value":"267","full_text":"A&L Company - RJ267( 08-APR-2021 )"},
+    {"name":"Alwar Auto Mobile Fitness Center","code":"RJ243","value":"243","full_text":"Alwar Auto Mobile Fitness Center - RJ243( 11-SEP-2020 )"},
+    {"name":"Alwar Fitness Center","code":"RJ254","value":"254","full_text":"Alwar Fitness Center - RJ254( 26-NOV-2020 )"},
+    {"name":"ALWAR RTO","code":"RJ2","value":"2","full_text":"ALWAR RTO - RJ2( 19-APR-2018 )"},
+    {"name":"ARAVALI FITNESS TESTING CENTER","code":"RJ218","value":"218","full_text":"ARAVALI FITNESS TESTING CENTER - RJ218( 02-DEC-2019 )"},
+    {"name":"Arihant Vehicle Fitness Center","code":"RJ257","value":"257","full_text":"Arihant Vehicle Fitness Center - RJ257( 07-DEC-2020 )"},
+    {"name":"Atharva Enterprises","code":"RJ261","value":"261","full_text":"Atharva Enterprises - RJ261( 05-JAN-2021 )"},
+    {"name":"BALAJI ALLIANCE","code":"RJ280","value":"280","full_text":"BALAJI ALLIANCE - RJ280( 07-APR-2022 )"},
+    {"name":"BALAJI FITNESS CENTER (BHILWARA)","code":"RJ210","value":"210","full_text":"BALAJI FITNESS CENTER (BHILWARA) - RJ210( 15-OCT-2019 )"},
+    {"name":"BALAJI FITNESS CENTER (HANUMANGARH)","code":"RJ209","value":"209","full_text":"BALAJI FITNESS CENTER (HANUMANGARH) - RJ209( 15-OCT-2019 )"},
+    {"name":"BALOTRA DTO","code":"RJ39","value":"39","full_text":"BALOTRA DTO - RJ39( 17-JUL-2019 )"},
+    {"name":"BANSWARA DTO","code":"RJ3","value":"3","full_text":"BANSWARA DTO - RJ3( 03-MAY-2018 )"},
+    {"name":"BANSWARA VEHICLE FITNESS CENTER","code":"RJ276","value":"276","full_text":"BANSWARA VEHICLE FITNESS CENTER - RJ276( 24-MAR-2022 )"},
+    {"name":"BARAN DTO","code":"RJ28","value":"28","full_text":"BARAN DTO - RJ28( 09-JAN-2018 )"},
+    {"name":"BARMER DTO","code":"RJ4","value":"4","full_text":"BARMER DTO - RJ4( 22-DEC-2017 )"},
+    {"name":"BEAWAR DTO","code":"RJ36","value":"36","full_text":"BEAWAR DTO - RJ36( 24-NOV-2017 )"},
+    {"name":"BHARATPUR RTO","code":"RJ5","value":"5","full_text":"BHARATPUR RTO - RJ5( 12-JUL-2017 )"},
+    {"name":"Bharat Vahan Fitness Center","code":"RJ250","value":"250","full_text":"Bharat Vahan Fitness Center - RJ250( 13-NOV-2020 )"},
+    {"name":"BHILWARA DTO","code":"RJ6","value":"6","full_text":"BHILWARA DTO - RJ6( 28-JUN-2017 )"},
+    {"name":"BHINMAL DTO","code":"RJ46","value":"46","full_text":"BHINMAL DTO - RJ46( 23-JUL-2019 )"},
+    {"name":"BHIWARI DTO","code":"RJ40","value":"40","full_text":"BHIWARI DTO - RJ40( 06-FEB-2018 )"},
+    {"name":"BIKANER RTO","code":"RJ7","value":"7","full_text":"BIKANER RTO - RJ7( 02-MAY-2017 )"},
+    {"name":"BUNDI DTO","code":"RJ8","value":"8","full_text":"BUNDI DTO - RJ8( 19-DEC-2017 )"},
+    {"name":"CHITTORGARH RTO","code":"RJ9","value":"9","full_text":"CHITTORGARH RTO - RJ9( 08-NOV-2017 )"},
+    {"name":"CHOMU DTO","code":"RJ41","value":"41","full_text":"CHOMU DTO - RJ41( 20-SEP-2017 )"},
+    {"name":"CHURU DTO","code":"RJ10","value":"10","full_text":"CHURU DTO - RJ10( 25-JAN-2018 )"},
+    {"name":"DAUSA RTO","code":"RJ29","value":"29","full_text":"DAUSA RTO - RJ29( 20-SEP-2017 )"},
+    {"name":"DHOLPUR DTO","code":"RJ11","value":"11","full_text":"DHOLPUR DTO - RJ11( 07-NOV-2017 )"},
+    {"name":"DIDWANA DTO","code":"RJ37","value":"37","full_text":"DIDWANA DTO - RJ37( 04-JUN-2018 )"},
+    {"name":"DUDU DTO","code":"RJ47","value":"47","full_text":"DUDU DTO - RJ47( 11-APR-2017 )"},
+    {"name":"DUDU FITNESS CENTER","code":"RJ281","value":"281","full_text":"DUDU FITNESS CENTER - RJ281( 11-APR-2022 )"},
+    {"name":"DUNGARPUR DTO","code":"RJ12","value":"12","full_text":"DUNGARPUR DTO - RJ12( 27-SEP-2017 )"},
+    {"name":"EXPLORE IT SERVICES PVT. LTD.","code":"RJ228","value":"228","full_text":"EXPLORE IT SERVICES PVT. LTD. - RJ228( 26-FEB-2020 )"},
+    {"name":"FREEDOM MOTORS","code":"RJ224","value":"224","full_text":"FREEDOM MOTORS - RJ224( 10-JAN-2020 )"},
+    {"name":"Ganesh Ji Fitness Center","code":"RJ226","value":"226","full_text":"Ganesh Ji Fitness Center - RJ226( 23-JAN-2020 )"},
+    {"name":"G.Y. Fitness Center","code":"RJ223","value":"223","full_text":"G.Y. Fitness Center - RJ223( 31-DEC-2019 )"},
+    {"name":"HANUMANGARH DTO","code":"RJ31","value":"31","full_text":"HANUMANGARH DTO - RJ31( 30-APR-2018 )"},
+    {"name":"Hindustan Automobiles","code":"RJ251","value":"251","full_text":"Hindustan Automobiles - RJ251( 25-NOV-2020 )"},
+    {"name":"Indira Vehicle Fitness Centre","code":"RJ269","value":"269","full_text":"Indira Vehicle Fitness Centre - RJ269( 27-MAY-2021 )"},
+    {"name":"INFINITY FITNESS CENTER","code":"RJ231","value":"231","full_text":"INFINITY FITNESS CENTER - RJ231( 20-MAR-2020 )"},
+    {"name":"JAGATPURA, JAIPUR ARTO","code":"RJ141","value":"141","full_text":"JAGATPURA, JAIPUR ARTO - RJ141( 20-DEC-2016 )"},
+    {"name":"Jai Bhawani Fitness Center","code":"RJ236","value":"236","full_text":"Jai Bhawani Fitness Center - RJ236( 20-AUG-2020 )"},
+    {"name":"JAIPUR (FIRST) RTO","code":"RJ14","value":"14","full_text":"JAIPUR (FIRST) RTO - RJ14( 28-NOV-2016 )"},
+    {"name":"JAIPUR (SECOND) RTO","code":"RJ59","value":"59","full_text":"JAIPUR (SECOND) RTO - RJ59( 19-JAN-2023 )"},
+    {"name":"Jaipur Vehicle Fitness and Maintenance Center","code":"RJ234","value":"234","full_text":"Jaipur Vehicle Fitness and Maintenance Center - RJ234( 10-JUL-2020 )"},
+    {"name":"JAISALMER DTO","code":"RJ15","value":"15","full_text":"JAISALMER DTO - RJ15( 27-FEB-2018 )"},
+    {"name":"JALORE DTO","code":"RJ16","value":"16","full_text":"JALORE DTO - RJ16( 05-OCT-2017 )"},
+    {"name":"JALORE FITNESS CENTRE","code":"RJ282","value":"282","full_text":"JALORE FITNESS CENTRE - RJ282( 20-APR-2022 )"},
+    {"name":"JHALAWAR DTO","code":"RJ17","value":"17","full_text":"JHALAWAR DTO - RJ17( 09-JAN-2018 )"},
+    {"name":"JHUNJHUNU DTO","code":"RJ18","value":"18","full_text":"JHUNJHUNU DTO - RJ18( 16-JAN-2018 )"},
+    {"name":"Jodhpur Parivahan Fitness Centre","code":"RJ242","value":"242","full_text":"Jodhpur Parivahan Fitness Centre - RJ242( 11-SEP-2020 )"},
+    {"name":"JODHPUR RTO","code":"RJ19","value":"19","full_text":"JODHPUR RTO - RJ19( 27-DEC-2017 )"},
+    {"name":"KAROLI DTO","code":"RJ34","value":"34","full_text":"KAROLI DTO - RJ34( 16-JAN-2018 )"},
+    {"name":"KEKRI DTO","code":"RJ48","value":"48","full_text":"KEKRI DTO - RJ48( 14-DEC-2017 )"},
+    {"name":"KHETRI DTO","code":"RJ53","value":"53","full_text":"KHETRI DTO - RJ53( 13-SEP-2018 )"},
+    {"name":"KISHANGARH DTO","code":"RJ42","value":"42","full_text":"KISHANGARH DTO - RJ42( 20-FEB-2018 )"},
+    {"name":"KOTA RTO","code":"RJ20","value":"20","full_text":"KOTA RTO - RJ20( 06-JUN-2017 )"},
+    {"name":"Kota Vehicle Fitness Center","code":"RJ263","value":"263","full_text":"Kota Vehicle Fitness Center - RJ263( 05-APR-2021 )"},
+    {"name":"KOTPUTALI DTO","code":"RJ32","value":"32","full_text":"KOTPUTALI DTO - RJ32( 20-SEP-2017 )"},
+    {"name":"Laxmi Parivahan Fitness Center","code":"RJ266","value":"266","full_text":"Laxmi Parivahan Fitness Center - RJ266( 07-APR-2021 )"},
+    {"name":"Mahadev Fitness Center","code":"RJ233","value":"233","full_text":"Mahadev Fitness Center - RJ233( 14-JUL-2020 )"},
+    {"name":"MAHADEV FITNESS CENTER BHILWARA","code":"RJ274","value":"274","full_text":"MAHADEV FITNESS CENTER BHILWARA - RJ274( 08-MAR-2022 )"},
+    {"name":"MAHADEV FITNESS CENTER JODHPUR","code":"RJ273","value":"273","full_text":"MAHADEV FITNESS CENTER JODHPUR - RJ273( 08-MAR-2022 )"},
+    {"name":"MAHAVEER JAIN FITNESS CENTRE","code":"RJ229","value":"229","full_text":"MAHAVEER JAIN FITNESS CENTRE - RJ229( 02-MAR-2020 )"},
+    {"name":"MAHAVEER PRASAD RAM KISHAN","code":"RJ232","value":"232","full_text":"MAHAVEER PRASAD RAM KISHAN - RJ232( 08-JUN-2020 )"},
+    {"name":"Marudhara Transport Company","code":"RJ271","value":"271","full_text":"Marudhara Transport Company - RJ271( 05-JUL-2021 )"},
+    {"name":"Marwar Fitness Center","code":"RJ249","value":"249","full_text":"Marwar Fitness Center - RJ249( 13-NOV-2020 )"},
+    {"name":"Matsya Fitness Center","code":"RJ220","value":"220","full_text":"Matsya Fitness Center - RJ220( 26-DEC-2019 )"},
+    {"name":"M & D Automobile Fitness Center","code":"RJ222","value":"222","full_text":"M & D Automobile Fitness Center - RJ222( 31-DEC-2019 )"},
+    {"name":"Meel Motors","code":"RJ230","value":"230","full_text":"Meel Motors - RJ230( 02-MAR-2020 )"},
+    {"name":"Meera Fitness Center","code":"RJ247","value":"247","full_text":"Meera Fitness Center - RJ247( 22-OCT-2020 )"},
+    {"name":"MEERA FITNESS TESTING CENTER CHITTORGARH","code":"RJ215","value":"215","full_text":"MEERA FITNESS TESTING CENTER CHITTORGARH - RJ215( 06-NOV-2019 )"},
+    {"name":"M.K. Fitness Center","code":"RJ239","value":"239","full_text":"M.K. Fitness Center - RJ239( 03-SEP-2020 )"},
+    {"name":"M/S Dholpur Fitness Center","code":"RJ201","value":"201","full_text":"M/S Dholpur Fitness Center - RJ201( 14-MAY-2019 )"},
+    {"name":"M/S Jagdamba Fitness Center","code":"RJ203","value":"203","full_text":"M/S Jagdamba Fitness Center - RJ203( 30-JUL-2019 )"},
+    {"name":"M/S Nandan Fitness Testing Center","code":"RJ204","value":"204","full_text":"M/S Nandan Fitness Testing Center - RJ204( 22-AUG-2019 )"},
+    {"name":"M/S OM Fitness & Service Center","code":"RJ202","value":"202","full_text":"M/S OM Fitness & Service Center - RJ202( 25-JUL-2019 )"},
+    {"name":"Naganaray Fitness Center","code":"RJ255","value":"255","full_text":"Naganaray Fitness Center - RJ255( 02-DEC-2020 )"},
+    {"name":"NAGAUR DTO","code":"RJ21","value":"21","full_text":"NAGAUR DTO - RJ21( 07-NOV-2017 )"},
+    {"name":"Navdeep Fitness Test Center","code":"RJ248","value":"248","full_text":"Navdeep Fitness Test Center - RJ248( 02-NOV-2020 )"},
+    {"name":"Navdurga Vahan Fitness Center","code":"RJ245","value":"245","full_text":"Navdurga Vahan Fitness Center - RJ245( 30-SEP-2020 )"},
+    {"name":"Navkar Shri Fitness Testing Center","code":"RJ216","value":"216","full_text":"Navkar Shri Fitness Testing Center - RJ216( 26-NOV-2019 )"},
+    {"name":"NOHAR DTO","code":"RJ49","value":"49","full_text":"NOHAR DTO - RJ49( 01-JUN-2018 )"},
+    {"name":"NOKHA DTO","code":"RJ50","value":"50","full_text":"NOKHA DTO - RJ50( 07-FEB-2018 )"},
+    {"name":"Nokha Vehicle Fitness Center","code":"RJ253","value":"253","full_text":"Nokha Vehicle Fitness Center - RJ253( 27-NOV-2020 )"},
+    {"name":"PALI RTO","code":"RJ22","value":"22","full_text":"PALI RTO - RJ22( 10-APR-2018 )"},
+    {"name":"Parasvnath Fitness Center","code":"RJ240","value":"240","full_text":"Parasvnath Fitness Center - RJ240( 03-SEP-2020 )"},
+    {"name":"PAWAN VEHICLE FITNESS CENTER PVT LTD","code":"RJ277","value":"277","full_text":"PAWAN VEHICLE FITNESS CENTER PVT LTD - RJ277( 05-APR-2022 )"},
+    {"name":"PHALODI DTO","code":"RJ43","value":"43","full_text":"PHALODI DTO - RJ43( 12-SEP-2018 )"},
+    {"name":"PIPAR CITY DTO","code":"RJ54","value":"54","full_text":"PIPAR CITY DTO - RJ54( 17-AUG-2021 )"},
+    {"name":"POKHRAN DTO","code":"RJ55","value":"55","full_text":"POKHRAN DTO - RJ55( 17-AUG-2021 )"},
+    {"name":"PRATAPGARH DTO","code":"RJ35","value":"35","full_text":"PRATAPGARH DTO - RJ35( 07-NOV-2017 )"},
+    {"name":"Preksha Parivahan Fitness Center","code":"RJ265","value":"265","full_text":"Preksha Parivahan Fitness Center - RJ265( 08-APR-2021 )"},
+    {"name":"Prerna Parivahan Fitness Center","code":"RJ272","value":"272","full_text":"Prerna Parivahan Fitness Center - RJ272( 05-JUL-2021 )"},
+    {"name":"RAJASTHAN VEHICLE FITNESS CENTER","code":"RJ283","value":"283","full_text":"RAJASTHAN VEHICLE FITNESS CENTER - RJ283( 21-AUG-2023 )"},
+    {"name":"RAJSAMAND DTO","code":"RJ30","value":"30","full_text":"RAJSAMAND DTO - RJ30( 27-AUG-2019 )"},
+    {"name":"RAMGANJMANDI DTO","code":"RJ33","value":"33","full_text":"RAMGANJMANDI DTO - RJ33( 22-FEB-2018 )"},
+    {"name":"R.K. Fitness Center","code":"RJ221","value":"221","full_text":"R.K. Fitness Center - RJ221( 31-DEC-2019 )"},
+    {"name":"Royal Motors","code":"RJ268","value":"268","full_text":"Royal Motors - RJ268( 27-MAY-2021 )"},
+    {"name":"SADULSHAHAR DTO","code":"RJ56","value":"56","full_text":"SADULSHAHAR DTO - RJ56( 17-AUG-2021 )"},
+    {"name":"SAHAPURA (BHILWARA) DTO","code":"RJ51","value":"51","full_text":"SAHAPURA (BHILWARA) DTO - RJ51( 16-FEB-2018 )"},
+    {"name":"SAHAPURA (JAIPUR) DTO","code":"RJ52","value":"52","full_text":"SAHAPURA (JAIPUR) DTO - RJ52( 15-DEC-2017 )"},
+    {"name":"SALUMBAR DTO","code":"RJ58","value":"58","full_text":"SALUMBAR DTO - RJ58( 10-OCT-2022 )"},
+    {"name":"SAWAI MADHOPUR DTO","code":"RJ25","value":"25","full_text":"SAWAI MADHOPUR DTO - RJ25( 19-JUL-2016 )"},
+    {"name":"Schoolnet India Limited","code":"RJ256","value":"256","full_text":"Schoolnet India Limited - RJ256( 27-NOV-2020 )"},
+    {"name":"SHAHPURA BHILWARA FITNESS CENTER","code":"RJ275","value":"275","full_text":"SHAHPURA BHILWARA FITNESS CENTER - RJ275( 16-MAR-2022 )"},
+    {"name":"SHAHPURA VEHICLE FITNESS CENTER (JAIPUR)","code":"RJ213","value":"213","full_text":"SHAHPURA VEHICLE FITNESS CENTER (JAIPUR) - RJ213( 01-NOV-2019 )"},
+    {"name":"Shanti Vehicle Fitness Testing Center","code":"RJ208","value":"208","full_text":"Shanti Vehicle Fitness Testing Center - RJ208( 10-OCT-2019 )"},
+    {"name":"Shashank Automobiles","code":"RJ227","value":"227","full_text":"Shashank Automobiles - RJ227( 23-JAN-2020 )"},
+    {"name":"SHIV KRIPA FITNESS CENTER PVT LTD","code":"RJ279","value":"279","full_text":"SHIV KRIPA FITNESS CENTER PVT LTD - RJ279( 05-APR-2022 )"},
+    {"name":"SHREE BALAJI FITNESS CENTER PALI","code":"RJ241","value":"241","full_text":"SHREE BALAJI FITNESS CENTER PALI - RJ241( 07-SEP-2020 )"},
+    {"name":"Shree Fitness Center","code":"RJ211","value":"211","full_text":"Shree Fitness Center - RJ211( 11-OCT-2019 )"},
+    {"name":"Shree Kamdhenu Fitness Center","code":"RJ219","value":"219","full_text":"Shree Kamdhenu Fitness Center - RJ219( 26-DEC-2019 )"},
+    {"name":"SHREE SHYAM VEHICLE FITNESS CENTER","code":"RJ246","value":"246","full_text":"SHREE SHYAM VEHICLE FITNESS CENTER - RJ246( 08-OCT-2020 )"},
+    {"name":"SHRI BALAJI FITNESS CENTER BIKANER","code":"RJ206","value":"206","full_text":"SHRI BALAJI FITNESS CENTER BIKANER - RJ206( 11-SEP-2019 )"},
+    {"name":"Shri Bikaner Fitness Center","code":"RJ205","value":"205","full_text":"Shri Bikaner Fitness Center - RJ205( 02-SEP-2019 )"},
+    {"name":"Shri Fitness Center","code":"RJ259","value":"259","full_text":"Shri Fitness Center - RJ259( 21-DEC-2020 )"},
+    {"name":"Shri Force Fitness Center","code":"RJ217","value":"217","full_text":"Shri Force Fitness Center - RJ217( 03-DEC-2019 )"},
+    {"name":"Shri Karni Fitness Center","code":"RJ214","value":"214","full_text":"Shri Karni Fitness Center - RJ214( 04-NOV-2019 )"},
+    {"name":"SHRI MAHALAXMI FITNESS CENTER","code":"RJ278","value":"278","full_text":"SHRI MAHALAXMI FITNESS CENTER - RJ278( 05-APR-2022 )"},
+    {"name":"Shri Vinayak Auto Fitness Center","code":"RJ252","value":"252","full_text":"Shri Vinayak Auto Fitness Center - RJ252( 27-NOV-2020 )"},
+    {"name":"SIKAR RTO","code":"RJ23","value":"23","full_text":"SIKAR RTO - RJ23( 27-SEP-2017 )"},
+    {"name":"Sikar Vehicle Fitness Center","code":"RJ212","value":"212","full_text":"Sikar Vehicle Fitness Center - RJ212( 23-OCT-2019 )"},
+    {"name":"SIROHI DTO","code":"RJ24","value":"24","full_text":"SIROHI DTO - RJ24( 27-FEB-2018 )"},
+    {"name":"Speedline Auto Fitness Private Limited","code":"RJ270","value":"270","full_text":"Speedline Auto Fitness Private Limited - RJ270( 27-MAY-2021 )"},
+    {"name":"SRI GANGANAGAR DTO","code":"RJ13","value":"13","full_text":"SRI GANGANAGAR DTO - RJ13( 27-SEP-2017 )"},
+    {"name":"SUJANGARH DTO","code":"RJ44","value":"44","full_text":"SUJANGARH DTO - RJ44( 16-FEB-2018 )"},
+    {"name":"SUMERPUR DTO","code":"RJ57","value":"57","full_text":"SUMERPUR DTO - RJ57( 17-AUG-2021 )"},
+    {"name":"Swarna Shri Fitness Testing Center","code":"RJ207","value":"207","full_text":"Swarna Shri Fitness Testing Center - RJ207( 09-OCT-2019 )"},
+    {"name":"TIRUPATI ASSOCIATES","code":"RJ238","value":"238","full_text":"TIRUPATI ASSOCIATES - RJ238( 27-AUG-2020 )"},
+    {"name":"TIRUPATI ASSOCIATES MORIJA CHOMU","code":"RJ237","value":"237","full_text":"TIRUPATI ASSOCIATES MORIJA CHOMU - RJ237( 27-AUG-2020 )"},
+    {"name":"TIRUPATI FITNESS CENTER","code":"RJ235","value":"235","full_text":"TIRUPATI FITNESS CENTER - RJ235( 22-JUL-2020 )"},
+    {"name":"TONK DTO","code":"RJ26","value":"26","full_text":"TONK DTO - RJ26( 07-NOV-2017 )"},
+    {"name":"Tonk Fitness Center","code":"RJ244","value":"244","full_text":"Tonk Fitness Center - RJ244( 30-SEP-2020 )"},
+    {"name":"Udaipur Fitness Center","code":"RJ262","value":"262","full_text":"Udaipur Fitness Center - RJ262( 05-APR-2021 )"},
+    {"name":"UDAIPUR RTO","code":"RJ27","value":"27","full_text":"UDAIPUR RTO - RJ27( 06-JUN-2017 )"},
+    {"name":"Vaahan Fitness Center","code":"RJ264","value":"264","full_text":"Vaahan Fitness Center - RJ264( 06-APR-2021 )"},
+    {"name":"VATSAL ENTERPRISES","code":"RJ258","value":"258","full_text":"VATSAL ENTERPRISES - RJ258( 18-DEC-2020 )"}
+  ]
+}
+
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -697,6 +1008,12 @@ def run_seed():
         print("🔧 Seeding RTOS for AP (Andhra Pradesh) [partial list you pasted]")
         seed_state_rtos(db, portal_ids, STATE_AP)
 
+        print("🔧 Seeding RTOS for BR (Bihar)")
+        seed_state_rtos(db, portal_ids, STATE_BR)
+
+        print("🔧 Seeding RTOS for CG (Chhattisgarh)")
+        seed_state_rtos(db, portal_ids, STATE_CG)
+
         print("🔧 Seeding RTOS for DL (Delhi)")
         seed_state_rtos(db, portal_ids, STATE_DL)
 
@@ -705,6 +1022,12 @@ def run_seed():
 
         print("🔧 Seeding RTOS for GJ (Gujarat)")
         seed_state_rtos(db, portal_ids, STATE_GJ)
+
+        print("🔧 Seeding RTOS for AS (Assam)")
+        seed_state_rtos(db, portal_ids, STATE_AS)
+
+        print("🔧 Seeding RTOS for RJ (Rajasthan)")
+        seed_state_rtos(db, portal_ids, STATE_RJ)
 
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)

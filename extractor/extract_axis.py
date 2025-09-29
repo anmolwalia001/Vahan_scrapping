@@ -159,6 +159,28 @@ class AxisExtractor:
         self.x_axis_filters = []
         self.y_axis_filters = []
         return self.extract_all_axis_filters()
+    
+    def get_current_axis_labels(self) -> Dict[str, str]:
+        """
+        Source of truth for the currently selected axis labels from DB.
+        We pick one label per axis. Adjust the selection rule as you prefer:
+        - If you have a 'current' flag/setting table later, switch to that.
+        - For now: return the first row alphabetically per axis.
+        """
+        try:
+            with SessionLocal() as db:
+                # Fetch all filters grouped by axis
+                rows = db.query(AxisFilter).all()
+                x = sorted([r.filter for r in rows if r.axis == "X"])
+                y = sorted([r.filter for r in rows if r.axis == "Y"])
+
+                if not x or not y:
+                    raise ValueError("AxisFilter table missing X or Y entries")
+
+                return {"X": x[0], "Y": y[0]}
+        except Exception as e:
+            logger.error(f"Failed to get current axis labels from DB: {e}")
+            raise
 
 
 def main():

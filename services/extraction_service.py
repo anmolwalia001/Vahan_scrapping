@@ -20,6 +20,7 @@ from storage.excel_export import ExcelExporter
 from services.file_handler import FileHandler
 from utils.helpers import sanitize_filename
 from db.session import SessionLocal
+from random import uniform
 from db.models import ExtractionJob, ExtractionResult
 
 logger = logging.getLogger("app.services.extraction")
@@ -43,6 +44,8 @@ class ExtractionConfig:
     vehicle_filter_categories: List[str] = None
     state_delay_minutes: int = 5
     rto_delay_seconds: int = 2
+    state_delay_jitter_minutes: float = 1.0
+    rto_delay_jitter_seconds: float = 3.0
     max_retries: int = 3
     output_directory: str = None
     
@@ -135,7 +138,7 @@ class ExtractionService:
             
             for idx, state in enumerate(active_states):
                 logger.info(f"\n{'='*70}")
-                logger.info(f"PROCESSING STATE {idx+1}/{len(active_states)}: {state.name} ({state.code})")
+                print(f"🌲🌲 PROCESSING STATE {idx+1}/{len(active_states)}: {state.name} ({state.code})")
                 logger.info(f"{'='*70}")
                 
                 try:
@@ -144,12 +147,11 @@ class ExtractionService:
                     state_results.append(state_result)
                     total_excel_files += state_result.successful_downloads
                     
-                    logger.info(f"State {state.name} completed: {state_result.successful_downloads} files downloaded")
+                    print(f"State 😊😊 {state.name} completed: {state_result.successful_downloads} files downloaded")
                     
                     # Wait between states (except for last state)
                     if idx < len(active_states) - 1:
-                        logger.info(f"Waiting {self.config.state_delay_minutes} minutes before next state...")
-                        time.sleep(self.config.state_delay_minutes * 60)
+                        self._sleep_with_jitter_minutes(self.config.state_delay_minutes, self.config.state_delay_jitter_minutes)
                 
                 except Exception as e:
                     logger.error(f"Failed to process state {state.name}: {e}")
@@ -179,6 +181,32 @@ class ExtractionService:
             raise
         finally:
             self._cleanup_browser()
+    
+    def _initialize_browser(self):
+        """Initialize the browser instance"""
+        if not self.browser:
+            self.browser = VahanBrowser()
+            self.browser.setup()
+
+            # 1) Read current axis labels from DB (source of truth)
+            axis_extractor = AxisExtractor()
+            labels = axis_extractor.get_current_axis_labels()
+            y_axis_from_db = labels["Y"]
+            x_axis_from_db = labels["X"]
+
+            # 2) Navigate and set + verify
+            if not self.browser.navigate_to_portal():
+                raise Exception("Failed to navigate to portal")
+
+            if not self.browser.set_axis_and_verify(y_axis_from_db, x_axis_from_db):
+                # FAIL FAST so you don’t run with defaults like "Vehicle Category Group"
+                raise Exception(
+                    f"Failed to apply axes from DB. Y='{y_axis_from_db}', X='{x_axis_from_db}'"
+                )
+
+            # Optionally reflect what we actually used to the config for logging
+            self.config.y_axis = y_axis_from_db
+            self.config.x_axis = x_axis_from_db
     
     def _process_state(self, state: StateData, output_dir: str) -> StateExtractionResult:
         """Process all RTOs for a single state"""
@@ -236,7 +264,7 @@ class ExtractionService:
                 
                 # Small delay between RTOs
                 if idx < len(rtos) - 1:
-                    time.sleep(self.config.rto_delay_seconds)
+                    self._sleep_with_jitter_seconds(self.config.rto_delay_seconds, self.config.rto_delay_jitter_seconds)
                     
             except Exception as e:
                 failed_downloads += 1
@@ -342,13 +370,11 @@ class ExtractionService:
         
         # Select state
         state_display_name = getattr(state, "display_name", state.name)
-        # if "andaman" in state.name.lower():
-        #     state_display_name = f"{state.name}(3)"
         
         if not self.browser.select_state(state_display_name):
             raise Exception(f"Failed to select state: {state_display_name}")
         
-        logger.info(f"Browser configured for state: {state_display_name}")
+        print(f"Browser configured for state 🤞🤞: {state_display_name}")
     
     def _cleanup_browser(self):
         """Clean up browser resources"""
@@ -486,6 +512,12 @@ class ExtractionService:
             })
         
         return summary
+    
+    def _sleep_with_jitter_seconds(self, base: float, jitter: float):
+        time.sleep(max(0, base + uniform(-jitter, jitter)))
+
+    def _sleep_with_jitter_minutes(self, base: float, jitter: float):
+        self._sleep_with_jitter_seconds(base * 60.0, jitter * 60.0)
     
     def pause_extraction(self):
         """Pause the current extraction"""
