@@ -137,17 +137,13 @@ class ExtractionService:
             total_excel_files = 0
             
             for idx, state in enumerate(active_states):
-                logger.info(f"\n{'='*70}")
-                print(f"🌲🌲 PROCESSING STATE {idx+1}/{len(active_states)}: {state.name} ({state.code})")
-                logger.info(f"{'='*70}")
+                
                 
                 try:
                     # Extract data for this state
                     state_result = self._process_state(state, output_dir)
                     state_results.append(state_result)
                     total_excel_files += state_result.successful_downloads
-                    
-                    print(f"State 😊😊 {state.name} completed: {state_result.successful_downloads} files downloaded")
                     
                     # Wait between states (except for last state)
                     if idx < len(active_states) - 1:
@@ -373,8 +369,6 @@ class ExtractionService:
         
         if not self.browser.select_state(state_display_name):
             raise Exception(f"Failed to select state: {state_display_name}")
-        
-        print(f"Browser configured for state 🤞🤞: {state_display_name}")
     
     def _cleanup_browser(self):
         """Clean up browser resources"""
