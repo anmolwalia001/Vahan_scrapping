@@ -212,8 +212,47 @@ class HumanLikeDelayConfig:
     random_pause_chance: float = 0.25         # 10% chance of random pause
     random_pause_duration: tuple = (3, 8)    # Random pause duration
 
-    consecutive_failure_threshold: int = 3
+    detection_cooldown: tuple = (300, 600)
 
+class SessionManager:
+    """Manage browser sessions to avoid detection"""
+    
+    def __init__(self):
+        self.session_duration = 0
+        self.max_session_duration = 1800  # 30 minutes max session
+        self.requests_count = 0
+        self.max_requests_per_session = 50
+        self.last_detection_time = None
+        self.detection_cooldown = 300  # 5 minutes
+    
+    def should_restart_session(self) -> bool:
+        """Check if we should restart the browser session"""
+        # Time-based restart
+        if self.session_duration > self.max_session_duration:
+            return True
+            
+        # Request-based restart
+        if self.requests_count > self.max_requests_per_session:
+            return True
+            
+        # Cooldown after detection
+        if self.last_detection_time:
+            time_since_detection = time.time() - self.last_detection_time
+            if time_since_detection < self.detection_cooldown:
+                return False  # Still in cooldown
+        
+        return False
+    
+    def record_detection(self):
+        """Record that detection occurred"""
+        self.last_detection_time = time.time()
+        logger.warning("Detection recorded - entering cooldown period")
+    
+    def reset_session(self):
+        """Reset session counters"""
+        self.session_duration = 0
+        self.requests_count = 0
+        logger.info("Session reset")
 
 class ConnectionRecoveryManager:
     """Manages connection recovery and retry logic"""
@@ -265,14 +304,13 @@ class HumanLikeBehaviorSimulator:
     
     def human_delay(self, delay_type: str, context: str = ""):
         """Apply human-like delay with variation"""
+
+        allowed = {"between_states", "after_filter_apply"}
+        if delay_type not in allowed:
+            return 
         delay_range = getattr(self.config, delay_type, self.config.between_actions)
-        
-        # Add slight variation to make delays less predictable
         base_delay = random.uniform(*delay_range)
-        
-        # Add micro-variations (human hesitation)
-        micro_variation = random.uniform(-0.5, 0.5)
-        actual_delay = max(0.5, base_delay + micro_variation)
+        actual_delay = max(0.5, base_delay + random.uniform(-0.2, 0.2))  # Add small random jitter
         
         logger.info(f"Human delay ({delay_type}): {actual_delay:.1f}s {context}")
         time.sleep(actual_delay)
@@ -280,8 +318,8 @@ class HumanLikeBehaviorSimulator:
         self.action_count += 1
         
         # Random pauses to simulate human behavior
-        if random.random() < self.config.random_pause_chance:
-            self._random_pause()
+        # if random.random() < self.config.random_pause_chance:
+        #     self._random_pause()
     
     def _random_pause(self):
         """Simulate random human pause (checking phone, thinking, etc.)"""
@@ -439,8 +477,8 @@ class HumanLikeExtractionService:
             
             try:
                 # Delay between RTOs (human reading/thinking time)
-                if idx > 0:
-                    self.behavior_sim.human_delay("between_rtos", f"before processing {rto.name}")
+                # if idx > 0:
+                #     self.behavior_sim.human_delay("between_rtos", f"before processing {rto.name}")
                 
                 # Process RTO with human behavior
                 rto_files = self._process_rto_with_human_behavior(rto, state_dir)
@@ -456,6 +494,46 @@ class HumanLikeExtractionService:
                     failed_downloads += 1
                     errors.append(f"No data for {rto.name}")
                     print(f"No data found for {rto.name}")
+                
+                # --- session accounting & possible restart ---
+                try:
+                    # increment request counter (count rto attempts)
+                    if not hasattr(self, 'session_manager'):
+                        self.session_manager = SessionManager()
+                    self.session_manager.requests_count += 1
+
+                    # update session duration
+                    if not hasattr(self, '_session_start_time'):
+                        self._session_start_time = time.time()
+                    self.session_manager.session_duration = time.time() - self._session_start_time
+
+                    # check if we should restart
+                    if self.session_manager.should_restart_session():
+                        logger.info("Session threshold reached — performing restart + cooldown")
+                        # record detection/cooldown to avoid immediate restart loops
+                        self.session_manager.record_detection()
+
+                        # complete reset + cool down
+                        self._complete_browser_reset()
+                        cooldown = random.uniform(120, 300)  # 2-5 minutes
+                        logger.info(f"Sleeping for cooldown: {cooldown:.1f}s")
+                        time.sleep(cooldown)
+
+                        # reinitialize browser & reselect the state UI
+                        if not self._initialize_browser_with_retry():
+                            logger.error("Failed to reinitialize browser after scheduled restart")
+                            raise Exception("Browser reinit failed after scheduled restart")
+
+                        # Re-setup this state (reselect state and axes)
+                        if not self._setup_browser_for_state_with_retry(state):
+                            logger.error("Failed to re-select state after scheduled restart")
+                            raise Exception("State re-selection failed after scheduled restart")
+
+                        # reset counters (start new session window)
+                        self.session_manager.reset_session()
+                        self._session_start_time = time.time()
+                except Exception as e:
+                    logger.warning(f"Session restart flow had an issue: {e}")
                 
             except Exception as e:
                 failed_downloads += 1
@@ -491,7 +569,7 @@ class HumanLikeExtractionService:
             raise Exception(f"Failed to select RTO: {rto.name} after 2 attempts, skipping...")
         
         # Human delay after selection
-        self.behavior_sim.human_delay("after_dropdown_select", f"after selecting {rto.name}")
+        # self.behavior_sim.human_delay("after_dropdown_select", f"after selecting {rto.name}")
         
         # Refresh data
         if not self._refresh_with_retry():
@@ -499,7 +577,7 @@ class HumanLikeExtractionService:
             return excel_files
         
         # Human delay after refresh
-        self.behavior_sim.human_delay("between_actions", "after refresh")
+        # self.behavior_sim.human_delay("between_actions", "after refresh")
         
        # Continue with rest of the processing...
         try:
@@ -507,7 +585,7 @@ class HumanLikeExtractionService:
                 logger.warning(f"Refresh failed for {rto.name}")
                 return excel_files
             
-            self.behavior_sim.human_delay("between_actions", "after refresh")
+            # self.behavior_sim.human_delay("between_actions", "after refresh")
 
             if self.config.apply_vehicle_filter:
                 for filter_idx, filter_set in enumerate(self.config.vehicle_filter_categories):
@@ -528,7 +606,7 @@ class HumanLikeExtractionService:
                             logger.info(f"No data for {rto.name} with filter {filter_set}")
                             continue
                         
-                        self.behavior_sim.human_delay("between_actions", "before download")
+                        # self.behavior_sim.human_delay("between_actions", "before download")
                         
                         # Download with retry
                         filename = self._generate_filename(rto, filter_name)
@@ -537,7 +615,7 @@ class HumanLikeExtractionService:
                             logger.info(f"Downloaded: {filename}")
                             
                             # Human delay after download
-                            self.behavior_sim.human_delay("after_download", f"after downloading {filename}")
+                            # self.behavior_sim.human_delay("after_download", f"after downloading {filename}")
                         
                     except Exception as e:
                         logger.error(f"Error with filter {filter_set}: {e}")

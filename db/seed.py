@@ -294,6 +294,70 @@ STATE_AP = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Arunachal Pradesh
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_AR = {
+  "state": "Arunachal Pradesh",
+  "state_code": "AR",
+  "extraction_date": "2025-07-29T13:38:04.448764",
+  "total_rtos": 30,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(29/29)"},
+    {"name":"ANJAW","code":"AR17","value":"17","full_text":"ANJAW - AR17( 23-JUL-2021 )"},
+    {"name":"Bichom","code":"AR28","value":"28","full_text":"Bichom - AR28( 23-DEC-2024 )"},
+    {"name":"CHANGLANG","code":"AR12","value":"12","full_text":"CHANGLANG - AR12( 11-DEC-2019 )"},
+    {"name":"DIBANG VALLEY","code":"AR10","value":"10","full_text":"DIBANG VALLEY - AR10( 06-JUL-2023 )"},
+    {"name":"EAST KAMENG","code":"AR5","value":"5","full_text":"EAST KAMENG - AR5( 06-OCT-2020 )"},
+    {"name":"EAST SIANG","code":"AR9","value":"9","full_text":"EAST SIANG - AR9( 21-JUN-2018 )"},
+    {"name":"ITANAGAR CAPITAL REGION","code":"AR1","value":"1","full_text":"ITANAGAR CAPITAL REGION - AR1( 09-OCT-2017 )"},
+    {"name":"KAMLE","code":"AR23","value":"23","full_text":"KAMLE - AR23( 08-FEB-2021 )"},
+    {"name":"Keyi Panyor","code":"AR27","value":"27","full_text":"Keyi Panyor - AR27( 23-DEC-2024 )"},
+    {"name":"KRA-DAADI","code":"AR19","value":"19","full_text":"KRA-DAADI - AR19( 05-SEP-2022 )"},
+    {"name":"KURUNG KUMEY","code":"AR15","value":"15","full_text":"KURUNG KUMEY - AR15( 10-AUG-2020 )"},
+    {"name":"LEPARADA","code":"AR25","value":"25","full_text":"LEPARADA - AR25( 07-SEP-2022 )"},
+    {"name":"LOHIT","code":"AR11","value":"11","full_text":"LOHIT - AR11( 16-JUL-2018 )"},
+    {"name":"LONGDING","code":"AR18","value":"18","full_text":"LONGDING - AR18( 24-MAY-2021 )"},
+    {"name":"LOWER DIBANG VALLEY","code":"AR16","value":"16","full_text":"LOWER DIBANG VALLEY - AR16( 30-JUL-2018 )"},
+    {"name":"LOWER SIANG","code":"AR22","value":"22","full_text":"LOWER SIANG - AR22( 29-AUG-2022 )"},
+    {"name":"LOWER SUBANSIRI","code":"AR6","value":"6","full_text":"LOWER SUBANSIRI - AR6( 05-FEB-2019 )"},
+    {"name":"NAMSAI","code":"AR20","value":"20","full_text":"NAMSAI - AR20( 26-JUL-2019 )"},
+    {"name":"PAKKE-KESANG","code":"AR24","value":"24","full_text":"PAKKE-KESANG - AR24( 15-FEB-2023 )"},
+    {"name":"SHI-YOMI","code":"AR26","value":"26","full_text":"SHI-YOMI - AR26( 18-JUL-2019 )"},
+    {"name":"SIANG","code":"AR21","value":"21","full_text":"SIANG - AR21( 21-MAR-2022 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"AR99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - AR99( 27-APR-2021 )"},
+    {"name":"TAWANG","code":"AR3","value":"3","full_text":"TAWANG - AR3( 25-JUL-2018 )"},
+    {"name":"TIRAP","code":"AR13","value":"13","full_text":"TIRAP - AR13( 15-OCT-2018 )"},
+    {"name":"UPPER SIANG","code":"AR14","value":"14","full_text":"UPPER SIANG - AR14( 06-FEB-2019 )"},
+    {"name":"UPPER SUBANSIRI","code":"AR7","value":"7","full_text":"UPPER SUBANSIRI - AR7( 30-JUL-2019 )"},
+    {"name":"WEST KAMENG","code":"AR4","value":"4","full_text":"WEST KAMENG - AR4( 21-JUN-2018 )"},
+    {"name":"WEST SIANG","code":"AR8","value":"8","full_text":"WEST SIANG - AR8( 29-OCT-2018 )"},
+    {"name":"YUPIA","code":"AR2","value":"2","full_text":"YUPIA - AR2( 22-JAN-2020 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Sikkim
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_SK = {
+  "state": "Sikkim",
+  "state_code": "SK",
+  "extraction_date": "2025-07-29T14:35:15.609759",
+  "total_rtos": 10,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(9/9)"},
+    {"name":"GYALSING","code":"SK2","value":"2","full_text":"GYALSING - SK2( 05-JUL-2017 )"},
+    {"name":"JORETHANG","code":"SK4","value":"4","full_text":"JORETHANG - SK4( 19-APR-2018 )"},
+    {"name":"MANGAN","code":"SK3","value":"3","full_text":"MANGAN - SK3( 24-APR-2017 )"},
+    {"name":"NAMCHI","code":"SK5","value":"5","full_text":"NAMCHI - SK5( 01-DEC-2017 )"},
+    {"name":"Office of the Secretary, STA","code":"SK99","value":"99","full_text":"Office of the Secretary, STA - SK99( 23-JAN-2024 )"},
+    {"name":"Pakyong","code":"SK7","value":"7","full_text":"Pakyong - SK7( 12-JUN-2018 )"},
+    {"name":"RTO GANGTOK","code":"SK1","value":"1","full_text":"RTO GANGTOK - SK1( 12-SEP-2016 )"},
+    {"name":"Singtam, East Sikkim","code":"SK8","value":"8","full_text":"Singtam, East Sikkim - SK8( 25-JAN-2019 )"},
+    {"name":"SORENG","code":"SK6","value":"6","full_text":"SORENG - SK6( 02-APR-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Delhi
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_DL = {
@@ -510,6 +574,63 @@ STATE_CG = {
     {"name":"Surajpur DTO","code":"CG29","value":"29","full_text":"Surajpur DTO - CG29( 20-DEC-2018 )"}
   ]
 }
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Tripura
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_TR = {
+  "state": "Tripura",
+  "state_code": "TR",
+  "extraction_date": "2025-07-29T14:41:25.020401",
+  "total_rtos": 10,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(9/9)"},
+    {"name":"DHALAI DTO","code":"TR4","value":"4","full_text":"DHALAI DTO - TR4( 22-DEC-2016 )"},
+    {"name":"GOMATI DTO","code":"TR3","value":"3","full_text":"GOMATI DTO - TR3( 23-FEB-2017 )"},
+    {"name":"KHOWAI DTO","code":"TR6","value":"6","full_text":"KHOWAI DTO - TR6( 22-FEB-2017 )"},
+    {"name":"NORTH TRIPURA DTO","code":"TR5","value":"5","full_text":"NORTH TRIPURA DTO - TR5( 03-MAR-2017 )"},
+    {"name":"SEPAHIJALA DTO","code":"TR7","value":"7","full_text":"SEPAHIJALA DTO - TR7( 09-DEC-2016 )"},
+    {"name":"SOUTH TRIPURA DTO","code":"TR8","value":"8","full_text":"SOUTH TRIPURA DTO - TR8( 23-FEB-2017 )"},
+    {"name":"STA TRIPURA","code":"TR99","value":"99","full_text":"STA TRIPURA - TR99( 01-MAR-2017 )"},
+    {"name":"UNAKOTI DTO","code":"TR2","value":"2","full_text":"UNAKOTI DTO - TR2( 03-MAR-2017 )"},
+    {"name":"WEST TRIPURA JTC","code":"TR1","value":"1","full_text":"WEST TRIPURA JTC - TR1( 01-MAR-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Uttarakhand
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_UK = {
+  "state": "Uttarakhand",
+  "state_code": "UK",
+  "extraction_date": "2025-07-29T14:42:57.527604",
+  "total_rtos": 22,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(21/21)"},
+    {"name":"ALMORA RTO","code":"UK1","value":"1","full_text":"ALMORA RTO - UK1( 30-MAR-2017 )"},
+    {"name":"BAGESHWAR ARTO","code":"UK2","value":"2","full_text":"BAGESHWAR ARTO - UK2( 03-MAY-2017 )"},
+    {"name":"DEHRADUN RTO","code":"UK7","value":"7","full_text":"DEHRADUN RTO - UK7( 14-AUG-2015 )"},
+    {"name":"HALDWANI RTO","code":"UK4","value":"4","full_text":"HALDWANI RTO - UK4( 01-AUG-2016 )"},
+    {"name":"HARIDWAR ARTO","code":"UK8","value":"8","full_text":"HARIDWAR ARTO - UK8( 29-JAN-2016 )"},
+    {"name":"KARANPRAYAG ARTO","code":"UK11","value":"11","full_text":"KARANPRAYAG ARTO - UK11( 18-APR-2016 )"},
+    {"name":"KASHIPUR ARTO","code":"UK18","value":"18","full_text":"KASHIPUR ARTO - UK18( 30-DEC-2015 )"},
+    {"name":"KOTDWAR ARTO","code":"UK15","value":"15","full_text":"KOTDWAR ARTO - UK15( 19-JAN-2016 )"},
+    {"name":"PAURI RTO","code":"UK12","value":"12","full_text":"PAURI RTO - UK12( 21-APR-2016 )"},
+    {"name":"PITHORAGARH ARTO","code":"UK5","value":"5","full_text":"PITHORAGARH ARTO - UK5( 28-MAR-2017 )"},
+    {"name":"RAMNAGAR ARTO","code":"UK19","value":"19","full_text":"RAMNAGAR ARTO - UK19( 30-JAN-2017 )"},
+    {"name":"RANIKHET ARTO","code":"UK20","value":"20","full_text":"RANIKHET ARTO - UK20( 30-JAN-2017 )"},
+    {"name":"RISHIKESH ARTO","code":"UK14","value":"14","full_text":"RISHIKESH ARTO - UK14( 16-DEC-2015 )"},
+    {"name":"ROORKEE ARTO","code":"UK17","value":"17","full_text":"ROORKEE ARTO - UK17( 03-OCT-2016 )"},
+    {"name":"RUDRAPRAYAG ARTO","code":"UK13","value":"13","full_text":"RUDRAPRAYAG ARTO - UK13( 19-FEB-2016 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"UK111","value":"111","full_text":"STATE TRANSPORT AUTHORITY - UK111( 29-FEB-2016 )"},
+    {"name":"TANAKPUR ARTO","code":"UK3","value":"3","full_text":"TANAKPUR ARTO - UK3( 01-FEB-2017 )"},
+    {"name":"TEHRI ARTO","code":"UK9","value":"9","full_text":"TEHRI ARTO - UK9( 07-JUN-2016 )"},
+    {"name":"UDHAM SINGH NAGAR ARTO","code":"UK6","value":"6","full_text":"UDHAM SINGH NAGAR ARTO - UK6( 29-DEC-2015 )"},
+    {"name":"UTTARKASHI ARTO","code":"UK10","value":"10","full_text":"UTTARKASHI ARTO - UK10( 05-MAY-2017 )"},
+    {"name":"VIKAS NAGAR ARTO","code":"UK16","value":"16","full_text":"VIKAS NAGAR ARTO - UK16( 16-MAY-2016 )"}
+  ]
+}
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Assam
@@ -1026,12 +1147,23 @@ def run_seed():
         print("🔧 Seeding RTOS for AS (Assam)")
         seed_state_rtos(db, portal_ids, STATE_AS)
 
+        print("🔧 Seeding RTOS for AR (Arunachal Pradesh)")
+        seed_state_rtos(db, portal_ids, STATE_AR)
+
+        print("🔧 Seeding RTOS for SK (Sikkim)")
+        seed_state_rtos(db, portal_ids, STATE_SK)
+
+        print("🔧 Seeding RTOS for TR (Tripura)")
+        seed_state_rtos(db, portal_ids, STATE_TR)
+
+        print("🔧 Seeding RTOS for UK (Uttarakhand)")
+        seed_state_rtos(db, portal_ids, STATE_UK)
+
         print("🔧 Seeding RTOS for RJ (Rajasthan)")
         seed_state_rtos(db, portal_ids, STATE_RJ)
 
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)
-
 
         print("🔧 Seeding RTOS for LA (Ladakh)")
         seed_state_rtos(db, portal_ids, STATE_LA)

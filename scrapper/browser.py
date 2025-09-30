@@ -7,6 +7,7 @@ Supports plain Chrome, optional proxy, stealth mode, and service layer integrati
 import logging
 import time
 import os
+import random
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -44,11 +45,10 @@ class VahanBrowser:
         self.driver = None
         self.wait = None
         self.element_cache = ElementCache()
-        
         self.temp_download_dir = None
-
-        if user_agent:
-            self.chrome_options.add_argument(f'--user-agent={user_agent}')
+        self.user_agent = user_agent
+        self._desired_y_axis = None
+        self._desired_x_axis = None
         
         logger.info(f"VahanBrowser initialized - headless: {headless}, stealth: {stealth}")
 
@@ -69,84 +69,323 @@ class VahanBrowser:
         logger.info("Browser setup completed")
 
     def _create_driver(self):
-        """Create Chrome WebDriver instance with optimized settings"""
+        """Create Chrome WebDriver with MAXIMUM stealth"""
         chrome_options = Options()
         
-        # Basic settings
         if self.headless:
             chrome_options.add_argument("--headless=new")
         
+        # MAXIMUM stealth arguments
         chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--start-maximized")
+        chrome_options.add_argument("--disable-notifications")
         chrome_options.add_argument("--disable-dev-shm-usage")
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-        chrome_options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        # chrome_options.add_argument("--disable-web-security")
+        # chrome_options.add_argument("--allow-running-insecure-content")
+        chrome_options.add_argument("--disable-features=VizDisplayCompositor")
+        chrome_options.add_argument("--disable-extensions")
+        # chrome_options.add_argument("--disable-plugins")
+        chrome_options.add_argument("--disable-default-apps")
+        chrome_options.add_argument("--disable-sync")
+        # chrome_options.add_argument("--disable-translate")
+        # chrome_options.add_argument("--hide-scrollbars")
+        # chrome_options.add_argument("--metrics-recording-only")
+        # chrome_options.add_argument("--mute-audio")
+        chrome_options.add_argument("--no-default-browser-check")
+        chrome_options.add_argument("--no-first-run")
+        chrome_options.add_argument("--safebrowsing-disable-auto-update")
+        # chrome_options.add_argument("--disable-backgrounding-occluded-windows")
+        chrome_options.add_argument("--disable-renderer-backgrounding")
+        # chrome_options.add_argument("--disable-field-trial-config")
+        # chrome_options.add_argument("--disable-back-forward-cache")
+        # chrome_options.add_argument("--disable-ipc-flooding-protection")
+        
+        # Remove automation indicators
+        chrome_options.add_experimental_option("excludeSwitches", [
+            "enable-automation", 
+            "enable-blink-features=AutomationControlled"
+        ])
         chrome_options.add_experimental_option("useAutomationExtension", False)
         
-        # SSL/Certificate handling for Vahan portal
+        # Random user agent rotation
+        user_agents = [
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 11.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/121.0"
+        ]
+        
+        if self.user_agent:
+            chrome_options.add_argument(f'--user-agent={self.user_agent}')
+        else:
+            ua = random.choice(user_agents)
+            chrome_options.add_argument(f'--user-agent={ua}')
+        
+        # SSL/Certificate handling
         chrome_options.add_argument("--ignore-certificate-errors")
         chrome_options.add_argument("--ignore-ssl-errors")
         chrome_options.add_argument("--allow-insecure-localhost")
-        chrome_options.add_argument("--allow-running-insecure-content")
-        chrome_options.set_capability("acceptInsecureCerts", True)
+        chrome_options.add_argument("--ignore-certificate-errors-spki-list")
+        chrome_options.add_argument("--ignore-urlfetcher-cert-requests")
         
-        # Download preferences
+        # Enhanced privacy settings
         prefs = {
+            "profile.default_content_setting_values": {
+                "notifications": 2,
+                "geolocation": 2,
+                "media_stream": 2,
+                "media_stream_mic": 2,
+                "media_stream_camera": 2,
+            },
+            "profile.managed_default_content_settings": {
+                "images": 1  
+            },
             "download.default_directory": self.temp_download_dir,
             "download.prompt_for_download": False,
             "download.directory_upgrade": True,
-            "safebrowsing.enabled": True
+            "safebrowsing.enabled": False,
+            "profile.default_content_settings.popups": 0,
+            "enable_do_not_track": True,
+            "profile.password_manager_enabled": False,
+            "profile.default_content_setting_values.automatic_downloads": 1,
         }
         chrome_options.add_experimental_option("prefs", prefs)
         
-        # Optional proxy
-        if self.use_proxy:
-            proxy = "http://127.0.0.1:8080"  # Placeholder
-            chrome_options.add_argument(f"--proxy-server={proxy}")
-            logger.info(f"Using proxy: {proxy}")
-
-        # Optional stealth mode
-        if self.stealth:
-            try:
-                import undetected_chromedriver as uc
-                logger.info("Using undetected_chromedriver for stealth mode")
-                driver = uc.Chrome(options=chrome_options)
-            except ImportError:
-                logger.warning("undetected_chromedriver not available, using regular Chrome")
-                driver = webdriver.Chrome(options=chrome_options)
-        else:
+        # Try undetected Chrome first
+        try:
+            import undetected_chromedriver as uc
+            logger.info("Using undetected_chromedriver for maximum stealth")
+            driver = uc.Chrome(
+                options=chrome_options,
+                version_main=None,
+                driver_executable_path=None,
+                browser_executable_path=None
+            )
+        except ImportError:
+            logger.warning("undetected_chromedriver not available - INSTALL IT: pip install undetected-chromedriver")
+            driver = webdriver.Chrome(options=chrome_options)
+        except Exception as e:
+            logger.warning(f"Undetected Chrome failed: {e}, falling back to regular Chrome")
             driver = webdriver.Chrome(options=chrome_options)
         
-        # Maximize window and set user agent
-        driver.maximize_window()
-        driver.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
+        # Apply maximum stealth scripts
+        self._apply_maximum_stealth_scripts(driver)
+        
+        # Random realistic viewport
+        viewports = [
+            (1920, 1080), (1536, 864), (1440, 900), (1366, 768), 
+            (1280, 720), (1600, 900), (2560, 1440)
+        ]
+        width, height = random.choice(viewports)
+        driver.set_window_size(width, height)
+        
+        # Random position
+        driver.set_window_position(random.randint(0, 100), random.randint(0, 100))
         
         return driver
 
+    def _apply_maximum_stealth_scripts(self, driver):
+        """Apply comprehensive JavaScript stealth scripts"""
+        stealth_scripts = [
+            # Core webdriver removal
+            """
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined,
+                configurable: true
+            });
+            """,
+            
+            # Chrome detection removal
+            """
+            window.navigator.chrome = {
+                runtime: {},
+                app: { isInstalled: false },
+                webstore: {
+                    onInstallStageChanged: {},
+                    onDownloadProgress: {},
+                }
+            };
+            """,
+            
+            # Plugin fingerprinting
+            """
+            Object.defineProperty(navigator, 'plugins', {
+                get: () => [
+                    {0: {type: "application/x-google-chrome-pdf", suffixes: "pdf", description: "Portable Document Format", enabledPlugin: {}}},
+                    {1: {type: "application/pdf", suffixes: "pdf", description: "Portable Document Format", enabledPlugin: {}}}
+                ],
+            });
+            """,
+            
+            # Language fingerprinting
+            """
+            Object.defineProperty(navigator, 'languages', {
+                get: () => ['en-US', 'en'],
+            });
+            """,
+            
+            # Permission query override
+            """
+            const originalQuery = window.navigator.permissions.query;
+            window.navigator.permissions.query = (parameters) => (
+                parameters.name === 'notifications' ?
+                    Promise.resolve({ state: 'denied' }) :
+                    originalQuery(parameters)
+            );
+            """,
+            
+            # Hardware concurrency randomization
+            """
+            Object.defineProperty(navigator, 'hardwareConcurrency', {
+                get: () => 4,
+            });
+            """,
+            
+            # Device memory override
+            """
+            try {
+                Object.defineProperty(navigator, 'deviceMemory', {
+                    get: () => 8,
+                });
+            } catch(e) {}
+            """,
+            
+            # WebGL fingerprinting protection
+            """
+            const getParameter = WebGLRenderingContext.prototype.getParameter;
+            WebGLRenderingContext.prototype.getParameter = function(parameter) {
+                if (parameter === 37445) {
+                    return 'Intel Inc.';
+                }
+                if (parameter === 37446) {
+                    return 'Intel(R) UHD Graphics 620';
+                }
+                return getParameter.call(this, parameter);
+            };
+            """,
+            
+            # Remove automation traces
+            """
+            delete window.cdc_adoQpoasnfa76pfcZLmcfl_Array;
+            delete window.cdc_adoQpoasnfa76pfcZLmcfl_Promise;
+            delete window.cdc_adoQpoasnfa76pfcZLmcfl_Symbol;
+            delete window.cdc_adoQpoasnfa76pfcZLmcfl_Object;
+            delete window.cdc_adoQpoasnfa76pfcZLmcfl_Proxy;
+            """,
+        ]
+        
+        for script in stealth_scripts:
+            try:
+                driver.execute_cdp_cmd("Runtime.evaluate", {"expression": script})
+            except Exception as e:
+                try:
+                    driver.execute_script(script)
+                except Exception as e2:
+                    logger.debug(f"Stealth script failed: {e} / {e2}")
+
     def navigate_to_portal(self) -> bool:
-        """Navigate to Vahan portal with retry logic"""
+        """Navigate with MAXIMUM stealth and delays"""
         url = "https://vahan.parivahan.gov.in/vahan4dashboard/vahan/view/reportview.xhtml"
         
-        for attempt in range(3):
+        for attempt in range(5):
             try:
-                logger.info(f"Navigating to Vahan portal (attempt {attempt + 1}/3)")
+                logger.info(f"Stealth navigation attempt {attempt + 1}/5")
+                
+                # Random delay before navigation (shorter for efficiency)
+                pre_delay = random.uniform(3, 8)
+                logger.info(f"Pre-navigation delay: {pre_delay:.1f}s")
+                time.sleep(pre_delay)
+                
+                # Clear any previous session
+                try:
+                    self.driver.delete_all_cookies()
+                    self.driver.execute_script("window.localStorage.clear();")
+                    self.driver.execute_script("window.sessionStorage.clear();")
+                except:
+                    pass
+                
+                # Navigate with stealth
                 self.driver.get(url)
-                time.sleep(5)
                 
-                # Refresh page to ensure proper loading
+                # Post-navigation delay (balanced)
+                nav_delay = random.uniform(5, 12)
+                logger.info(f"Post-navigation delay: {nav_delay:.1f}s")
+                time.sleep(nav_delay)
+                
+                # Simulate human behavior
+                self._human_simulation()
+                
+                # Gentle refresh with delay
+                refresh_delay = random.uniform(3, 8)
+                logger.info(f"Pre-refresh delay: {refresh_delay:.1f}s")
+                time.sleep(refresh_delay)
+                
                 self.driver.refresh()
-                time.sleep(3)
                 
-                # Verify page loaded
-                if "reportview" in self.driver.current_url.lower():
-                    logger.info("Successfully navigated to Vahan portal")
+                # Post-refresh delay (balanced)
+                post_refresh = random.uniform(5, 15)
+                logger.info(f"Post-refresh delay: {post_refresh:.1f}s")
+                time.sleep(post_refresh)
+                
+                # Check if we were blocked
+                current_url = self.driver.current_url.lower()
+                page_source = self.driver.page_source.lower()
+                
+                if any(block_indicator in page_source for block_indicator in [
+                    "blocked", "access denied", "too many requests", 
+                    "err_empty_response", "this page isn't working"
+                ]):
+                    logger.warning(f"Detected blocking on attempt {attempt + 1}")
+                    # Longer delay if blocked but not excessive
+                    block_delay = random.uniform(60, 120)  # 1-2 minutes
+                    logger.info(f"Block recovery delay: {block_delay/60:.1f} minutes")
+                    time.sleep(block_delay)
+                    continue
+                
+                # Verify successful load
+                if "reportview" in current_url:
+                    logger.info(f"Successful stealth navigation on attempt {attempt + 1}")
                     return True
                     
             except WebDriverException as e:
                 logger.warning(f"Navigation attempt {attempt + 1} failed: {e}")
-                time.sleep(5)
+                failure_delay = random.uniform(15, 45)  # 15-45 seconds
+                logger.info(f"Failure recovery delay: {failure_delay:.1f}s")
+                time.sleep(failure_delay)
         
-        logger.error("Failed to navigate to Vahan portal after 3 attempts")
+        logger.error("All stealth navigation attempts failed - likely IP blocked")
         return False
+
+    def _human_simulation(self):
+        """Balanced human behavior simulation"""
+        try:
+            from selenium.webdriver.common.action_chains import ActionChains
+            
+            actions = ActionChains(self.driver)
+            
+            # Fewer mouse movements for efficiency
+            for _ in range(random.randint(2, 4)):
+                x = random.randint(50, 800)
+                y = random.randint(50, 600)
+                actions.move_by_offset(x, y)
+                time.sleep(random.uniform(0.2, 0.8))
+            
+            # Quick scroll pattern
+            for _ in range(random.randint(1, 3)):
+                scroll_amount = random.randint(-300, 300)
+                self.driver.execute_script(f"window.scrollBy(0, {scroll_amount});")
+                time.sleep(random.uniform(0.3, 1.0))
+            
+            actions.perform()
+            
+            # Brief interaction delay
+            interaction_delay = random.uniform(1, 3)
+            time.sleep(interaction_delay)
+            
+        except Exception as e:
+            logger.debug(f"Human simulation failed: {e}")
 
     def set_axis(self, y_axis: str, x_axis: str) -> bool:
         """Set Y-axis and X-axis dropdown values"""
@@ -225,11 +464,10 @@ class VahanBrowser:
             return False
 
     def click_refresh(self) -> bool:
-        """Click refresh button to load data - FIXED VERSION"""
-
+        """Click refresh button to load data"""
         selectors = [
-        "//span[normalize-space()='Refresh']",
-        "//button[.//span[text()='Refresh']]"
+            "//span[normalize-space()='Refresh']",
+            "//button[.//span[text()='Refresh']]"
         ]
 
         for sel in selectors:
@@ -245,72 +483,9 @@ class VahanBrowser:
                 continue
         logger.error("Could not find refresh button with any selector")
         return False
-        try:
-            logger.debug("Clicking refresh button")
-            
-            # Try multiple possible refresh button selectors
-            refresh_selectors = [
-                "input[value='Refresh']",
-                "input[type='submit'][value='Refresh']", 
-                "button:contains('Refresh')",
-                ".ui-button:contains('Refresh')",
-                "[id*='refresh']",
-                "[id*='Refresh']"
-            ]
-            
-            for selector in refresh_selectors:
-                try:
-                    elements = self.driver.find_elements(By.CSS_SELECTOR, selector)
-                    for element in elements:
-                        if element.is_displayed() and element.is_enabled():
-                            self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
-                            time.sleep(0.5)
-                            self.driver.execute_script("arguments[0].click();", element)
-                            
-                            # Wait for data to load
-                            self._wait_for_ajax(timeout=15)
-                            time.sleep(2)
-                            
-                            logger.debug("Refresh completed")
-                            return True
-                except Exception as e:
-                    logger.debug(f"Refresh selector {selector} failed: {e}")
-                    continue
-            
-            logger.error("Could not find refresh button with any selector")
-            return False
-            
-        except Exception as e:
-            logger.error(f"Error clicking refresh: {e}")
-            return False
-
-    # def apply_vehicle_filter(self, vehicle_categories: List[str]) -> bool:
-    #     """Apply vehicle category filter"""
-    #     try:
-    #         logger.info(f"Applying vehicle filter: {vehicle_categories}")
-            
-    #         from scrapper.element_cache import apply_vehicle_filter_cached
-            
-    #         success = apply_vehicle_filter_cached(
-    #             self.driver, 
-    #             self.wait, 
-    #             self.element_cache, 
-    #             vehicle_categories
-    #         )
-            
-    #         if success:
-    #             logger.info("Vehicle filter applied successfully")
-    #             return True
-    #         else:
-    #             logger.error("Failed to apply vehicle filter")
-    #             return False
-                
-    #     except Exception as e:
-    #         logger.error(f"Error applying vehicle filter: {e}")
-    #         return False
 
     def apply_vehicle_filter(self, vehicle_categories: List[str]) -> bool:
-        """Apply vehicle category filter with improved checkbox handling - FIXED VERSION"""
+        """Apply vehicle category filter with improved checkbox handling"""
         try:
             logger.info(f"Applying vehicle filter: {vehicle_categories}")
             
@@ -406,7 +581,6 @@ class VahanBrowser:
             logger.error(f"Error applying vehicle filter: {e}")
             return False
 
-
     def check_data_exists(self) -> bool:
         """Check if data exists in the report table"""
         try:
@@ -414,18 +588,18 @@ class VahanBrowser:
 
             time.sleep(2)  # small wait for table to render
 
-        # First check: "No records found" message
+            # First check: "No records found" message
             if self.driver.find_elements(By.XPATH, "//*[contains(text(), 'No records found')]"):
                 logger.debug("Found 'No records found' message")
                 return False
 
-        # Candidate selectors for data rows
+            # Candidate selectors for data rows
             table_selectors = [
-            "#reportTable_data tr",
-            ".ui-datatable-data tr",
-            "#reportTable tbody tr",
-            ".ui-datatable tbody tr",
-            "table tbody tr"
+                "#reportTable_data tr",
+                ".ui-datatable-data tr",
+                "#reportTable tbody tr",
+                ".ui-datatable tbody tr",
+                "table tbody tr"
             ]
 
             for selector in table_selectors:
@@ -436,7 +610,7 @@ class VahanBrowser:
 
                     logger.debug(f"Found {len(rows)} rows using selector: {selector}")
 
-                # Inspect first couple of rows for actual text
+                    # Inspect first couple of rows for actual text
                     for row in rows[:2]:
                         cells = row.find_elements(By.TAG_NAME, "td")
                         if cells and any(cell.text.strip() for cell in cells):
@@ -453,61 +627,72 @@ class VahanBrowser:
             logger.error(f"Error checking data existence: {e}")
             return False
 
-
     def download_excel(self, output_dir: str, filename: str) -> bool:
-        """Download Excel file from the portal"""
+        """FIXED download method with proper variable handling"""
         try:
             logger.info(f"Downloading Excel file: {filename}")
-
-        # Clear temp directory first
+            
+            # Clear temp directory first
             self._clear_temp_downloads()
-
-        # Try multiple selectors for Excel export button
+            
+            # Try multiple selectors for Excel export button
             export_selectors = [
                 "//a[contains(@onclick, ':xls')]",
-                "//a[contains(@onclick, 'groupingTable:xls')]",
+                "//a[contains(@onclick, 'groupingTable:xls')]", 
                 "//a[contains(@onclick, 'xls:')]",
+                "//button[contains(@onclick, 'xls')]",
+                "//input[@value='Excel']",
+                "//*[contains(text(), 'Excel')]"
             ]
-
-            excel_element = None
+            
+            export_element = None  # FIX: Use same variable name
             for xpath in export_selectors:
                 try:
                     export_element = self.wait.until(
-                    EC.element_to_be_clickable((By.XPATH, xpath))
-                )
+                        EC.element_to_be_clickable((By.XPATH, xpath))
+                    )
+                    logger.debug(f"Found export element with: {xpath}")
                     break
                 except:
                     continue
-
+            
             if not export_element:
-                logger.error("Excel export button not found")
+                logger.error("Excel export button not found with any selector")
                 return False
-
-        # Click via JS to avoid hidden/overlay issues
+            
+            # Brief pre-download delay
+            review_delay = random.uniform(1, 3)
+            time.sleep(review_delay)
+            
+            # Click via JS to avoid interception
             self.driver.execute_script("arguments[0].click();", export_element)
-            logger.debug("Clicked Excel export link")
-
-        # Wait for download to complete (reportTable.xlsx is default name)
+            logger.debug("Clicked Excel export button")
+            
+            # Wait for download with reasonable timeout
             expected_file = "reportTable.xlsx"
-            if not self._wait_for_download_complete(expected_file, timeout=30):
+            if not self._wait_for_download_complete(expected_file, timeout=45):
                 logger.error("Excel download did not complete in time")
                 return False
-
-        # Move file from temp to output_dir
+            
+            # Move file from temp to output_dir
             temp_file = os.path.join(self.temp_download_dir, expected_file)
             final_file = os.path.join(output_dir, filename)
-
+            
             os.makedirs(output_dir, exist_ok=True)
             import shutil
             shutil.move(temp_file, final_file)
-
+            
             logger.info(f"Excel file saved: {final_file}")
+            
+            # Brief post-download delay
+            post_delay = random.uniform(1, 2)
+            time.sleep(post_delay)
+            
             return True
-
+            
         except Exception as e:
             logger.error(f"Error downloading Excel: {e}")
             return False
-
 
     def refresh_page(self):
         """Refresh the current page"""
@@ -539,20 +724,20 @@ class VahanBrowser:
 
         for attempt in range(3):  # retry up to 3 times
             try:
-            # open dropdown
+                # open dropdown
                 dropdown = self.wait.until(EC.element_to_be_clickable((By.ID, dropdown_id)))
                 self.driver.execute_script("arguments[0].scrollIntoView(true);", dropdown)
                 dropdown.click()
                 time.sleep(1)
 
-            # locate the option
+                # locate the option
                 option_xpath = f"//div[@id='{panel_id}']//li[contains(normalize-space(.), '{option_text}')]"
                 option = self.wait.until(EC.presence_of_element_located((By.XPATH, option_xpath)))
 
-            # click it via JS (avoids stale issues)
+                # click it via JS (avoids stale issues)
                 self.driver.execute_script("arguments[0].click();", option)
 
-            # wait for PrimeFaces AJAX
+                # wait for PrimeFaces AJAX
                 self._wait_for_ajax()
                 logger.info(f"Selected '{option_text}' from {dropdown_id}")
                 return True
@@ -564,8 +749,6 @@ class VahanBrowser:
 
         logger.error(f"Failed to select '{option_text}' from {dropdown_id} after retries")
         return False
-
-        
     
     def _wait_for_ajax(self, timeout: int = 10):
         """Wait for AJAX requests to complete"""
