@@ -336,6 +336,41 @@ STATE_AR = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Jammu & Kashmir
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_JK = {
+  "state": "Jammu and Kashmir",
+  "state_code": "JK",
+  "extraction_date": "2025-07-29T14:04:16.414015",
+  "total_rtos": 22,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(21/21)"},
+    {"name":"ANANTNAG ARTO","code":"JK3","value":"3","full_text":"ANANTNAG ARTO - JK3( 24-OCT-2016 )"},
+    {"name":"BANDIPORA ARTO","code":"JK15","value":"15","full_text":"BANDIPORA ARTO - JK15( 29-FEB-2016 )"},
+    {"name":"BARAMULLA ARTO","code":"JK5","value":"5","full_text":"BARAMULLA ARTO - JK5( 07-DEC-2016 )"},
+    {"name":"BUDGAM ARTO","code":"JK4","value":"4","full_text":"BUDGAM ARTO - JK4( 16-MAY-2016 )"},
+    {"name":"DODA ARTO","code":"JK6","value":"6","full_text":"DODA ARTO - JK6( 05-SEP-2016 )"},
+    {"name":"GANDERBAL ARTO","code":"JK16","value":"16","full_text":"GANDERBAL ARTO - JK16( 18-MAY-2016 )"},
+    {"name":"JAMMU RTO","code":"JK2","value":"2","full_text":"JAMMU RTO - JK2( 01-DEC-2016 )"},
+    {"name":"KATHUA RTO","code":"JK8","value":"8","full_text":"KATHUA RTO - JK8( 22-SEP-2016 )"},
+    {"name":"KISHTWAR ARTO","code":"JK17","value":"17","full_text":"KISHTWAR ARTO - JK17( 18-NOV-2016 )"},
+    {"name":"KULGAM ARTO","code":"JK18","value":"18","full_text":"KULGAM ARTO - JK18( 21-APR-2016 )"},
+    {"name":"KUPWARA ARTO","code":"JK9","value":"9","full_text":"KUPWARA ARTO - JK9( 25-NOV-2016 )"},
+    {"name":"POONCH ARTO","code":"JK12","value":"12","full_text":"POONCH ARTO - JK12( 08-FEB-2017 )"},
+    {"name":"PULWAMA ARTO","code":"JK13","value":"13","full_text":"PULWAMA ARTO - JK13( 29-FEB-2016 )"},
+    {"name":"RAJOURI ARTO","code":"JK11","value":"11","full_text":"RAJOURI ARTO - JK11( 09-DEC-2016 )"},
+    {"name":"RAMBAN ARTO","code":"JK19","value":"19","full_text":"RAMBAN ARTO - JK19( 07-APR-2016 )"},
+    {"name":"REASI ARTO","code":"JK20","value":"20","full_text":"REASI ARTO - JK20( 29-FEB-2016 )"},
+    {"name":"SAMBA ARTO","code":"JK21","value":"21","full_text":"SAMBA ARTO - JK21( 29-FEB-2016 )"},
+    {"name":"SHOPIAN ARTO","code":"JK22","value":"22","full_text":"SHOPIAN ARTO - JK22( 08-NOV-2016 )"},
+    {"name":"SRINAGAR RTO","code":"JK1","value":"1","full_text":"SRINAGAR RTO - JK1( 12-NOV-2016 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"JK999","value":"999","full_text":"STATE TRANSPORT AUTHORITY - JK999( 04-MAY-2021 )"},
+    {"name":"UDHAMPUR ARTO","code":"JK14","value":"14","full_text":"UDHAMPUR ARTO - JK14( 12-SEP-2016 )"}
+  ]
+}
+
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Sikkim
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_SK = {
@@ -1140,6 +1175,9 @@ def run_seed():
 
         print("🔧 Seeding RTOS for GA (Goa)")
         seed_state_rtos(db, portal_ids, STATE_GA)
+
+        print("🔧 Seeding RTOS for JK (Jammu & Kashmir)")
+        seed_state_rtos(db, portal_ids, STATE_JK)
 
         print("🔧 Seeding RTOS for GJ (Gujarat)")
         seed_state_rtos(db, portal_ids, STATE_GJ)
