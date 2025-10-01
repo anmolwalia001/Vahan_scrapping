@@ -369,6 +369,116 @@ STATE_JK = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Punjab
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_PB = {
+  "state": "Punjab",
+  "state_code": "PB",
+  "extraction_date": "2025-07-29T14:28:05.709334",
+  "total_rtos": 97,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(96/96)"},
+    {"name":"PUNJAB STA(RAC)/(AITP)","code":"PB1","value":"1","full_text":"PUNJAB STA(RAC)/(AITP) - PB1( 16-FEB-2018 )"},
+    {"name":"RTO AMRITSAR","code":"PB2","value":"2","full_text":"RTO AMRITSAR - PB2( 02-NOV-2017 )"},
+    {"name":"RTO BARNALA","code":"PB19","value":"19","full_text":"RTO BARNALA - PB19( 02-JAN-2018 )"},
+    {"name":"RTO BATHINDA","code":"PB3","value":"3","full_text":"RTO BATHINDA - PB3( 25-OCT-2017 )"},
+    {"name":"RTO FARIDKOT","code":"PB4","value":"4","full_text":"RTO FARIDKOT - PB4( 25-OCT-2017 )"},
+    {"name":"RTO FATEHGARH SAHIB","code":"PB23","value":"23","full_text":"RTO FATEHGARH SAHIB - PB23( 11-OCT-2017 )"},
+    {"name":"RTO FAZILKA","code":"PB22","value":"22","full_text":"RTO FAZILKA - PB22( 10-NOV-2017 )"},
+    {"name":"RTO FEROZPUR","code":"PB5","value":"5","full_text":"RTO FEROZPUR - PB5( 25-OCT-2017 )"},
+    {"name":"RTO GURDASPUR","code":"PB6","value":"6","full_text":"RTO GURDASPUR - PB6( 27-OCT-2017 )"},
+    {"name":"RTO HOSHIARPUR","code":"PB7","value":"7","full_text":"RTO HOSHIARPUR - PB7( 01-NOV-2017 )"},
+    {"name":"RTO JALANDHAR","code":"PB8","value":"8","full_text":"RTO JALANDHAR - PB8( 30-OCT-2017 )"},
+    {"name":"RTO KAPURTHALA","code":"PB9","value":"9","full_text":"RTO KAPURTHALA - PB9( 01-NOV-2017 )"},
+    {"name":"RTO LUDHIANA","code":"PB10","value":"10","full_text":"RTO LUDHIANA - PB10( 25-JAN-2018 )"},
+    {"name":"RTO MALERKOTLA","code":"PB28","value":"28","full_text":"RTO MALERKOTLA - PB28( 01-NOV-2017 )"},
+    {"name":"RTO MANSA","code":"PB31","value":"31","full_text":"RTO MANSA - PB31( 24-OCT-2017 )"},
+    {"name":"RTO MOGA","code":"PB29","value":"29","full_text":"RTO MOGA - PB29( 18-OCT-2017 )"},
+    {"name":"RTO MUKTSAR SAHIB","code":"PB30","value":"30","full_text":"RTO MUKTSAR SAHIB - PB30( 27-FEB-2018 )"},
+    {"name":"RTO PATHANKOT","code":"PB35","value":"35","full_text":"RTO PATHANKOT - PB35( 01-NOV-2017 )"},
+    {"name":"RTO PATIALA","code":"PB11","value":"11","full_text":"RTO PATIALA - PB11( 22-DEC-2017 )"},
+    {"name":"RTO ROPAR","code":"PB12","value":"12","full_text":"RTO ROPAR - PB12( 31-OCT-2017 )"},
+    {"name":"RTO SAHIBZADA AJIT SINGH NAGAR","code":"PB65","value":"65","full_text":"RTO SAHIBZADA AJIT SINGH NAGAR - PB65( 24-OCT-2017 )"},
+    {"name":"RTO SANGRUR","code":"PB13","value":"13","full_text":"RTO SANGRUR - PB13( 13-NOV-2017 )"},
+    {"name":"RTO SBS NAGAR","code":"PB32","value":"32","full_text":"RTO SBS NAGAR - PB32( 28-OCT-2017 )"},
+    {"name":"RTO TARN TARAN","code":"PB46","value":"46","full_text":"RTO TARN TARAN - PB46( 26-OCT-2017 )"},
+    {"name":"SDM ABOHAR","code":"PB15","value":"15","full_text":"SDM ABOHAR - PB15( 26-OCT-2017 )"},
+    {"name":"SDM ADAMPUR","code":"PB94","value":"94","full_text":"SDM ADAMPUR - PB94( 26-OCT-2023 )"},
+    {"name":"SDM AHMEDGARH","code":"PB82","value":"82","full_text":"SDM AHMEDGARH - PB82( 01-NOV-2017 )"},
+    {"name":"SDM AJNALA","code":"PB14","value":"14","full_text":"SDM AJNALA - PB14( 02-NOV-2017 )"},
+    {"name":"SDM AMARGARH","code":"PB92","value":"92","full_text":"SDM AMARGARH - PB92( 22-OCT-2021 )"},
+    {"name":"SDM AMLOH","code":"PB48","value":"48","full_text":"SDM AMLOH - PB48( 04-OCT-2017 )"},
+    {"name":"SDM AMRITSAR-2","code":"PB89","value":"89","full_text":"SDM AMRITSAR-2 - PB89( 02-NOV-2017 )"},
+    {"name":"SDM ANANDPUR SAHIB","code":"PB16","value":"16","full_text":"SDM ANANDPUR SAHIB - PB16( 30-OCT-2017 )"},
+    {"name":"SDM BABA BAKALA","code":"PB17","value":"17","full_text":"SDM BABA BAKALA - PB17( 02-NOV-2017 )"},
+    {"name":"SDM BAGHA PURANA","code":"PB69","value":"69","full_text":"SDM BAGHA PURANA - PB69( 18-OCT-2017 )"},
+    {"name":"SDM BALACHAUR","code":"PB20","value":"20","full_text":"SDM BALACHAUR - PB20( 01-NOV-2017 )"},
+    {"name":"SDM BANGA","code":"PB78","value":"78","full_text":"SDM BANGA - PB78( 01-NOV-2017 )"},
+    {"name":"SDM BASSI PATHANA","code":"PB52","value":"52","full_text":"SDM BASSI PATHANA - PB52( 28-SEP-2017 )"},
+    {"name":"SDM BATALA","code":"PB18","value":"18","full_text":"SDM BATALA - PB18( 27-OCT-2017 )"},
+    {"name":"SDM BHAWNIGARH","code":"PB84","value":"84","full_text":"SDM BHAWNIGARH - PB84( 25-OCT-2017 )"},
+    {"name":"SDM BHIKHIWIND","code":"PB88","value":"88","full_text":"SDM BHIKHIWIND - PB88( 26-OCT-2017 )"},
+    {"name":"SDM BHOLATH","code":"PB57","value":"57","full_text":"SDM BHOLATH - PB57( 01-NOV-2017 )"},
+    {"name":"SDM BUDHLADA","code":"PB50","value":"50","full_text":"SDM BUDHLADA - PB50( 26-OCT-2017 )"},
+    {"name":"SDM CHAMKAUR SAHIB","code":"PB71","value":"71","full_text":"SDM CHAMKAUR SAHIB - PB71( 26-OCT-2017 )"},
+    {"name":"SDM DASUYA","code":"PB21","value":"21","full_text":"SDM DASUYA - PB21( 01-NOV-2017 )"},
+    {"name":"SDM DERA BABA NANAK","code":"PB58","value":"58","full_text":"SDM DERA BABA NANAK - PB58( 27-OCT-2017 )"},
+    {"name":"SDM DERA BASSI","code":"PB70","value":"70","full_text":"SDM DERA BASSI - PB70( 17-OCT-2017 )"},
+    {"name":"SDM DHARAMKOT","code":"PB76","value":"76","full_text":"SDM DHARAMKOT - PB76( 18-OCT-2017 )"},
+    {"name":"SDM DHAR KALAN","code":"PB68","value":"68","full_text":"SDM DHAR KALAN - PB68( 01-NOV-2017 )"},
+    {"name":"SDM DHURI","code":"PB59","value":"59","full_text":"SDM DHURI - PB59( 27-OCT-2017 )"},
+    {"name":"SDM DINANAGAR","code":"PB99","value":"99","full_text":"SDM DINANAGAR - PB99( 25-MAR-2019 )"},
+    {"name":"SDM DIRBA","code":"PB86","value":"86","full_text":"SDM DIRBA - PB86( 01-NOV-2017 )"},
+    {"name":"SDM DUDHAN SADHAN","code":"PB83","value":"83","full_text":"SDM DUDHAN SADHAN - PB83( 26-OCT-2017 )"},
+    {"name":"SDM GARSHANKAR","code":"PB24","value":"24","full_text":"SDM GARSHANKAR - PB24( 27-OCT-2017 )"},
+    {"name":"SDM GIDDARBAHA","code":"PB60","value":"60","full_text":"SDM GIDDARBAHA - PB60( 13-OCT-2017 )"},
+    {"name":"SDM GURU HAR SAHAI","code":"PB77","value":"77","full_text":"SDM GURU HAR SAHAI - PB77( 24-OCT-2017 )"},
+    {"name":"SDM JAGRAON","code":"PB25","value":"25","full_text":"SDM JAGRAON - PB25( 03-NOV-2017 )"},
+    {"name":"SDM JAITO","code":"PB62","value":"62","full_text":"SDM JAITO - PB62( 24-OCT-2017 )"},
+    {"name":"SDM JALALABAD","code":"PB61","value":"61","full_text":"SDM JALALABAD - PB61( 26-OCT-2017 )"},
+    {"name":"SDM JALANDHAR-11","code":"PB90","value":"90","full_text":"SDM JALANDHAR-11 - PB90( 27-OCT-2017 )"},
+    {"name":"SDM KALANAUR","code":"PB85","value":"85","full_text":"SDM KALANAUR - PB85( 27-OCT-2017 )"},
+    {"name":"SDM KHADUR SAHIB","code":"PB63","value":"63","full_text":"SDM KHADUR SAHIB - PB63( 26-OCT-2017 )"},
+    {"name":"SDM KHAMANO","code":"PB49","value":"49","full_text":"SDM KHAMANO - PB49( 26-SEP-2017 )"},
+    {"name":"SDM KHANNA","code":"PB26","value":"26","full_text":"SDM KHANNA - PB26( 01-NOV-2017 )"},
+    {"name":"SDM KHARAR","code":"PB27","value":"27","full_text":"SDM KHARAR - PB27( 23-OCT-2017 )"},
+    {"name":"SDM KOTKAPURA","code":"PB79","value":"79","full_text":"SDM KOTKAPURA - PB79( 25-OCT-2017 )"},
+    {"name":"SDM LEHRAGAGA","code":"PB75","value":"75","full_text":"SDM LEHRAGAGA - PB75( 27-OCT-2017 )"},
+    {"name":"SDM LOPOKE","code":"PB93","value":"93","full_text":"SDM LOPOKE - PB93( 26-OCT-2023 )"},
+    {"name":"SDM LUDHIANA EAST","code":"PB91","value":"91","full_text":"SDM LUDHIANA EAST - PB91( 29-DEC-2017 )"},
+    {"name":"SDM MAJITHA","code":"PB81","value":"81","full_text":"SDM MAJITHA - PB81( 28-OCT-2017 )"},
+    {"name":"SDM MALOUT","code":"PB53","value":"53","full_text":"SDM MALOUT - PB53( 17-OCT-2017 )"},
+    {"name":"SDM MAUR MANDI","code":"PB80","value":"80","full_text":"SDM MAUR MANDI - PB80( 25-OCT-2017 )"},
+    {"name":"SDM MOONAK","code":"PB64","value":"64","full_text":"SDM MOONAK - PB64( 27-OCT-2017 )"},
+    {"name":"SDM MORINDA","code":"PB87","value":"87","full_text":"SDM MORINDA - PB87( 27-OCT-2017 )"},
+    {"name":"SDM MUKERIAN","code":"PB54","value":"54","full_text":"SDM MUKERIAN - PB54( 27-OCT-2017 )"},
+    {"name":"SDM NABHA","code":"PB34","value":"34","full_text":"SDM NABHA - PB34( 13-OCT-2017 )"},
+    {"name":"SDM NAKODAR","code":"PB33","value":"33","full_text":"SDM NAKODAR - PB33( 31-OCT-2017 )"},
+    {"name":"SDM NANGAL","code":"PB74","value":"74","full_text":"SDM NANGAL - PB74( 26-OCT-2017 )"},
+    {"name":"SDM NIHAL SINGH WALA","code":"PB66","value":"66","full_text":"SDM NIHAL SINGH WALA  - PB66( 18-OCT-2017 )"},
+    {"name":"SDM PATRAN","code":"PB72","value":"72","full_text":"SDM PATRAN - PB72( 11-OCT-2017 )"},
+    {"name":"SDM PATTI","code":"PB38","value":"38","full_text":"SDM PATTI - PB38( 26-OCT-2017 )"},
+    {"name":"SDM PAYAL","code":"PB55","value":"55","full_text":"SDM PAYAL - PB55( 03-NOV-2017 )"},
+    {"name":"SDM PHAGWARA","code":"PB36","value":"36","full_text":"SDM PHAGWARA - PB36( 01-NOV-2017 )"},
+    {"name":"SDM PHILLOUR","code":"PB37","value":"37","full_text":"SDM PHILLOUR - PB37( 28-OCT-2017 )"},
+    {"name":"SDM RAIKOT","code":"PB56","value":"56","full_text":"SDM RAIKOT - PB56( 20-NOV-2017 )"},
+    {"name":"SDM RAJPURA","code":"PB39","value":"39","full_text":"SDM RAJPURA - PB39( 24-OCT-2017 )"},
+    {"name":"SDM RAMPURA PHUL","code":"PB40","value":"40","full_text":"SDM RAMPURA PHUL - PB40( 25-OCT-2017 )"},
+    {"name":"SDM SAMANA","code":"PB42","value":"42","full_text":"SDM SAMANA - PB42( 11-OCT-2017 )"},
+    {"name":"SDM SAMRALA","code":"PB43","value":"43","full_text":"SDM SAMRALA - PB43( 27-OCT-2017 )"},
+    {"name":"SDM SARDULGARH","code":"PB51","value":"51","full_text":"SDM SARDULGARH - PB51( 27-OCT-2017 )"},
+    {"name":"SDM SHAHKOT","code":"PB67","value":"67","full_text":"SDM SHAHKOT - PB67( 30-OCT-2017 )"},
+    {"name":"SDM SULTANPUR LODHI","code":"PB41","value":"41","full_text":"SDM SULTANPUR LODHI - PB41( 30-OCT-2017 )"},
+    {"name":"SDM SUNAM","code":"PB44","value":"44","full_text":"SDM SUNAM - PB44( 26-OCT-2017 )"},
+    {"name":"SDM TALWANDI SABO","code":"PB45","value":"45","full_text":"SDM TALWANDI SABO - PB45( 24-OCT-2017 )"},
+    {"name":"SDM TANDA","code":"PB95","value":"95","full_text":"SDM TANDA - PB95( 29-AUG-2024 )"},
+    {"name":"SDM TAPA","code":"PB73","value":"73","full_text":"SDM TAPA - PB73( 03-NOV-2017 )"},
+    {"name":"SDM ZIRA","code":"PB47","value":"47","full_text":"SDM ZIRA - PB47( 26-OCT-2017 )"}
+  ]
+}
+
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Manipur
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_MN = {
@@ -1275,7 +1385,7 @@ def run_seed():
         print("🔧 Seeding RTOS for AN (Andaman & Nicobar)")
         seed_state_rtos(db, portal_ids, STATE_AN)
 
-        print("🔧 Seeding RTOS for AP (Andhra Pradesh) [partial list you pasted]")
+        print("🔧 Seeding RTOS for AP (Andhra Pradesh)")
         seed_state_rtos(db, portal_ids, STATE_AP)
 
         print("🔧 Seeding RTOS for BR (Bihar)")
@@ -1283,6 +1393,9 @@ def run_seed():
 
         print("🔧 Seeding RTOS for CG (Chhattisgarh)")
         seed_state_rtos(db, portal_ids, STATE_CG)
+
+        print("🔧 Seeding RTO for PB (PUNJAB)")
+        seed_state_rtos(db, portal_ids, STATE_PB)
 
         print("🔧 Seeding RTOS for DL (Delhi)")
         seed_state_rtos(db, portal_ids, STATE_DL)
