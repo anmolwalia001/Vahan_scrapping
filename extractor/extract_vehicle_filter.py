@@ -166,6 +166,38 @@ class VehicleFilterExtractor:
         
         return matching_filters
 
+    def get_filter_id_by_name(self, filter_name: str) -> Optional[int]:
+        """
+        Get vehicle filter ID by name
+        
+        Args:
+            filter_name: Filter name (e.g., "MOTOR CAR", "PURE EV")
+            
+        Returns:
+            Filter ID if found, None otherwise
+        """
+        from db.session import get_session
+        from db.models import VehicleFilter
+        
+        session = next(get_session())
+        try:
+            vehicle_filter = session.query(VehicleFilter).filter(
+                VehicleFilter.name == filter_name
+            ).first()
+            
+            if vehicle_filter:
+                return vehicle_filter.id
+            else:
+                logger.warning(f"Vehicle filter not found: {filter_name}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Error getting vehicle filter ID: {e}")
+            return None
+        finally:
+            session.close()
+
+
 
 def main():
     """CLI interface for vehicle filter extraction"""

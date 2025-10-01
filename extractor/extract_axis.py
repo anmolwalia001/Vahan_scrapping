@@ -4,7 +4,7 @@ Extract axis filters from database
 """
 
 import logging
-from typing import List, Dict
+from typing import List, Dict, Optional
 from dataclasses import dataclass
 from enum import Enum
 
@@ -182,7 +182,37 @@ class AxisExtractor:
             logger.error(f"Failed to get current axis labels from DB: {e}")
             raise
 
-
+    def get_axis_id_by_label(self, label: str) -> Optional[int]:
+        """
+        Get axis ID by label text
+        
+        Args:
+            label: Axis label (e.g., "Maker", "Month Wise")
+            
+        Returns:
+            Axis ID if found, None otherwise
+        """
+        from db.session import get_session
+        from db.models import AxisFilter
+        
+        session = next(get_session())
+        try:
+            axis = session.query(AxisFilter).filter(
+                AxisFilter.filter == label
+            ).first()
+            
+            if axis:
+                return axis.id
+            else:
+                logger.warning(f"Axis not found for label: {label}")
+                return None
+                
+        except Exception as e:
+            logger.error(f"Error getting axis ID: {e}")
+            return None
+        finally:
+            session.close()
+    
 def main():
     """CLI interface for axis extraction"""
     extractor = AxisExtractor()

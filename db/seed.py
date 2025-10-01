@@ -1,5 +1,4 @@
 # db/seed.py
-# db/seed.py
 from __future__ import annotations
 from datetime import datetime, timedelta, timezone
 try:
@@ -369,6 +368,124 @@ STATE_JK = {
   ]
 }
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Manipur
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_MN = {
+  "state": "Manipur",
+  "state_code": "MN",
+  "extraction_date": "2025-07-29T14:17:46.391728",
+  "total_rtos": 14,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(13/13)"},
+    {"name":"BISHNUPUR","code":"MN5","value":"5","full_text":"BISHNUPUR - MN5( 27-AUG-2018 )"},
+    {"name":"Chandel","code":"MN9","value":"9","full_text":"Chandel - MN9( 27-OCT-2021 )"},
+    {"name":"CHURACHANDPUR","code":"MN2","value":"2","full_text":"CHURACHANDPUR - MN2( 11-APR-2018 )"},
+    {"name":"DTO, KAMJONG","code":"MN12","value":"12","full_text":"DTO, KAMJONG - MN12( 13-FEB-2025 )"},
+    {"name":"IMPHAL EAST","code":"MN6","value":"6","full_text":"IMPHAL EAST - MN6( 26-SEP-2018 )"},
+    {"name":"IMPHAL WEST","code":"MN1","value":"1","full_text":"IMPHAL WEST - MN1( 09-MAY-2017 )"},
+    {"name":"KANGPOKPI","code":"MN3","value":"3","full_text":"KANGPOKPI - MN3( 20-AUG-2018 )"},
+    {"name":"SENAPATI","code":"MN8","value":"8","full_text":"SENAPATI - MN8( 11-OCT-2018 )"},
+    {"name":"STA MANIPUR","code":"MN99","value":"99","full_text":"STA MANIPUR - MN99( 08-SEP-2020 )"},
+    {"name":"Tamenglong","code":"MN10","value":"10","full_text":"Tamenglong - MN10( 27-OCT-2021 )"},
+    {"name":"TENGNOUPAL","code":"MN11","value":"11","full_text":"TENGNOUPAL - MN11( 05-MAR-2023 )"},
+    {"name":"THOUBAL","code":"MN4","value":"4","full_text":"THOUBAL - MN4( 20-SEP-2018 )"},
+    {"name":"UKHRUL","code":"MN7","value":"7","full_text":"UKHRUL - MN7( 08-MAR-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Meghalaya
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_ML = {
+  "state": "Meghalaya",
+  "state_code": "ML",
+  "extraction_date": "2025-07-29T14:16:27.411473",
+  "total_rtos": 15,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(14/14)"},
+    {"name":"AMPATI","code":"ML14","value":"14","full_text":"AMPATI - ML14( 03-NOV-2017 )"},
+    {"name":"BAGHMARA","code":"ML9","value":"9","full_text":"BAGHMARA - ML9( 02-FEB-2017 )"},
+    {"name":"Commissioner of Transport","code":"null98","value":"98","full_text":"Commissioner of Transport - null98( 07-MAY-2025 )"},
+    {"name":"JOWAI","code":"ML4","value":"4","full_text":"JOWAI - ML4( 03-AUG-2017 )"},
+    {"name":"KHLIEHRIAT","code":"ML11","value":"11","full_text":"KHLIEHRIAT - ML11( 11-JUL-2017 )"},
+    {"name":"MAIRANG","code":"ML15","value":"15","full_text":"MAIRANG - ML15( 05-JUL-2022 )"},
+    {"name":"MAWKYRWAT","code":"ML12","value":"12","full_text":"MAWKYRWAT - ML12( 26-FEB-2018 )"},
+    {"name":"NONGPOH","code":"ML10","value":"10","full_text":"NONGPOH - ML10( 06-MAR-2017 )"},
+    {"name":"NONGSTOIN","code":"ML6","value":"6","full_text":"NONGSTOIN - ML6( 08-DEC-2017 )"},
+    {"name":"RESUBELPARA","code":"ML13","value":"13","full_text":"RESUBELPARA - ML13( 19-DEC-2017 )"},
+    {"name":"SHILLONG","code":"ML5","value":"5","full_text":"SHILLONG - ML5( 29-FEB-2016 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"ML99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - ML99( 28-NOV-2017 )"},
+    {"name":"TURA","code":"ML8","value":"8","full_text":"TURA - ML8( 31-JAN-2017 )"},
+    {"name":"WILLIAMNAGAR","code":"ML7","value":"7","full_text":"WILLIAMNAGAR - ML7( 14-AUG-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Mizoram
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_MZ = {
+  "state": "Mizoram",
+  "state_code": "MZ",
+  "extraction_date": "2025-07-29T14:21:22.705918",
+  "total_rtos": 11,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(10/10)"},
+    {"name":"AIZAWL DTO","code":"MZ1","value":"1","full_text":"AIZAWL DTO - MZ1( 29-AUG-2017 )"},
+    {"name":"AIZAWL RURAL DTO","code":"MZ9","value":"9","full_text":"AIZAWL RURAL DTO - MZ9( 29-AUG-2017 )"},
+    {"name":"CHAMPHAI","code":"MZ4","value":"4","full_text":"CHAMPHAI - MZ4( 29-AUG-2017 )"},
+    {"name":"KOLASIB","code":"MZ5","value":"5","full_text":"KOLASIB - MZ5( 29-AUG-2017 )"},
+    {"name":"LAWNGTLAI","code":"MZ7","value":"7","full_text":"LAWNGTLAI - MZ7( 10-MAY-2018 )"},
+    {"name":"LUNGLEI","code":"MZ2","value":"2","full_text":"LUNGLEI - MZ2( 29-AUG-2017 )"},
+    {"name":"MAMIT","code":"MZ8","value":"8","full_text":"MAMIT - MZ8( 29-AUG-2017 )"},
+    {"name":"SAIHA","code":"MZ3","value":"3","full_text":"SAIHA - MZ3( 29-AUG-2017 )"},
+    {"name":"SERCHHIP","code":"MZ6","value":"6","full_text":"SERCHHIP - MZ6( 29-AUG-2017 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"MZ99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - MZ99( 30-AUG-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Nagaland
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_NL = {
+  "state": "Nagaland",
+  "state_code": "NL",
+  "extraction_date": "2025-07-29T14:22:35.645465",
+  "total_rtos": 10,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(9/9)"},
+    {"name":"DIMAPUR DTO","code":"NL7","value":"7","full_text":"DIMAPUR DTO - NL7( 19-JUN-2018 )"},
+    {"name":"KOHIMA RTO","code":"NL1","value":"1","full_text":"KOHIMA RTO - NL1( 16-SEP-2019 )"},
+    {"name":"MOKOKCHUNG RTO","code":"NL2","value":"2","full_text":"MOKOKCHUNG RTO - NL2( 05-APR-2019 )"},
+    {"name":"MON DTO","code":"NL4","value":"4","full_text":"MON DTO - NL4( 30-NOV-2018 )"},
+    {"name":"PHEK DTO","code":"NL8","value":"8","full_text":"PHEK DTO - NL8( 16-NOV-2018 )"},
+    {"name":"TRANSPORT COMMISSIONERATE","code":"NL99","value":"99","full_text":"TRANSPORT COMMISSIONERATE - NL99( 20-JUL-2021 )"},
+    {"name":"TUENSANG DTO","code":"NL3","value":"3","full_text":"TUENSANG DTO - NL3( 05-NOV-2018 )"},
+    {"name":"WOKHA DTO","code":"NL5","value":"5","full_text":"WOKHA DTO - NL5( 04-OCT-2018 )"},
+    {"name":"ZUNHEBOTO DTO","code":"NL6","value":"6","full_text":"ZUNHEBOTO DTO - NL6( 28-MAR-2019 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Puducherry
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_PY = {
+  "state": "Puducherry",
+  "state_code": "PY",
+  "extraction_date": "2025-07-29T14:29:17.363047",
+  "total_rtos": 9,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(8/8)"},
+    {"name":"BAHOUR","code":"PY11","value":"11","full_text":"BAHOUR - PY11( 27-JAN-2017 )"},
+    {"name":"CHECK POST","code":"PY99","value":"99","full_text":"CHECK POST - PY99( 23-MAR-2018 )"},
+    {"name":"KARAIKAL","code":"PY2","value":"2","full_text":"KARAIKAL - PY2( 16-APR-2018 )"},
+    {"name":"MAHE","code":"PY3","value":"3","full_text":"MAHE - PY3( 12-MAR-2018 )"},
+    {"name":"OULGARET","code":"PY5","value":"5","full_text":"OULGARET - PY5( 06-FEB-2018 )"},
+    {"name":"PUDUCHERRY","code":"PY1","value":"1","full_text":"PUDUCHERRY - PY1( 28-MAY-2018 )"},
+    {"name":"VILLIANUR","code":"PY51","value":"51","full_text":"VILLIANUR - PY51( 27-JUN-2017 )"},
+    {"name":"YANAM","code":"PY4","value":"4","full_text":"YANAM - PY4( 03-MAR-2018 )"}
+  ]
+}
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Sikkim
@@ -666,7 +783,6 @@ STATE_UK = {
   ]
 }
 
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Assam
 # ──────────────────────────────────────────────────────────────────────────────
@@ -870,8 +986,6 @@ STATE_RJ = {
     {"name":"VATSAL ENTERPRISES","code":"RJ258","value":"258","full_text":"VATSAL ENTERPRISES - RJ258( 18-DEC-2020 )"}
   ]
 }
-
-
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Ladakh
@@ -1202,6 +1316,21 @@ def run_seed():
 
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)
+
+        print("🔧 Seeding RTOS for MN (Manipur)")
+        seed_state_rtos(db, portal_ids, STATE_MN)
+
+        print("🔧 Seeding RTOS for ML (Meghalaya)")
+        seed_state_rtos(db, portal_ids, STATE_ML)
+
+        print("🔧 Seeding RTOS for MZ (Mizoram)")
+        seed_state_rtos(db, portal_ids, STATE_MZ)
+
+        print("🔧 Seeding RTOS for NL (Nagaland)")
+        seed_state_rtos(db, portal_ids, STATE_NL)
+
+        print("🔧 Seeding RTOS for PY (Puducherry)")
+        seed_state_rtos(db, portal_ids, STATE_PY)
 
         print("🔧 Seeding RTOS for LA (Ladakh)")
         seed_state_rtos(db, portal_ids, STATE_LA)

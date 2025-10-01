@@ -15,8 +15,10 @@ from selenium.common.exceptions import WebDriverException, TimeoutException
 from extractor.extract_states import StateExtractor, StateData
 from extractor.extract_all_rto import RTOExtractor, RTOData
 from scrapper.browser import VahanBrowser
+from extractor.extract_vehicle_filter import VehicleFilterExtractor
 from extractor.extract_axis import AxisExtractor
 from utils.helpers import sanitize_filename
+from services.db_extraction_service import DBExtractionService
 
 logger = logging.getLogger("app.services.extraction")
 
@@ -280,7 +282,6 @@ class ConnectionRecoveryManager:
         self.retry_count += 1
         self.consecutive_errors += 1
         self.last_error_time = datetime.now()
-        
         delay = self.get_retry_delay()
         logger.warning(f"Connection error #{self.retry_count}. Waiting {delay}s before retry...")
         time.sleep(delay)
@@ -311,10 +312,8 @@ class HumanLikeBehaviorSimulator:
         delay_range = getattr(self.config, delay_type, self.config.between_actions)
         base_delay = random.uniform(*delay_range)
         actual_delay = max(0.5, base_delay + random.uniform(-0.2, 0.2))  # Add small random jitter
-        
         logger.info(f"Human delay ({delay_type}): {actual_delay:.1f}s {context}")
         time.sleep(actual_delay)
-        
         self.action_count += 1
         
         # Random pauses to simulate human behavior
@@ -344,6 +343,8 @@ class ExtractionConfig:
     vehicle_filter_categories: List[List[str]] = None  # Changed to list of lists
     output_directory: str = None
     delay_config: HumanLikeDelayConfig = None
+    enable_db_storage: bool = True  # Enable DB storage of results
+    skip_existing: bool = True  #Skip already extracted RTOs
     
     def __post_init__(self):
         if self.vehicle_filter_categories is None:
@@ -372,12 +373,24 @@ class HumanLikeExtractionService:
         # Extractors
         self.state_extractor = StateExtractor()
         self.rto_extractor = RTOExtractor()
+        self.axis_extractor = AxisExtractor()
+        self.vehicle_filter_extractor = VehicleFilterExtractor()
+
+         # Database service
+        self.db_service = DBExtractionService() if self.config.enable_db_storage else None
         
         # Browser
         self.browser = None
         self.browser_restarts = 0
+        self.session_manager = SessionManager()
+        self._session_start_time = None
+
+        self.current_job_id = None
+        self.y_axis_id = None
+        self.x_axis_id = None
+        self.vehicle_filter_id_map = {} 
         
-        logger.info("HumanLikeExtractionService initialized")
+        logger.info("HumanLikeExtractionService initialized with DB integration")
         logger.info(f"Vehicle filter sets: {len(self.config.vehicle_filter_categories)}")
     
     def start_extraction(self, specific_states: List[str] = None) -> Dict:
@@ -398,6 +411,10 @@ class HumanLikeExtractionService:
             
             # Setup
             output_dir = self._setup_output_directory()
+
+            # Initialize database job if enabled
+            if self.config.enable_db_storage:
+                self._initialize_database_job([s.code for s in active_states])
             
             # Initialize browser with retry
             if not self._initialize_browser_with_retry():
@@ -407,9 +424,7 @@ class HumanLikeExtractionService:
             state_results = []
             
             for idx, state in enumerate(active_states):
-                print(f"\n{'='*70}")
                 print(f"PROCESSING STATE {idx+1}/{len(active_states)}: {state.name}")
-                print(f"{'='*70}")
                 
                 try:
                     # Between states delay (except first)
@@ -420,10 +435,13 @@ class HumanLikeExtractionService:
                     # Process state
                     state_result = self._process_state_with_human_behavior(state, output_dir)
                     state_results.append(state_result)
+
+                    # Save state result to database
+                    if self.config.enable_db_storage and self.current_job_id:
+                        self._save_state_result_to_db(state, state_result)
                     
                     # Record success
                     self.recovery_manager.record_success()
-                    
                     print(f"State {state.name} completed: {state_result['successful_downloads']} files")
                     
                 except Exception as e:
@@ -440,12 +458,65 @@ class HumanLikeExtractionService:
             # Generate summary
             end_time = datetime.now()
             summary = self._generate_summary(state_results, start_time, end_time)
+
+             # Update job status
+            if self.config.enable_db_storage and self.current_job_id:
+                self.db_service.update_job_status(self.current_job_id, "completed")
             
             logger.info("Extraction completed")
             return summary
+        
+        except Exception as e:
+            logger.error(f"Extraction failed: {e}")
+            if self.config.enable_db_storage and self.current_job_id:
+                self.db_service.update_job_status(self.current_job_id, "failed", str(e))
+            raise
             
         finally:
             self._cleanup_browser()
+
+    def _initialize_database_job(self, state_codes: List[str]):
+        """Initialize database job and get axis/filter IDs"""
+        try:
+            # Get axis IDs from database
+            axis_labels = self.axis_extractor.get_current_axis_labels()
+            y_axis_label = axis_labels["Y"]
+            x_axis_label = axis_labels["X"]
+            
+            # Get axis filter IDs
+            self.y_axis_id = self.axis_extractor.get_axis_id_by_label(y_axis_label)
+            self.x_axis_id = self.axis_extractor.get_axis_id_by_label(x_axis_label)
+            
+            if not self.y_axis_id or not self.x_axis_id:
+                logger.error("Could not find axis IDs in database")
+                return
+            
+            # Get vehicle filter IDs
+            if self.config.apply_vehicle_filter:
+                for filter_set in self.config.vehicle_filter_categories:
+                    for filter_name in filter_set:
+                        filter_id = self.vehicle_filter_extractor.get_filter_id_by_name(filter_name)
+                        if filter_id:
+                            self.vehicle_filter_id_map[filter_name] = filter_id
+            
+            # Create extraction job
+            vehicle_filter_ids = list(self.vehicle_filter_id_map.values()) if self.vehicle_filter_id_map else None
+            
+            self.current_job_id = self.db_service.create_extraction_job(
+                state_codes=state_codes,
+                y_axis_id=self.y_axis_id,
+                x_axis_id=self.x_axis_id,
+                vehicle_filter_ids=vehicle_filter_ids
+            )
+            
+            if self.current_job_id:
+                logger.info(f"Created extraction job: {self.current_job_id}")
+                self.db_service.update_job_status(self.current_job_id, "running")
+            else:
+                logger.error("Failed to create extraction job")
+                
+        except Exception as e:
+            logger.error(f"Error initializing database job: {e}")
     
     def _process_state_with_human_behavior(self, state: StateData, output_dir: str) -> Dict:
         """Process state with human-like behavior"""
@@ -476,24 +547,33 @@ class HumanLikeExtractionService:
             print(f"Processing RTO {idx+1}/{len(rtos)}: {rto.name}")
             
             try:
-                # Delay between RTOs (human reading/thinking time)
-                # if idx > 0:
-                #     self.behavior_sim.human_delay("between_rtos", f"before processing {rto.name}")
+                # Check if already extracted (if enabled)
+                if self.config.skip_existing and self.config.enable_db_storage:
+                    if self._check_rto_already_extracted(rto.id):
+                        logger.info(f"Skipping {rto.name} - already extracted recently")
+                        continue
                 
-                # Process RTO with human behavior
-                rto_files = self._process_rto_with_human_behavior(rto, state_dir)
+                rto_files = self._process_rto_with_human_behavior(rto, state, state_dir)
                 
                 if rto_files:
                     excel_files.extend(rto_files)
                     successful_downloads += len(rto_files)
                     logger.info(f"Downloaded {len(rto_files)} files for {rto.name}")
-                    
                     # Record success
                     self.recovery_manager.record_success()
                 else:
                     failed_downloads += 1
                     errors.append(f"No data for {rto.name}")
                     print(f"No data found for {rto.name}")
+
+                # Session management
+                self._manage_session(state)
+
+            except Exception as e:
+                failed_downloads += 1
+                error_msg = f"Error processing {rto.name}: {str(e)[:200]}"
+                errors.append(error_msg)
+                logger.error(error_msg)
                 
                 # --- session accounting & possible restart ---
                 try:
@@ -560,7 +640,7 @@ class HumanLikeExtractionService:
             'duration_minutes': (end_time - start_time).total_seconds() / 60
         }
     
-    def _process_rto_with_human_behavior(self, rto: RTOData, state_dir: str) -> List[str]:
+    def _process_rto_with_human_behavior(self, rto: RTOData,state: StateData ,state_dir: str) -> List[str]:
         """Process single RTO with human-like behavior"""
         excel_files = []
         
@@ -604,6 +684,14 @@ class HumanLikeExtractionService:
                         # Check if data exists
                         if not self.browser.check_data_exists():
                             logger.info(f"No data for {rto.name} with filter {filter_set}")
+                            if self.config.enable_db_storage:
+                                self._record_extraction_rto(
+                                    rto=rto,
+                                    state=state,
+                                    filter_set=filter_set,
+                                    status="success",   # or "error" if you want to treat as error
+                                    file_id=None
+                        )
                             continue
                         
                         # self.behavior_sim.human_delay("between_actions", "before download")
@@ -613,6 +701,24 @@ class HumanLikeExtractionService:
                         if self._download_with_retry(state_dir, filename):
                             excel_files.append(filename)
                             logger.info(f"Downloaded: {filename}")
+
+                            if self.config.enable_db_storage:
+                                try:
+            # Step 1: create file record
+                                    file_path = os.path.join(state_dir, filename)
+                                    file_id = self.db_service.create_file_record(file_path)
+
+            # Step 2: record extraction RTO
+                                    self._record_extraction_rto(
+                                    rto=rto,
+                                    state=state,
+                                    filter_set=filter_set,
+                                    status="success",
+                                    file_id=file_id
+                                    )
+
+                                except Exception as e:
+                                    logger.error(f"DB recording failed for {filename}: {e}")
                             
                             # Human delay after download
                             # self.behavior_sim.human_delay("after_download", f"after downloading {filename}")
@@ -909,6 +1015,115 @@ class HumanLikeExtractionService:
         ]
         return random.choice(user_agents)
     
+    def _manage_session(self, state: StateData):
+        """Manage session with automatic restart if needed"""
+        try:
+            if not hasattr(self, 'session_manager'):
+                self.session_manager = SessionManager()
+        
+        # Initialize session start time if not set
+            if not hasattr(self, '_session_start_time') or self._session_start_time is None:
+                self._session_start_time = time.time()
+        
+            self.session_manager.requests_count += 1
+            self.session_manager.session_duration = time.time() - self._session_start_time
+        
+            if self.session_manager.should_restart_session():
+                logger.info("Session threshold reached - performing restart + cooldown")
+                self.session_manager.record_detection()
+            
+                self._complete_browser_reset()
+                cooldown = random.uniform(120, 300)
+                logger.info(f"Sleeping for cooldown: {cooldown:.1f}s")
+                time.sleep(cooldown)
+            
+                if not self._initialize_browser_with_retry():
+                    logger.error("Failed to reinitialize browser after scheduled restart")
+                    raise Exception("Browser reinit failed after scheduled restart")
+            
+                if not self._setup_browser_for_state_with_retry(state):
+                    logger.error("Failed to re-select state after scheduled restart")
+                    raise Exception("State re-selection failed after scheduled restart")
+            
+                self.session_manager.reset_session()
+                self._session_start_time = time.time()
+        except Exception as e:
+            logger.warning(f"Session restart flow had an issue: {e}")
+
+    def _check_rto_already_extracted(self, rto_id: int) -> bool:
+        """Check if RTO was already extracted recently"""
+        if not self.y_axis_id or not self.x_axis_id:
+            return False
+    
+    # Check for each vehicle filter if applicable
+        if self.config.apply_vehicle_filter and self.vehicle_filter_id_map:
+            for filter_id in self.vehicle_filter_id_map.values():
+                if not self.db_service.check_extraction_exists(
+                rto_id=rto_id,
+                y_axis_id=self.y_axis_id,
+                x_axis_id=self.x_axis_id,
+                vehicle_filter_id=filter_id,
+                days_old=7
+                ):
+                    return False  # At least one filter not extracted
+            return True  # All filters already extracted
+        else:
+            return self.db_service.check_extraction_exists(
+            rto_id=rto_id,
+            y_axis_id=self.y_axis_id,
+            x_axis_id=self.x_axis_id,
+            days_old=7
+            )
+
+    def _record_extraction_rto(self, rto: RTOData, state: StateData, 
+                          filter_set: List[str], status: str = "success", 
+                          file_id: int = None):
+        """Record RTO extraction in database"""
+        try:
+        # Get vehicle filter ID if applicable
+            vehicle_filter_id = None
+            if filter_set and len(filter_set) > 0:
+            # Use first filter name for ID lookup
+                vehicle_filter_id = self.vehicle_filter_id_map.get(filter_set[0])
+        
+            extraction_data = {
+            'filter_categories': filter_set if filter_set else [],
+            'extraction_timestamp': datetime.now().isoformat()
+            }
+        
+            self.db_service.create_extraction_rto_record(
+            state_id=state.id,
+            rto_id=rto.id,
+            y_axis_id=self.y_axis_id,
+            x_axis_id=self.x_axis_id,
+            vehicle_filter_id=vehicle_filter_id,
+            file_id=file_id,
+            status=status,
+            extraction_data=extraction_data
+            )
+        except Exception as e:
+            logger.error(f"Error recording extraction RTO: {e}")
+
+    def _save_state_result_to_db(self, state: StateData, result: Dict):
+        """Save state result to database"""
+        try:
+            if not self.current_job_id:
+                return
+        
+            self.db_service.create_extraction_result(
+            job_id=self.current_job_id,
+            state_id=state.id,
+            state_code=state.code,
+            state_name=state.name,
+            rtos_processed=result['total_rtos'],
+            files_downloaded=result['successful_downloads'],
+            failures=result['failed_downloads'],
+            duration_minutes=result['duration_minutes'],
+            errors=result['errors']
+            )
+        except Exception as e:
+            logger.error(f"Error saving state result to DB: {e}")
+    
     def _generate_filename(self, rto: RTOData, filter_suffix: str = None) -> str:
         """Generate filename for download"""
         safe_name = sanitize_filename(rto.name)[:30]
@@ -995,10 +1210,4 @@ if __name__ == "__main__":
     print("Starting human-like extraction...")
     print("This will simulate human behavior with realistic delays and retry logic")
     
-    # Test with just one state first
-    summary = start_human_like_extraction(['DL'])  # Just Delhi for testing
-    
     print(f"\nExtraction completed!")
-    print(f"Files downloaded: {summary['files_downloaded']}")
-    print(f"Duration: {summary['duration_minutes']:.1f} minutes")
-    print(f"Success rate: {summary['success_rate']}%")
