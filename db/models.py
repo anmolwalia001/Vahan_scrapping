@@ -81,18 +81,18 @@ class JobTemplate(Base):
 # 3) Workers / UA / Proxies
 # ============================================================
 
-class WorkerNode(Base):
-    __tablename__ = "worker_node"
+# class WorkerNode(Base):
+#     __tablename__ = "worker_node"
 
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    name = Column(String(120), nullable=False, unique=True)
-    kind = Column(SAEnum("browser", "parser", "orchestrator", name="worker_kind_enum"),
-                  default="browser", nullable=False)
-    max_conc = Column(Integer, default=1, nullable=False)
-    status = Column(SAEnum("active", "draining", "offline", name="worker_status_enum"),
-                    default="active", nullable=False)
-    last_heartbeat = Column(DateTime)
-    created_at = Column(TIMESTAMP, server_default=func.now())
+#     id = Column(BigInteger, primary_key=True, autoincrement=True)
+#     name = Column(String(120), nullable=False, unique=True)
+#     kind = Column(SAEnum("browser", "parser", "orchestrator", name="worker_kind_enum"),
+#                   default="browser", nullable=False)
+#     max_conc = Column(Integer, default=1, nullable=False)
+#     status = Column(SAEnum("active", "draining", "offline", name="worker_status_enum"),
+#                     default="active", nullable=False)
+#     last_heartbeat = Column(DateTime)
+#     created_at = Column(TIMESTAMP, server_default=func.now())
 
 
 class UserAgentPool(Base):
@@ -114,25 +114,25 @@ class UserAgent(Base):
     created_at = Column(TIMESTAMP, server_default=func.now())
 
 
-class ProxyPool(Base):
-    __tablename__ = "proxy_pool"
+# class ProxyPool(Base):
+#     __tablename__ = "proxy_pool"
 
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    name = Column(String(120), nullable=False, unique=True)
-    notes = Column(Text)
-    created_at = Column(TIMESTAMP, server_default=func.now())
+#     id = Column(BigInteger, primary_key=True, autoincrement=True)
+#     name = Column(String(120), nullable=False, unique=True)
+#     notes = Column(Text)
+#     created_at = Column(TIMESTAMP, server_default=func.now())
 
 
-class ProxyEndpoint(Base):
-    __tablename__ = "proxy_endpoint"
+# class ProxyEndpoint(Base):
+#     __tablename__ = "proxy_endpoint"
 
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    pool_id = Column(BigInteger, ForeignKey("proxy_pool.id"), nullable=False)
-    endpoint = Column(String(300), nullable=False)
-    region = Column(String(64))
-    weight = Column(Integer, default=1)
-    is_active = Column(Boolean, default=True, nullable=False)
-    last_used_at = Column(DateTime)
+#     id = Column(BigInteger, primary_key=True, autoincrement=True)
+#     pool_id = Column(BigInteger, ForeignKey("proxy_pool.id"), nullable=False)
+#     endpoint = Column(String(300), nullable=False)
+#     region = Column(String(64))
+#     weight = Column(Integer, default=1)
+#     is_active = Column(Boolean, default=True, nullable=False)
+#     last_used_at = Column(DateTime)
 
 # ============================================================
 # 4) States / RTO / Axis / Vehicle Filters
@@ -217,46 +217,8 @@ class ExtractionRTO(Base):
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
 
 
-class ExtractionLog(Base):
-    __tablename__ = "extraction_logs"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    extraction_rto_id = Column(BigInteger, ForeignKey("extraction_rto.id"), nullable=False)
-    level = Column(SAEnum("debug", "info", "warn", "error", name="log_level_enum"), default="info")
-    log_info = Column(String(100))
-    message = Column(Text, nullable=False)
-    meta = Column(JSON)
-    created_at = Column(TIMESTAMP, server_default=func.now())
-
 # ============================================================
-# 6) Filter sets + Job Template Mapping
-# ============================================================
-
-class FilterSet(Base):
-    __tablename__ = "filter_sets"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    state_id = Column(BigInteger, ForeignKey("states.id"))
-    rto_id = Column(BigInteger, ForeignKey("rtos.id"))
-    vehicle_filter_id = Column(Integer, ForeignKey("vehicle_filter.id"))
-    year_val = Column(Integer)
-    x_axis_id = Column(Integer, ForeignKey("axis_filter.id"))
-    y_axis_id = Column(Integer, ForeignKey("axis_filter.id"))
-    other_filters = Column(JSON)
-    filter_hash = Column(String(64), nullable=False, unique=True)
-    created_at = Column(TIMESTAMP, server_default=func.now())
-
-
-class JobTemplateFilter(Base):
-    __tablename__ = "job_template_filters"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    template_id = Column(BigInteger, ForeignKey("job_template.id"), nullable=False)
-    filter_set_id = Column(BigInteger, ForeignKey("filter_sets.id"), nullable=False)
-    priority = Column(Integer, default=5, nullable=False)
-
-# ============================================================
-# 7) High-level Extraction Job & Result (used by services/extraction_service.py)
+# 6) High-level Extraction Job & Result (used by services/extraction_service.py)
 # ============================================================
 
 class ExtractionJob(Base):

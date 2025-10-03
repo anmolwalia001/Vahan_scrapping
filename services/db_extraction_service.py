@@ -43,59 +43,45 @@ class DBExtractionService:
             session.close()
     
     def create_extraction_job(self, 
-                             state_codes: List[str],
-                             y_axis_id: int,
-                             x_axis_id: int,
-                             vehicle_filter_ids: List[int] = None,
-                             year_value: int = None) -> Optional[int]:
-        """
-        Create a new extraction job record
-        
-        Args:
-            state_codes: List of state codes to extract
-            y_axis_id: Y-axis filter ID
-            x_axis_id: X-axis filter ID
-            vehicle_filter_ids: Optional list of vehicle filter IDs
-            year_value: Optional year value
-            
-        Returns:
-            Job ID if successful, None otherwise
-        """
+                         state_codes: List[str],
+                         y_axis_id: int,
+                         x_axis_id: int,
+                         vehicle_filter_ids: List[int] = None,
+                         year_value: int = None) -> Optional[int]:
+        """Create a new extraction job record"""
         session = self._get_session()
         try:
+        # Store all config in the JSON field
+            config_data = {
+            'state_codes': state_codes,
+            'y_axis_id': y_axis_id,
+            'x_axis_id': x_axis_id,
+            'vehicle_filter_ids': vehicle_filter_ids or [],
+            'year_value': year_value
+            }
+        
             job = ExtractionJob(
-                state_codes=state_codes,
-                y_axis_id=y_axis_id,
-                x_axis_id=x_axis_id,
-                vehicle_filter_ids=vehicle_filter_ids or [],
-                year_value=year_value,
-                status="queued",
-                started_at=datetime.now()
+            status="pending",  # Use enum value from model
+            config=config_data
             )
-            
+        
             session.add(job)
             session.commit()
-            
+        
             job_id = job.id
             logger.info(f"Created extraction job: {job_id}")
             return job_id
-            
+        
         except SQLAlchemyError as e:
-            logger.error(f"Error creating extraction job: {e}")
+            logger.error(f"Error creating extraction job: {e}", exc_info=True)
             session.rollback()
             return None
         finally:
             self._close_session(session)
     
     def update_job_status(self, job_id: int, status: str, error_message: str = None):
-        """
-        Update extraction job status
-        
-        Args:
-            job_id: Job ID
-            status: New status (running, completed, failed, cancelled)
-            error_message: Optional error message if failed
-        """
+        """ Update extraction job status """
+       
         session = self._get_session()
         try:
             job = session.query(ExtractionJob).filter_by(id=job_id).first()
@@ -104,12 +90,15 @@ class DBExtractionService:
                 if status == "completed":
                     job.end_time = datetime.now()
                 if error_message:
-                    job.config = {**(job.config or {}), "error_message": error_message}
+                    if not job.config:
+                        job.config = {}
+                    job.config['error_message'] = error_message
                 session.commit()
+                logger.info(f"Updated job {job_id} status to: {status}")
             else:
                 logger.warning(f"Job {job_id} not found")
         except SQLAlchemyError as e:
-            logger.error(f"Error updating job status: {e}")
+            logger.error(f"Error updating job status: {e}", exc_info=True)
             session.rollback()
         finally:
             self._close_session(session)

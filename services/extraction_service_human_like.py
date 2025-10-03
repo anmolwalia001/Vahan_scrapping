@@ -511,7 +511,7 @@ class HumanLikeExtractionService:
             
             if self.current_job_id:
                 logger.info(f"Created extraction job: {self.current_job_id}")
-                self.db_service.update_job_status(self.current_job_id, "running")
+                self.db_service.update_job_status(self.current_job_id, "in_progress")
             else:
                 logger.error("Failed to create extraction job")
                 

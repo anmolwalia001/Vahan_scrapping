@@ -1,25 +1,28 @@
 # services/scheduler.py
-import schedule
 import time
 from db.session import SessionLocal
 from db.models import JobTemplate
-from services.extraction_service import start_extraction
+from services.run_human_like_extraction import main as run_human_extraction
+from apscheduler.schedulers.blocking import BlockingScheduler
 
+scheduler = BlockingScheduler(timezone="Asia/Kolkata")
 
-def load_jobs():
+def run_scheduler():
     db = SessionLocal()
     jobs = db.query(JobTemplate).filter(JobTemplate.enabled == True).all()
     db.close()
 
     for job in jobs:
         print(f"⏳ Scheduling job {job.name} ({job.cron_expr})")
-        # simple daily at HH:MM for now
-        schedule.every().day.at(job.cron_expr).do(start_extraction)
+        scheduler.add_job(
 
+            run_human_extraction,
+            trigger="cron",
+            **dict(zip(["minute", "hour", "day", "month", "day_of_week"], job.cron_expr.split()))
+        )
 
-def run_scheduler():
-    load_jobs()
-    while True:
-        schedule.run_pending()
-        time.sleep(60)
+    print("✅ Scheduler started. Waiting for jobs...")
+    scheduler.start()
 
+if __name__ == "__main__":
+    run_scheduler()

@@ -25,7 +25,7 @@ from db.models import (
     PortalSite, PortalField, PortalFieldOption,
     State, RTO,
     AxisFilter, VehicleFilter,
-    UserAgentPool, UserAgent, ProxyPool, ProxyEndpoint, JobTemplate
+    UserAgentPool, UserAgent, JobTemplate
 )
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -577,6 +577,72 @@ STATE_NL = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Madhya Pradesh
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_MP = {
+  "state": "Madhya Pradesh",
+  "state_code": "MP",
+  "extraction_date": "2025-07-29T14:20:08.928644",
+  "total_rtos": 54,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(53/53)"},
+    {"name":"AGAR MALWA RTO","code":"MP70","value":"70","full_text":"AGAR MALWA RTO - MP70( 25-JUL-2022 )"},
+    {"name":"ALIRAJPUR DTO","code":"MP69","value":"69","full_text":"ALIRAJPUR DTO - MP69( 23-JUL-2022 )"},
+    {"name":"ANUPPUR DTO","code":"MP65","value":"65","full_text":"ANUPPUR DTO - MP65( 23-JUL-2022 )"},
+    {"name":"ASHOKNAGAR DTO","code":"MP67","value":"67","full_text":"ASHOKNAGAR DTO - MP67( 23-JUL-2022 )"},
+    {"name":"BADWANI DTO","code":"MP46","value":"46","full_text":"BADWANI DTO - MP46( 23-JUL-2022 )"},
+    {"name":"BALAGHAT DTO","code":"MP50","value":"50","full_text":"BALAGHAT DTO - MP50( 23-JUL-2022 )"},
+    {"name":"BETUL DTO","code":"MP48","value":"48","full_text":"BETUL DTO - MP48( 23-JUL-2022 )"},
+    {"name":"BHIND DTO","code":"MP30","value":"30","full_text":"BHIND DTO - MP30( 23-JUL-2022 )"},
+    {"name":"BHOPAL RTO","code":"MP4","value":"4","full_text":"BHOPAL RTO - MP4( 23-JUL-2022 )"},
+    {"name":"BURHANPUR DTO","code":"MP68","value":"68","full_text":"BURHANPUR DTO - MP68( 23-JUL-2022 )"},
+    {"name":"CHATTARPUR  ARTO","code":"MP16","value":"16","full_text":"CHATTARPUR  ARTO - MP16( 23-JUL-2022 )"},
+    {"name":"CHHINDWARA ARTO","code":"MP28","value":"28","full_text":"CHHINDWARA ARTO - MP28( 23-JUL-2022 )"},
+    {"name":"DAMOH DTO","code":"MP34","value":"34","full_text":"DAMOH DTO - MP34( 23-JUL-2022 )"},
+    {"name":"DATIA DTO","code":"MP32","value":"32","full_text":"DATIA DTO - MP32( 23-JUL-2022 )"},
+    {"name":"DEWAS DTO","code":"MP41","value":"41","full_text":"DEWAS DTO - MP41( 23-JUL-2022 )"},
+    {"name":"DHAR ARTO","code":"MP11","value":"11","full_text":"DHAR ARTO - MP11( 23-JUL-2022 )"},
+    {"name":"DINDORI DTO","code":"MP52","value":"52","full_text":"DINDORI DTO - MP52( 26-JUL-2022 )"},
+    {"name":"GUNA DTO","code":"MP8","value":"8","full_text":"GUNA DTO - MP8( 23-JUL-2022 )"},
+    {"name":"GWALIOR RTO","code":"MP7","value":"7","full_text":"GWALIOR RTO - MP7( 23-JUL-2022 )"},
+    {"name":"HARDA DTO","code":"MP47","value":"47","full_text":"HARDA DTO - MP47( 23-JUL-2022 )"},
+    {"name":"HOSANGABAD DTO","code":"MP5","value":"5","full_text":"HOSANGABAD DTO - MP5( 23-JUL-2022 )"},
+    {"name":"INDORE RTO","code":"MP9","value":"9","full_text":"INDORE RTO - MP9( 23-JUL-2022 )"},
+    {"name":"JABALPUR RTO","code":"MP20","value":"20","full_text":"JABALPUR RTO - MP20( 23-JUL-2022 )"},
+    {"name":"JHABUA DTO","code":"MP45","value":"45","full_text":"JHABUA DTO - MP45( 23-JUL-2022 )"},
+    {"name":"KATNI ARTO","code":"MP21","value":"21","full_text":"KATNI ARTO - MP21( 23-JUL-2022 )"},
+    {"name":"KHANDWA ARTO","code":"MP12","value":"12","full_text":"KHANDWA ARTO - MP12( 23-JUL-2022 )"},
+    {"name":"KHARGONE ARTO","code":"MP10","value":"10","full_text":"KHARGONE ARTO - MP10( 23-JUL-2022 )"},
+    {"name":"MANDLA DTO","code":"MP51","value":"51","full_text":"MANDLA DTO - MP51( 23-JUL-2022 )"},
+    {"name":"MANDSAUR ARTO","code":"MP14","value":"14","full_text":"MANDSAUR ARTO - MP14( 23-JUL-2022 )"},
+    {"name":"MORENA DTO","code":"MP6","value":"6","full_text":"MORENA DTO - MP6( 23-JUL-2022 )"},
+    {"name":"NARSINGHPUR DTO","code":"MP49","value":"49","full_text":"NARSINGHPUR DTO - MP49( 23-JUL-2022 )"},
+    {"name":"NEEMUCH DTO","code":"MP44","value":"44","full_text":"NEEMUCH DTO - MP44( 23-JUL-2022 )"},
+    {"name":"NIWARI DTO","code":"MP71","value":"71","full_text":"NIWARI DTO - MP71( 20-OCT-2023 )"},
+    {"name":"PANNA DTO","code":"MP35","value":"35","full_text":"PANNA DTO - MP35( 23-JUL-2022 )"},
+    {"name":"RAISEN DTO","code":"MP38","value":"38","full_text":"RAISEN DTO - MP38( 23-JUL-2022 )"},
+    {"name":"RAJGARH DTO","code":"MP39","value":"39","full_text":"RAJGARH DTO - MP39( 23-JUL-2022 )"},
+    {"name":"RATLAM DTO","code":"MP43","value":"43","full_text":"RATLAM DTO - MP43( 23-JUL-2022 )"},
+    {"name":"REWA RTO","code":"MP17","value":"17","full_text":"REWA RTO - MP17( 23-JUL-2022 )"},
+    {"name":"SAGAR RTO","code":"MP15","value":"15","full_text":"SAGAR RTO - MP15( 23-JUL-2022 )"},
+    {"name":"SATNA ARTO","code":"MP19","value":"19","full_text":"SATNA ARTO - MP19( 23-JUL-2022 )"},
+    {"name":"SEHORE DTO","code":"MP37","value":"37","full_text":"SEHORE DTO - MP37( 23-JUL-2022 )"},
+    {"name":"SEONI ARTO","code":"MP22","value":"22","full_text":"SEONI ARTO - MP22( 23-JUL-2022 )"},
+    {"name":"SHAHDOL RTO","code":"MP18","value":"18","full_text":"SHAHDOL RTO - MP18( 23-JUL-2022 )"},
+    {"name":"SHAJAPUR DTO","code":"MP42","value":"42","full_text":"SHAJAPUR DTO - MP42( 23-JUL-2022 )"},
+    {"name":"SHEOPUR DTO","code":"MP31","value":"31","full_text":"SHEOPUR DTO - MP31( 23-JUL-2022 )"},
+    {"name":"SHIVPURI DTO","code":"MP33","value":"33","full_text":"SHIVPURI DTO - MP33( 23-JUL-2022 )"},
+    {"name":"SIDHI DTO","code":"MP53","value":"53","full_text":"SIDHI DTO - MP53( 26-JUL-2022 )"},
+    {"name":"SINGROLI DTO","code":"MP66","value":"66","full_text":"SINGROLI DTO - MP66( 23-JUL-2022 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"MP999","value":"999","full_text":"STATE TRANSPORT AUTHORITY - MP999( 14-FEB-2023 )"},
+    {"name":"TIKAMGARH DTO","code":"MP36","value":"36","full_text":"TIKAMGARH DTO - MP36( 23-JUL-2022 )"},
+    {"name":"UJJAIN RTO","code":"MP13","value":"13","full_text":"UJJAIN RTO - MP13( 23-JUL-2022 )"},
+    {"name":"UMARIA DTO","code":"MP54","value":"54","full_text":"UMARIA DTO - MP54( 26-JUL-2022 )"},
+    {"name":"VIDISHA DTO","code":"MP40","value":"40","full_text":"VIDISHA DTO - MP40( 19-JUL-2022 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Puducherry
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_PY = {
@@ -834,6 +900,115 @@ STATE_CG = {
     {"name":"State Transport Authority","code":"CG99","value":"99","full_text":"State Transport Authority - CG99( 01-JAN-2019 )"},
     {"name":"Sukma DTO","code":"CG26","value":"26","full_text":"Sukma DTO - CG26( 04-SEP-2018 )"},
     {"name":"Surajpur DTO","code":"CG29","value":"29","full_text":"Surajpur DTO - CG29( 20-DEC-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# UT of DNH and DD
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_UT = {
+  "state": "UT of DNH and DD",
+  "state_code": "UT",
+  "extraction_date": "2025-07-29T13:46:11.957625",
+  "total_rtos": 4,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(3/3)"},
+    {"name":"DAMAN","code":"DD3","value":"3","full_text":"DAMAN - DD3( 14-DEC-2017 )"},
+    {"name":"DIU","code":"DD2","value":"2","full_text":"DIU - DD2( 14-DEC-2017 )"},
+    {"name":"SILVASSA","code":"DD1","value":"1","full_text":"SILVASSA - DD1( 20-DEC-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Lakshadweep
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_LA = {
+  "state": "Lakshadweep",
+  "state_code": "LA",
+  "extraction_date": "2025-07-29T14:12:32.423115",
+  "total_rtos": 7,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(6/9)"},
+    {"name":"AMINI","code":"LD3","value":"3","full_text":"AMINI - LD3( 23-DEC-2024 )"},
+    {"name":"ANDROTH","code":"LD4","value":"4","full_text":"ANDROTH - LD4( 06-NOV-2024 )"},
+    {"name":"CHETLAT","code":"LD5","value":"5","full_text":"CHETLAT - LD5( 06-FEB-2025 )"},
+    {"name":"KALPENI","code":"LD7","value":"7","full_text":"KALPENI - LD7( 09-MAY-2025 )"},
+    {"name":"KAVARATTI","code":"LD1","value":"1","full_text":"KAVARATTI - LD1( 13-JUN-2024 )"},
+    {"name":"MINICOY","code":"LD9","value":"9","full_text":"MINICOY - LD9( 06-NOV-2024 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Maharashtra
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_MH = {
+  "state": "Maharashtra",
+  "state_code": "MH",
+  "extraction_date": "2025-07-29T14:15:06.849762",
+  "total_rtos": 62,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(59/59)"},
+    {"name":"AKLUJ","code":"MH45","value":"45","full_text":"AKLUJ - MH45( 03-APR-2017 )"},
+    {"name":"AMBEJOGAI","code":"MH44","value":"44","full_text":"AMBEJOGAI - MH44( 02-MAY-2017 )"},
+    {"name":"AMRAWATI","code":"MH27","value":"27","full_text":"AMRAWATI - MH27( 21-JAN-2017 )"},
+    {"name":"BARAMATI","code":"MH42","value":"42","full_text":"BARAMATI - MH42( 10-MAR-2017 )"},
+    {"name":"BEED","code":"MH23","value":"23","full_text":"BEED - MH23( 17-MAR-2017 )"},
+    {"name":"BHADGAON","code":"MH54","value":"54","full_text":"BHADGAON - MH54( 20-MAR-2024 )"},
+    {"name":"BHANDARA","code":"MH36","value":"36","full_text":"BHANDARA - MH36( 12-APR-2017 )"},
+    {"name":"BULDHANA","code":"MH28","value":"28","full_text":"BULDHANA - MH28( 07-NOV-2017 )"},
+    {"name":"CHALISGAON","code":"MH52","value":"52","full_text":"CHALISGAON - MH52( 05-MAR-2024 )"},
+    {"name":"CHHATRAPATI SAMBHAJINAGAR","code":"MH20","value":"20","full_text":"CHHATRAPATI SAMBHAJINAGAR - MH20( 20-OCT-2016 )"},
+    {"name":"Chiplun Chiplun Track","code":"MH202","value":"202","full_text":"Chiplun Chiplun Track - MH202( 04-DEC-2019 )"},
+    {"name":"DHARASHIV","code":"MH25","value":"25","full_text":"DHARASHIV - MH25( 31-OCT-2017 )"},
+    {"name":"DHULE","code":"MH18","value":"18","full_text":"DHULE - MH18( 03-JAN-2017 )"},
+    {"name":"DY REGIONAL TRANSPORT OFFICE, HINGOLI","code":"MH38","value":"38","full_text":"DY REGIONAL TRANSPORT OFFICE, HINGOLI - MH38( 15-JUL-2017 )"},
+    {"name":"DY RTO RATNAGIRI","code":"MH8","value":"8","full_text":"DY RTO RATNAGIRI - MH8( 10-APR-2017 )"},
+    {"name":"GADCHIROLI","code":"MH33","value":"33","full_text":"GADCHIROLI - MH33( 18-APR-2017 )"},
+    {"name":"GONDHIA","code":"MH35","value":"35","full_text":"GONDHIA - MH35( 11-APR-2017 )"},
+    {"name":"ICHALKARANJI","code":"MH51","value":"51","full_text":"ICHALKARANJI - MH51( 07-MAR-2024 )"},
+    {"name":"JALANA","code":"MH21","value":"21","full_text":"JALANA - MH21( 03-AUG-2017 )"},
+    {"name":"KALYAN","code":"MH5","value":"5","full_text":"KALYAN - MH5( 11-MAY-2017 )"},
+    {"name":"KARAD","code":"MH50","value":"50","full_text":"KARAD - MH50( 20-MAR-2017 )"},
+    {"name":"KHAMGAON","code":"MH56","value":"56","full_text":"KHAMGAON - MH56( 15-APR-2025 )"},
+    {"name":"KOLHAPUR","code":"MH9","value":"9","full_text":"KOLHAPUR - MH9( 02-MAR-2017 )"},
+    {"name":"MALEGAON","code":"MH41","value":"41","full_text":"MALEGAON - MH41( 23-AUG-2017 )"},
+    {"name":"MIRA BHAYANDAR","code":"MH58","value":"58","full_text":"MIRA BHAYANDAR - MH58( 07-MAY-2025 )"},
+    {"name":"MUMBAI (CENTRAL)","code":"MH1","value":"1","full_text":"MUMBAI (CENTRAL) - MH1( 15-DEC-2016 )"},
+    {"name":"MUMBAI (EAST)","code":"MH3","value":"3","full_text":"MUMBAI (EAST) - MH3( 13-DEC-2016 )"},
+    {"name":"MUMBAI (WEST)","code":"MH2","value":"2","full_text":"MUMBAI (WEST) - MH2( 21-APR-2017 )"},
+    {"name":"NAGPUR (EAST)","code":"MH49","value":"49","full_text":"NAGPUR (EAST) - MH49( 17-APR-2017 )"},
+    {"name":"NAGPUR (RURAL)","code":"MH40","value":"40","full_text":"NAGPUR (RURAL) - MH40( 17-JAN-2017 )"},
+    {"name":"NAGPUR (U)","code":"MH31","value":"31","full_text":"NAGPUR (U) - MH31( 18-JAN-2017 )"},
+    {"name":"NANDED","code":"MH26","value":"26","full_text":"NANDED - MH26( 12-JAN-2017 )"},
+    {"name":"NANDURBAR","code":"MH39","value":"39","full_text":"NANDURBAR - MH39( 02-MAY-2017 )"},
+    {"name":"NASHIK","code":"MH15","value":"15","full_text":"NASHIK - MH15( 05-JAN-2017 )"},
+    {"name":"PANVEL","code":"MH46","value":"46","full_text":"PANVEL - MH46( 31-JAN-2017 )"},
+    {"name":"PARBHANI","code":"MH22","value":"22","full_text":"PARBHANI - MH22( 25-APR-2017 )"},
+    {"name":"PEN (RAIGAD)","code":"MH6","value":"6","full_text":"PEN (RAIGAD) - MH6( 16-MAY-2017 )"},
+    {"name":"PHALTAN","code":"MH53","value":"53","full_text":"PHALTAN - MH53( 03-SEP-2024 )"},
+    {"name":"PUNE","code":"MH12","value":"12","full_text":"PUNE - MH12( 25-JAN-2017 )"},
+    {"name":"RTO AHEMEDNAGAR","code":"MH16","value":"16","full_text":"RTO AHEMEDNAGAR - MH16( 16-MAR-2017 )"},
+    {"name":"RTO AKOLA","code":"MH30","value":"30","full_text":"RTO AKOLA - MH30( 20-FEB-2017 )"},
+    {"name":"R.T.O.BORIVALI","code":"MH47","value":"47","full_text":"R.T.O.BORIVALI - MH47( 21-APR-2017 )"},
+    {"name":"RTO CHANDRAPUR","code":"MH34","value":"34","full_text":"RTO CHANDRAPUR - MH34( 25-APR-2017 )"},
+    {"name":"RTO JALGAON","code":"MH19","value":"19","full_text":"RTO JALGAON - MH19( 24-MAR-2017 )"},
+    {"name":"RTO LATUR","code":"MH24","value":"24","full_text":"RTO LATUR - MH24( 15-MAR-2017 )"},
+    {"name":"RTO","code":"MH04","value":"203","full_text":"RTO MH04-Mira Bhayander FitnessTrack - MH203( 01-MAY-2022 )"},
+    {"name":"RTO PIMPRI CHINCHWAD","code":"MH14","value":"14","full_text":"RTO PIMPRI CHINCHWAD - MH14( 06-FEB-2017 )"},
+    {"name":"RTO SATARA","code":"MH11","value":"11","full_text":"RTO SATARA - MH11( 04-MAR-2017 )"},
+    {"name":"RTO SOLAPUR","code":"MH13","value":"13","full_text":"RTO SOLAPUR - MH13( 05-APR-2017 )"},
+    {"name":"SANGLI","code":"MH10","value":"10","full_text":"SANGLI - MH10( 03-MAR-2017 )"},
+    {"name":"SINDHUDURG(KUDAL)","code":"MH7","value":"7","full_text":"SINDHUDURG(KUDAL) - MH7( 10-APR-2017 )"},
+    {"name":"SRIRAMPUR","code":"MH17","value":"17","full_text":"SRIRAMPUR - MH17( 22-MAR-2017 )"},
+    {"name":"TC OFFICE","code":"MH99","value":"99","full_text":"TC OFFICE - MH99( 06-JUN-2018 )"},
+    {"name":"THANE","code":"MH4","value":"4","full_text":"THANE - MH4( 08-MAR-2017 )"},
+    {"name":"UDGIR","code":"MH55","value":"55","full_text":"UDGIR - MH55( 28-AUG-2024 )"},
+    {"name":"VAIJAPUR","code":"MH57","value":"57","full_text":"VAIJAPUR - MH57( 06-JUN-2025 )"},
+    {"name":"VASAI","code":"MH48","value":"48","full_text":"VASAI - MH48( 08-JUN-2017 )"},
+    {"name":"VASHI (NEW MUMBAI)","code":"MH43","value":"43","full_text":"VASHI (NEW MUMBAI) - MH43( 07-JUL-2016 )"},
+    {"name":"WARDHA","code":"MH32","value":"32","full_text":"WARDHA - MH32( 06-APR-2017 )"},
+    {"name":"WASHIM","code":"MH37","value":"37","full_text":"WASHIM - MH37( 11-APR-2017 )"},
+    {"name":"YAWATMAL","code":"MH29","value":"29","full_text":"YAWATMAL - MH29( 07-JUL-2017 )"}
   ]
 }
 
@@ -1153,30 +1328,6 @@ def seed_user_agents(session: Session):
     print("✅ Seeded user agents")
 
 
-def seed_proxies(session: Session):
-    pool, _ = get_or_create(session, ProxyPool, name="default_proxy_pool")
-    session.flush()  # ensure pool.id is available
-
-    proxies = [
-        # Example: "http://user:pass@host:port" OR "http://host:port"
-        ("http://123.45.67.89:8080", 5),
-        ("http://98.76.54.32:3128", 3),
-    ]
-
-    for endpoint, weight in proxies:
-        get_or_create(
-            session,
-            ProxyEndpoint,
-            pool_id=pool.id,
-            endpoint=endpoint,
-            defaults=dict(is_active=True, weight=weight, last_used_at=None)
-        )
-
-    print("✅ Seeded proxies")
-
-
-
-
 # ──────────────────────────────────────────────────────────────────────────────
 # Normalization
 # ──────────────────────────────────────────────────────────────────────────────
@@ -1313,29 +1464,13 @@ def seed_job_templates(session: Session, site: PortalSite):
     """
     templates = [
         dict(
-            name="Daily Goa: Maker × MonthWise",
+            name="Daily Extraction: Maker & MonthWise",
             site_id=site.id,
-            cron_expr="30 3 * * *",         # every day 03:30 IST
+            cron_expr="35 12 * * *",         # every day 02:00 pm  IST
             timezone="Asia/Kolkata",
             enabled=True,
-            notes="Run Goa (GA) jobs with Y=Maker, X=Month Wise for all configured filter sets."
-        ),
-        dict(
-            name="Hourly Smoke Test",
-            site_id=site.id,
-            cron_expr="15 * * * *",         # at minute 15 past every hour
-            timezone="Asia/Kolkata",
-            enabled=False,                  # disabled by default; enable when needed
-            notes="Quick health-check job to verify selectors/page availability."
-        ),
-        dict(
-            name="Weekly AP Audit",
-            site_id=site.id,
-            cron_expr="0 4 * * 1",          # Mondays 04:00 IST
-            timezone="Asia/Kolkata",
-            enabled=True,
-            notes="Andhra Pradesh audit run to compare weekly diffs."
-        ),
+            notes="Run jobs with Y=Maker, X=Month Wise for all configured filter sets."
+        )
     ]
 
     created = []
@@ -1375,9 +1510,6 @@ def run_seed():
 
         print("🔧 Seeding user agents")
         seed_user_agents(db)
-
-        print("🔧 Seeding proxies")
-        seed_proxies(db)
 
         print("🔧 Seeding STATE dropdown (36 rows incl. AL aggregate)")
         seed_state_dropdown(db, portal_ids, ALL_STATES_BLOB)
@@ -1429,6 +1561,18 @@ def run_seed():
 
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)
+
+        print("🔧 Seeding RTOS for UT (UT of DNH and DD)")
+        seed_state_rtos(db, portal_ids, STATE_UT)
+
+        print("🔧 Seeding RTOS for LA (Lakshadweep)")
+        seed_state_rtos(db, portal_ids, STATE_LA)
+
+        print("🔧 Seeding RTOS for MH (Maharashtra)")
+        seed_state_rtos(db, portal_ids, STATE_MH)
+
+        print("🔧 Seeding RTOS for MP (Madhya Pradesh)")
+        seed_state_rtos(db, portal_ids, STATE_MP)
 
         print("🔧 Seeding RTOS for MN (Manipur)")
         seed_state_rtos(db, portal_ids, STATE_MN)
