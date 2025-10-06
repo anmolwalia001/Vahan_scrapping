@@ -335,6 +335,25 @@ STATE_AR = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Lakshadweep
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_LD = {
+  "state": "Lakshadweep",
+  "state_code": "LD",
+  "extraction_date": "2025-07-29T14:12:32.423115",
+  "total_rtos": 7,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(6/9)"},
+    {"name":"AMINI","code":"LD3","value":"3","full_text":"AMINI - LD3( 23-DEC-2024 )"},
+    {"name":"ANDROTH","code":"LD4","value":"4","full_text":"ANDROTH - LD4( 06-NOV-2024 )"},
+    {"name":"CHETLAT","code":"LD5","value":"5","full_text":"CHETLAT - LD5( 06-FEB-2025 )"},
+    {"name":"KALPENI","code":"LD7","value":"7","full_text":"KALPENI - LD7( 09-MAY-2025 )"},
+    {"name":"KAVARATTI","code":"LD1","value":"1","full_text":"KAVARATTI - LD1( 13-JUN-2024 )"},
+    {"name":"MINICOY","code":"LD9","value":"9","full_text":"MINICOY - LD9( 06-NOV-2024 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Jammu & Kashmir
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_JK = {
@@ -505,6 +524,197 @@ STATE_MN = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Haryana
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_HR = {
+  "state": "Haryana",
+  "state_code": "HR",
+  "extraction_date": "2025-07-29T14:00:55.963461",
+  "total_rtos": 179,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(98/98)"},
+    {"name":"AMBALA CITY","code":"HR1","value":"1","full_text":"AMBALA CITY - HR1( 27-APR-2017 )"},
+    {"name":"ASSANDH","code":"HR40","value":"40","full_text":"ASSANDH - HR40( 16-JUN-2017 )"},
+    {"name":"BAHADURGARH","code":"HR13","value":"13","full_text":"BAHADURGARH - HR13( 03-MAY-2017 )"},
+    {"name":"BALLABGARH","code":"HR29","value":"29","full_text":"BALLABGARH - HR29( 18-JUL-2017 )"},
+    {"name":"BARARA","code":"HR54","value":"54","full_text":"BARARA - HR54( 25-APR-2017 )"},
+    {"name":"BAWAL","code":"HR81","value":"81","full_text":"BAWAL - HR81( 19-JUL-2017 )"},
+    {"name":"BHIWANI","code":"HR16","value":"16","full_text":"BHIWANI - HR16( 30-MAY-2017 )"},
+    {"name":"CHARKHI DADRI","code":"HR19","value":"19","full_text":"CHARKHI DADRI - HR19( 05-JUL-2017 )"},
+    {"name":"DABWALI","code":"HR25","value":"25","full_text":"DABWALI - HR25( 03-JUL-2017 )"},
+    {"name":"ELLNABAD","code":"HR44","value":"44","full_text":"ELLNABAD - HR44( 03-JUL-2017 )"},
+    {"name":"FARIDABAD","code":"HR51","value":"51","full_text":"FARIDABAD - HR51( 12-JUN-2017 )"},
+    {"name":"FATEHABAD","code":"HR22","value":"22","full_text":"FATEHABAD - HR22( 27-JUN-2017 )"},
+    {"name":"FEROZEPUR ZIRKHA","code":"HR28","value":"28","full_text":"FEROZEPUR ZIRKHA - HR28( 01-MAY-2017 )"},
+    {"name":"GANAUR","code":"HR42","value":"42","full_text":"GANAUR - HR42( 29-JUN-2017 )"},
+    {"name":"GOHANA","code":"HR11","value":"11","full_text":"GOHANA - HR11( 07-JUL-2017 )"},
+    {"name":"GULHA","code":"HR9","value":"9","full_text":"GULHA - HR9( 25-JUL-2017 )"},
+    {"name":"GURUGRAM SOUTH","code":"HR72","value":"72","full_text":"GURUGRAM SOUTH - HR72( 03-JUL-2017 )"},
+    {"name":"HANSI","code":"HR21","value":"21","full_text":"HANSI - HR21( 03-JUL-2017 )"},
+    {"name":"HARYANA HEAD OFFICE CHD","code":"HR70","value":"70","full_text":"HARYANA HEAD OFFICE CHD - HR70( 01-JAN-2018 )"},
+    {"name":"HATHIN","code":"HR52","value":"52","full_text":"HATHIN - HR52( 21-JUL-2017 )"},
+    {"name":"HISAR","code":"HR20","value":"20","full_text":"HISAR - HR20( 18-MAY-2017 )"},
+    {"name":"HODEL","code":"HR50","value":"50","full_text":"HODEL - HR50( 19-JUL-2017 )"},
+    {"name":"JAGADHARI","code":"HR2","value":"2","full_text":"JAGADHARI - HR2( 06-JUN-2017 )"},
+    {"name":"JHAJHAR","code":"HR14","value":"14","full_text":"JHAJHAR - HR14( 25-MAY-2017 )"},
+    {"name":"JIND","code":"HR31","value":"31","full_text":"JIND - HR31( 19-MAY-2017 )"},
+    {"name":"KAITHAL","code":"HR8","value":"8","full_text":"KAITHAL - HR8( 04-JUL-2017 )"},
+    {"name":"KALAYAT","code":"HR83","value":"83","full_text":"KALAYAT - HR83( 27-JUL-2017 )"},
+    {"name":"KANINA","code":"HR82","value":"82","full_text":"KANINA - HR82( 12-JUL-2017 )"},
+    {"name":"KARNAL","code":"HR5","value":"5","full_text":"KARNAL - HR5( 05-JUN-2017 )"},
+    {"name":"KOSLI","code":"HR43","value":"43","full_text":"KOSLI - HR43( 27-JUL-2017 )"},
+    {"name":"LADWA","code":"HR97","value":"97","full_text":"LADWA - HR97( 05-APR-2018 )"},
+    {"name":"LOHARU","code":"HR18","value":"18","full_text":"LOHARU - HR18( 20-JUL-2017 )"},
+    {"name":"MAHENDERGARH","code":"HR34","value":"34","full_text":"MAHENDERGARH - HR34( 29-JUN-2017 )"},
+    {"name":"MEHAM","code":"HR15","value":"15","full_text":"MEHAM - HR15( 01-MAY-2017 )"},
+    {"name":"M.G. MOTORS, 12KM MILE STONE(F.C)","code":"HR204","value":"204","full_text":"M.G. MOTORS, 12KM MILE STONE(F.C) - HR204( 27-AUG-2021 )"},
+    {"name":"M/S ABC MOTORS DHANGARH FATEHABAD(F.C)","code":"HR238","value":"238","full_text":"M/S ABC MOTORS DHANGARH FATEHABAD(F.C) - HR238( 25-OCT-2021 )"},
+    {"name":"M/S AMBA MOTORS","code":"HR271","value":"271","full_text":"M/S AMBA MOTORS - HR271( 21-JAN-2022 )"},
+    {"name":"M/S COMPETENT AUTOMOBILES COMPANY LTD","code":"HR270","value":"270","full_text":"M/S COMPETENT AUTOMOBILES COMPANY LTD - HR270( 21-JAN-2022 )"},
+    {"name":"M/S CSG AUTOMOBILES(F.C)","code":"HR266","value":"266","full_text":"M/S CSG AUTOMOBILES(F.C) - HR266( 03-DEC-2021 )"},
+    {"name":"M/S DAISY MOTORS PVT LTD, 12KM STONE(F.C)","code":"HR206","value":"206","full_text":"M/S DAISY MOTORS PVT LTD, 12KM STONE(F.C) - HR206( 27-AUG-2021 )"},
+    {"name":"M/S DAISY MOTORS PVT LTD(F.C)","code":"HR261","value":"261","full_text":"M/S DAISY MOTORS PVT LTD(F.C) - HR261( 22-NOV-2021 )"},
+    {"name":"M/S DAISY MOTORS PVT LTD(F.C)","code":"HR259","value":"259","full_text":"M/S DAISY MOTORS PVT LTD(F.C) - HR259( 22-NOV-2021 )"},
+    {"name":"M/S DAKSH MARKETING(F.C)","code":"HR251","value":"251","full_text":"M/S DAKSH MARKETING(F.C) - HR251( 15-NOV-2021 )"},
+    {"name":"M/S DHINGRA TRUCKING PVT LTD","code":"HR268","value":"268","full_text":"M/S DHINGRA TRUCKING PVT LTD - HR268( 21-JAN-2022 )"},
+    {"name":"M/S DINCO FOUR WHEELS LLP(F.C)","code":"HR263","value":"263","full_text":"M/S DINCO FOUR WHEELS LLP(F.C) - HR263( 22-NOV-2021 )"},
+    {"name":"M/S EAKANSH MOTORS PVT LTD(F.C)","code":"HR247","value":"247","full_text":"M/S EAKANSH MOTORS PVT LTD(F.C) - HR247( 29-OCT-2021 )"},
+    {"name":"M/S EAKANSH WHEELS 126KM STONE JAGDHARI ROAD(F.C)","code":"HR236","value":"236","full_text":"M/S EAKANSH WHEELS 126KM STONE JAGDHARI ROAD(F.C) - HR236( 29-SEP-2021 )"},
+    {"name":"M/S GARG MOTORS(F.C)","code":"HR253","value":"253","full_text":"M/S GARG MOTORS(F.C) - HR253( 15-NOV-2021 )"},
+    {"name":"M/S GLOBAL AUTMOBOLINES SCO 25-26 GROUND FLOOR(F.C)","code":"HR213","value":"213","full_text":"M/S GLOBAL AUTMOBOLINES SCO 25-26 GROUND FLOOR(F.C) - HR213( 22-SEP-2021 )"},
+    {"name":"M/S GLOBAL AUTOMART PVT LTD, 82 KM STONE(F.C)","code":"HR203","value":"203","full_text":"M/S GLOBAL AUTOMART PVT LTD, 82 KM STONE(F.C) - HR203( 27-AUG-2021 )"},
+    {"name":"M/S G.N.G AUTO AIDS PVT.LTD(F.C)","code":"HR256","value":"256","full_text":"M/S G.N.G AUTO AIDS PVT.LTD(F.C) - HR256( 15-NOV-2021 )"},
+    {"name":"M/S HARCHAND MOTORS(F.C)","code":"HR260","value":"260","full_text":"M/S HARCHAND MOTORS(F.C) - HR260( 22-NOV-2021 )"},
+    {"name":"M/S HARYANA MOTOR(F.C)","code":"HR276","value":"276","full_text":"M/S HARYANA MOTOR(F.C) - HR276( 22-FEB-2022 )"},
+    {"name":"M/S HIMGIRI AUTOMOBILES PVT.LTD(F.C)","code":"HR257","value":"257","full_text":"M/S HIMGIRI AUTOMOBILES PVT.LTD(F.C) - HR257( 15-NOV-2021 )"},
+    {"name":"M/S HIND MOTORS(F.C)","code":"HR246","value":"246","full_text":"M/S HIND MOTORS(F.C) - HR246( 29-OCT-2021 )"},
+    {"name":"M/S HISAR AUTOMOBILES 5TH KM STONE SIRSA ROAD(F.C)","code":"HR215","value":"215","full_text":"M/S HISAR AUTOMOBILES 5TH KM STONE SIRSA ROAD(F.C) - HR215( 24-SEP-2021 )"},
+    {"name":"M/S H.S MOTORS SANOLI ROAD(F.C)","code":"HR212","value":"212","full_text":"M/S H.S MOTORS SANOLI ROAD(F.C) - HR212( 15-SEP-2021 )"},
+    {"name":"M/S JAGMOHAN AUTOMOBILES PVT LTD(F.C)","code":"HR218","value":"218","full_text":"M/S JAGMOHAN AUTOMOBILES PVT LTD(F.C) - HR218( 24-SEP-2021 )"},
+    {"name":"M/S JOHAR AUTOMOBILES FARIDABAD(F.C)","code":"HR208","value":"208","full_text":"M/S JOHAR AUTOMOBILES FARIDABAD(F.C) - HR208( 27-AUG-2021 )"},
+    {"name":"M/S KARAN AUTOMOTIVE(F.C)","code":"HR275","value":"275","full_text":"M/S KARAN AUTOMOTIVE(F.C) - HR275( 17-FEB-2022 )"},
+    {"name":"M/S KARNAL MOTORS PVT 71/3 MILE STONE(F.C)","code":"HR210","value":"210","full_text":"M/S KARNAL MOTORS PVT 71/3 MILE STONE(F.C) - HR210( 17-SEP-2021 )"},
+    {"name":"M/S KARNAL MOTORS PVT LTD,PLOT NO-156-157(F.C)","code":"HR209","value":"209","full_text":"M/S KARNAL MOTORS PVT LTD,PLOT NO-156-157(F.C) - HR209( 17-SEP-2021 )"},
+    {"name":"M/S KBS MOTORS PVT LTD OLD COURT ROAD JAGADHARI(F.C)","code":"HR221","value":"221","full_text":"M/S KBS MOTORS PVT LTD OLD COURT ROAD JAGADHARI(F.C) - HR221( 24-SEP-2021 )"},
+    {"name":"M/S KBS MOTORS PVT LTD VILL-TEPLA AMBALA(F.C)","code":"HR216","value":"216","full_text":"M/S KBS MOTORS PVT LTD VILL-TEPLA AMBALA(F.C) - HR216( 27-SEP-2021 )"},
+    {"name":"M/S KHANNA CAR PLAZA PVT LTD(F.C)","code":"HR249","value":"249","full_text":"M/S KHANNA CAR PLAZA PVT LTD(F.C) - HR249( 29-OCT-2021 )"},
+    {"name":"M/S LEKHRAJ AUTO PLAZA PVT LTD(F.C)","code":"HR250","value":"250","full_text":"M/S LEKHRAJ AUTO PLAZA PVT LTD(F.C) - HR250( 15-NOV-2021 )"},
+    {"name":"M/S MAHABALAJI AUTO SERVICE PVT LTD, 1/158, KM STONE(F.C)","code":"HR223","value":"223","full_text":"M/S MAHABALAJI AUTO SERVICE PVT LTD, 1/158, KM STONE(F.C) - HR223( 24-SEP-2021 )"},
+    {"name":"M/S MANGALAM MOTORS BAHADURGARH DISTT JHAJJAR(F.C)","code":"HR240","value":"240","full_text":"M/S MANGALAM MOTORS BAHADURGARH DISTT JHAJJAR(F.C) - HR240( 28-SEP-2021 )"},
+    {"name":"M/S MANGLA MOTORS(F.C)","code":"HR277","value":"277","full_text":"M/S MANGLA MOTORS(F.C) - HR277( 25-APR-2022 )"},
+    {"name":"M/S METRO MOTORS PVT LTD, 106, RAILWAY ROAD(F.C)","code":"HR219","value":"219","full_text":"M/S METRO MOTORS PVT LTD, 106, RAILWAY ROAD(F.C) - HR219( 24-SEP-2021 )"},
+    {"name":"M/S METRO MOTORS PVT LTD, 76/1 MILE STONE(F.C)","code":"HR217","value":"217","full_text":"M/S METRO MOTORS PVT LTD, 76/1 MILE STONE(F.C) - HR217( 24-SEP-2021 )"},
+    {"name":"M/S M.G. MOTORS","code":"HR269","value":"269","full_text":"M/S M.G. MOTORS - HR269( 21-JAN-2022 )"},
+    {"name":"M/S MG MOTORS NEAR TOLL PLAZA NARANGPUR ROHTAK ROAD BHIWANI(F.C)","code":"HR227","value":"227","full_text":"M/S MG MOTORS NEAR TOLL PLAZA NARANGPUR ROHTAK ROAD BHIWANI(F.C) - HR227( 27-SEP-2021 )"},
+    {"name":"M/S MOHAN FOURWHEEL PVT LTD, 13 KM STONE(F.C)","code":"HR205","value":"205","full_text":"M/S MOHAN FOURWHEEL PVT LTD, 13 KM STONE(F.C) - HR205( 27-AUG-2021 )"},
+    {"name":"M/S M/S SATGURU MOTORS NH-52(F.C)","code":"HR235","value":"235","full_text":"M/S M/S SATGURU MOTORS NH-52(F.C) - HR235( 24-SEP-2021 )"},
+    {"name":"M/S PALTINUM MOTOCOPR MANESAR GURUGRAM(F.C)","code":"HR239","value":"239","full_text":"M/S PALTINUM MOTOCOPR MANESAR GURUGRAM(F.C) - HR239( 28-SEP-2021 )"},
+    {"name":"M/S PALUCK TECHNOLOGIES PVT.LTD(F.C)","code":"HR258","value":"258","full_text":"M/S PALUCK TECHNOLOGIES PVT.LTD(F.C) - HR258( 15-NOV-2021 )"},
+    {"name":"M/S PANDIT AUTOMOBILES PVT LTD GOBINDPURA BYE PASS ROAD JAGADHARI YAMUNANAGAR(F.C)","code":"HR225","value":"225","full_text":"M/S PANDIT AUTOMOBILES PVT LTD GOBINDPURA BYE PASS ROAD JAGADHARI YAMUNANAGAR(F.C) - HR225( 28-SEP-2021 )"},
+    {"name":"M/S PARAS TRUCKS, 11KM STONE DELHI BYE PASS ROAD(F.C)","code":"HR211","value":"211","full_text":"M/S PARAS TRUCKS, 11KM STONE DELHI BYE PASS ROAD(F.C) - HR211( 17-SEP-2021 )"},
+    {"name":"M/S PASCO AUTOMOBILES","code":"HR214","value":"214","full_text":"M/S PASCO AUTOMOBILES - HR214( 24-SEP-2021 )"},
+    {"name":"M/S PASCO AUTOMOBILES","code":"HR233","value":"233","full_text":"M/S PASCO AUTOMOBILES - HR233( 28-SEP-2021 )"},
+    {"name":"M/S PASCO AUTOMOBILES","code":"HR232","value":"232","full_text":"M/S PASCO AUTOMOBILES - HR232( 28-SEP-2021 )"},
+    {"name":"M/S PASCO AUTOMOBILES 34/3 DINESH JAIN COMPLEX(F.C)","code":"HR230","value":"230","full_text":"M/S PASCO AUTOMOBILES 34/3 DINESH JAIN COMPLEX(F.C) - HR230( 28-SEP-2021 )"},
+    {"name":"M/S PASCO AUTOMOBILES, 6 INDUSTRIAL ESTATE PALAM GURUGRAM(F.C)","code":"HR228","value":"228","full_text":"M/S PASCO AUTOMOBILES, 6 INDUSTRIAL ESTATE PALAM GURUGRAM(F.C) - HR228( 28-SEP-2021 )"},
+    {"name":"M/S PASCO MOTORS(F.C)","code":"HR252","value":"252","full_text":"M/S PASCO MOTORS(F.C) - HR252( 15-NOV-2021 )"},
+    {"name":"M/S PASCO MOTORS LLP 30MILES STONE(F.C)","code":"HR224","value":"224","full_text":"M/S PASCO MOTORS LLP 30MILES STONE(F.C) - HR224( 24-SEP-2021 )"},
+    {"name":"M/S PASCO MOTORS LLP, 40 MILE STONE(F.C)","code":"HR207","value":"207","full_text":"M/S PASCO MOTORS LLP, 40 MILE STONE(F.C) - HR207( 27-AUG-2021 )"},
+    {"name":"M/S PASCO MOTORS LLP SHOP NO. G35(F.C)","code":"HR202","value":"202","full_text":"M/S PASCO MOTORS LLP SHOP NO. G35(F.C) - HR202( 27-AUG-2021 )"},
+    {"name":"M/S PREM MOTORS PVT LTD DIVIDING ROAD(F.C)","code":"HR234","value":"234","full_text":"M/S PREM MOTORS PVT LTD DIVIDING ROAD(F.C) - HR234( 27-SEP-2021 )"},
+    {"name":"M/S PREM MOTORS PVT LTD PLOT 3 IDC(F.C)","code":"HR231","value":"231","full_text":"M/S PREM MOTORS PVT LTD PLOT 3 IDC(F.C) - HR231( 28-SEP-2021 )"},
+    {"name":"M/S RAMA MOTORS(F.C)","code":"HR279","value":"279","full_text":"M/S RAMA MOTORS(F.C) - HR279( 24-MAY-2022 )"},
+    {"name":"M/S RANA MOTORS PVT LTD MEHARAULI ROAD GURUGRAM(F.C)","code":"HR241","value":"241","full_text":"M/S RANA MOTORS PVT LTD MEHARAULI ROAD GURUGRAM(F.C) - HR241( 28-SEP-2021 )"},
+    {"name":"M/S R.K.H AUTOMOBILES PVT LTD(F.C)","code":"HR229","value":"229","full_text":"M/S R.K.H AUTOMOBILES PVT LTD(F.C) - HR229( 24-SEP-2021 )"},
+    {"name":"M/S RUDRA MOTORS NARWANA DISTT JIND(F.C)","code":"HR243","value":"243","full_text":"M/S RUDRA MOTORS NARWANA DISTT JIND(F.C) - HR243( 28-SEP-2021 )"},
+    {"name":"M/S SAHIL MOTORS(F.C)","code":"HR245","value":"245","full_text":"M/S SAHIL MOTORS(F.C) - HR245( 29-OCT-2021 )"},
+    {"name":"M/S Sanjay Automotive LLP Old Delhi Road(F.C)","code":"HR280","value":"280","full_text":"M/S Sanjay Automotive LLP Old Delhi Road(F.C) - HR280( 24-MAY-2022 )"},
+    {"name":"M/S SHAKTI MOTORS PVT LTD(F.C)","code":"HR254","value":"254","full_text":"M/S SHAKTI MOTORS PVT LTD(F.C) - HR254( 15-NOV-2021 )"},
+    {"name":"M/S SHIVA MOTORS(F.C)","code":"HR248","value":"248","full_text":"M/S SHIVA MOTORS(F.C) - HR248( 29-OCT-2021 )"},
+    {"name":"M/S SHREE KRISHANA MOTORS(F.C)","code":"HR264","value":"264","full_text":"M/S SHREE KRISHANA MOTORS(F.C) - HR264( 22-NOV-2021 )"},
+    {"name":"M/S SHREE MOTORS PVT LTD, DEHCORA ROAD(F.C)","code":"HR201","value":"201","full_text":"M/S SHREE MOTORS PVT LTD, DEHCORA ROAD(F.C) - HR201( 27-AUG-2021 )"},
+    {"name":"M/S SHREE SALASAR MOTORS(F.C)","code":"HR255","value":"255","full_text":"M/S SHREE SALASAR MOTORS(F.C) - HR255( 15-NOV-2021 )"},
+    {"name":"M/S SISOTHYA AUTOMOBILES DELHI JAIPUR HIGHWAY(F.C)","code":"HR278","value":"278","full_text":"M/S SISOTHYA AUTOMOBILES DELHI JAIPUR HIGHWAY(F.C) - HR278( 25-APR-2022 )"},
+    {"name":"M/S STAR AUTOMOBILE(F.C)","code":"HR244","value":"244","full_text":"M/S STAR AUTOMOBILE(F.C) - HR244( 29-OCT-2021 )"},
+    {"name":"M/S SUPREME MOBILES PVT LTD(F.C)","code":"HR262","value":"262","full_text":"M/S SUPREME MOBILES PVT LTD(F.C) - HR262( 22-NOV-2021 )"},
+    {"name":"M/S SUPREME MOBILES PVT LTD(F.C)","code":"HR267","value":"267","full_text":"M/S SUPREME MOBILES PVT LTD(F.C) - HR267( 14-DEC-2021 )"},
+    {"name":"M/S TAYAL MOTORS PVT LTD MATHURA ROAD FARIDABAD(F.C)","code":"HR237","value":"237","full_text":"M/S TAYAL MOTORS PVT LTD MATHURA ROAD FARIDABAD(F.C) - HR237( 28-SEP-2021 )"},
+    {"name":"M/S TCS AUTOWORLD","code":"HR273","value":"273","full_text":"M/S TCS AUTOWORLD - HR273( 21-JAN-2022 )"},
+    {"name":"M/S THADESHRI Motors(F.C)","code":"HR265","value":"265","full_text":"M/S THADESHRI Motors(F.C) - HR265( 03-DEC-2021 )"},
+    {"name":"M/S TIRUPATI MOTORS REWARI-DELHI ROAD VILL-JONAWAS(F.C)","code":"HR220","value":"220","full_text":"M/S TIRUPATI MOTORS REWARI-DELHI ROAD VILL-JONAWAS(F.C) - HR220( 24-SEP-2021 )"},
+    {"name":"M/S UNIQUE MOTORS PVT LTD OPP-BHANU INDUSTRIES HISAR(F.C)","code":"HR242","value":"242","full_text":"M/S UNIQUE MOTORS PVT LTD OPP-BHANU INDUSTRIES HISAR(F.C) - HR242( 28-SEP-2021 )"},
+    {"name":"M/S UNITED MOTORS MIRZAPUR ROAD NEAR MIRZAPUR CHOWK(F.C)","code":"HR222","value":"222","full_text":"M/S UNITED MOTORS MIRZAPUR ROAD NEAR MIRZAPUR CHOWK(F.C) - HR222( 24-SEP-2021 )"},
+    {"name":"M/S VIPIN MOTORS","code":"HR272","value":"272","full_text":"M/S VIPIN MOTORS - HR272( 21-JAN-2022 )"},
+    {"name":"M/S VMT MOTORS","code":"HR274","value":"274","full_text":"M/S VMT MOTORS - HR274( 21-JAN-2022 )"},
+    {"name":"M/S YASHODHA TRANSWHEELS LLP, 78 MILE STONE VILLAGE KARHANS(F.C)","code":"HR226","value":"226","full_text":"M/S YASHODHA TRANSWHEELS LLP, 78 MILE STONE VILLAGE KARHANS(F.C) - HR226( 27-SEP-2021 )"},
+    {"name":"NARAINGARH","code":"HR4","value":"4","full_text":"NARAINGARH - HR4( 15-MAR-2017 )"},
+    {"name":"NARNAUL","code":"HR35","value":"35","full_text":"NARNAUL - HR35( 30-JUN-2017 )"},
+    {"name":"NARWANA","code":"HR32","value":"32","full_text":"NARWANA - HR32( 20-MAY-2017 )"},
+    {"name":"NUH","code":"HR27","value":"27","full_text":"NUH - HR27( 29-MAY-2017 )"},
+    {"name":"PALWAL","code":"HR30","value":"30","full_text":"PALWAL - HR30( 17-JUL-2017 )"},
+    {"name":"PANCHKULA","code":"HR3","value":"3","full_text":"PANCHKULA - HR3( 22-FEB-2017 )"},
+    {"name":"PANIPAT","code":"HR6","value":"6","full_text":"PANIPAT - HR6( 06-JUL-2017 )"},
+    {"name":"PATAUDI","code":"HR76","value":"76","full_text":"PATAUDI - HR76( 03-JUL-2017 )"},
+    {"name":"PEHOWA","code":"HR41","value":"41","full_text":"PEHOWA - HR41( 04-AUG-2017 )"},
+    {"name":"RA(MV),PANCHKULA","code":"HR99","value":"99","full_text":"RA(MV),PANCHKULA - HR99( 15-JAN-2021 )"},
+    {"name":"RATIA","code":"HR59","value":"59","full_text":"RATIA - HR59( 28-JUN-2017 )"},
+    {"name":"REWARI","code":"HR36","value":"36","full_text":"REWARI - HR36( 13-JUN-2017 )"},
+    {"name":"RLA TAURU","code":"HR96","value":"96","full_text":"RLA TAURU - HR96( 20-DEC-2017 )"},
+    {"name":"ROHTAK","code":"HR12","value":"12","full_text":"ROHTAK - HR12( 01-MAY-2017 )"},
+    {"name":"RTA AMBALA","code":"HR37","value":"37","full_text":"RTA AMBALA - HR37( 01-APR-2017 )"},
+    {"name":"RTA, BHIWANI","code":"HR61","value":"61","full_text":"RTA, BHIWANI - HR61( 01-APR-2017 )"},
+    {"name":"RTA CHARKI DADRI","code":"HR84","value":"84","full_text":"RTA CHARKI DADRI - HR84( 01-APR-2017 )"},
+    {"name":"RTA, FARIDABAD","code":"HR38","value":"38","full_text":"RTA, FARIDABAD - HR38( 01-APR-2017 )"},
+    {"name":"RTA, FATEHABAD","code":"HR62","value":"62","full_text":"RTA, FATEHABAD - HR62( 01-APR-2017 )"},
+    {"name":"RTA, GURGAON","code":"HR55","value":"55","full_text":"RTA, GURGAON - HR55( 01-APR-2017 )"},
+    {"name":"RTA, HISAR","code":"HR39","value":"39","full_text":"RTA, HISAR - HR39( 01-APR-2017 )"},
+    {"name":"RTA, JHAJJAR AT BAHADURGARH","code":"HR63","value":"63","full_text":"RTA, JHAJJAR AT BAHADURGARH - HR63( 01-APR-2017 )"},
+    {"name":"RTA, JIND","code":"HR56","value":"56","full_text":"RTA, JIND - HR56( 01-APR-2017 )"},
+    {"name":"RTA, KAITHAL","code":"HR64","value":"64","full_text":"RTA, KAITHAL - HR64( 01-APR-2017 )"},
+    {"name":"RTA, KARNAL","code":"HR45","value":"45","full_text":"RTA, KARNAL - HR45( 01-APR-2017 )"},
+    {"name":"RTA, KURUKSHETRA","code":"HR65","value":"65","full_text":"RTA, KURUKSHETRA - HR65( 01-APR-2017 )"},
+    {"name":"RTA, MOHINDERGARH","code":"HR66","value":"66","full_text":"RTA, MOHINDERGARH - HR66( 01-APR-2017 )"},
+    {"name":"RTA, NUH","code":"HR74","value":"74","full_text":"RTA, NUH - HR74( 01-APR-2017 )"},
+    {"name":"RTA, PALWAL","code":"HR73","value":"73","full_text":"RTA, PALWAL - HR73( 01-APR-2017 )"},
+    {"name":"RTA, PANCHKULA","code":"HR68","value":"68","full_text":"RTA, PANCHKULA - HR68( 01-APR-2017 )"},
+    {"name":"RTA, PANIPAT","code":"HR67","value":"67","full_text":"RTA, PANIPAT - HR67( 01-APR-2017 )"},
+    {"name":"RTA, REWARI","code":"HR47","value":"47","full_text":"RTA, REWARI - HR47( 01-APR-2017 )"},
+    {"name":"RTA, ROHTAK","code":"HR46","value":"46","full_text":"RTA, ROHTAK - HR46( 01-APR-2017 )"},
+    {"name":"RTA, SIRSA","code":"HR57","value":"57","full_text":"RTA, SIRSA - HR57( 01-APR-2017 )"},
+    {"name":"RTA, SONEPAT","code":"HR69","value":"69","full_text":"RTA, SONEPAT - HR69( 01-APR-2017 )"},
+    {"name":"RTA, YNR","code":"HR58","value":"58","full_text":"RTA, YNR - HR58( 01-APR-2017 )"},
+    {"name":"SAFIDON","code":"HR33","value":"33","full_text":"SAFIDON - HR33( 19-MAY-2017 )"},
+    {"name":"SAMALKHA","code":"HR60","value":"60","full_text":"SAMALKHA - HR60( 06-JUL-2017 )"},
+    {"name":"SDM AMBALA CANTONMENT","code":"HR85","value":"85","full_text":"SDM AMBALA CANTONMENT - HR85( 10-MAR-2017 )"},
+    {"name":"SDM BADHRA","code":"HR88","value":"88","full_text":"SDM BADHRA - HR88( 28-AUG-2017 )"},
+    {"name":"SDM BADKHAL","code":"HR87","value":"87","full_text":"SDM BADKHAL - HR87( 19-JUN-2017 )"},
+    {"name":"SDM BADLI","code":"HR89","value":"89","full_text":"SDM BADLI - HR89( 11-APR-2017 )"},
+    {"name":"SDM BADSHAHPUR","code":"HR98","value":"98","full_text":"SDM BADSHAHPUR - HR98( 15-JUL-2020 )"},
+    {"name":"SDM BARWALA","code":"HR80","value":"80","full_text":"SDM BARWALA - HR80( 23-JUN-2017 )"},
+    {"name":"SDM BERI","code":"HR77","value":"77","full_text":"SDM BERI - HR77( 21-JUN-2017 )"},
+    {"name":"SDM BILASPUR","code":"HR71","value":"71","full_text":"SDM BILASPUR - HR71( 18-JUL-2017 )"},
+    {"name":"SDM GHARAUNDA","code":"HR91","value":"91","full_text":"SDM GHARAUNDA - HR91( 29-MAY-2017 )"},
+    {"name":"SDM GURUGRAM","code":"HR26","value":"26","full_text":"SDM GURUGRAM - HR26( 27-JUN-2017 )"},
+    {"name":"SDM INDIRI","code":"HR75","value":"75","full_text":"SDM INDIRI - HR75( 13-JUN-2017 )"},
+    {"name":"SDM KALANWALI","code":"HR94","value":"94","full_text":"SDM KALANWALI - HR94( 28-JUL-2017 )"},
+    {"name":"SDM KHARKHONDA","code":"HR79","value":"79","full_text":"SDM KHARKHONDA - HR79( 05-JUL-2017 )"},
+    {"name":"SDM NARNAUND","code":"HR86","value":"86","full_text":"SDM NARNAUND - HR86( 22-MAY-2017 )"},
+    {"name":"SDM OFFICE KALKA","code":"HR49","value":"49","full_text":"SDM OFFICE KALKA - HR49( 26-MAY-2017 )"},
+    {"name":"SDM PUNHANA","code":"HR93","value":"93","full_text":"SDM PUNHANA - HR93( 03-MAY-2017 )"},
+    {"name":"SDM RADAUR","code":"HR92","value":"92","full_text":"SDM RADAUR - HR92( 24-MAY-2017 )"},
+    {"name":"SDM SAMPLA","code":"HR95","value":"95","full_text":"SDM SAMPLA - HR95( 24-APR-2017 )"},
+    {"name":"SDM SHAHABAD","code":"HR78","value":"78","full_text":"SDM SHAHABAD - HR78( 08-JUN-2017 )"},
+    {"name":"SDM UCHANA","code":"HR90","value":"90","full_text":"SDM UCHANA - HR90( 07-APR-2017 )"},
+    {"name":"SIRSA","code":"HR24","value":"24","full_text":"SIRSA - HR24( 03-JUL-2017 )"},
+    {"name":"SIWANI","code":"HR17","value":"17","full_text":"SIWANI - HR17( 21-JUL-2017 )"},
+    {"name":"SONEPAT","code":"HR10","value":"10","full_text":"SONEPAT - HR10( 05-JUL-2017 )"},
+    {"name":"THANESAR","code":"HR7","value":"7","full_text":"THANESAR - HR7( 22-JUN-2017 )"},
+    {"name":"TOHANA","code":"HR23","value":"23","full_text":"TOHANA - HR23( 07-JUN-2017 )"},
+    {"name":"TOSHAM","code":"HR48","value":"48","full_text":"TOSHAM - HR48( 01-JUN-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Meghalaya
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_ML = {
@@ -532,6 +742,50 @@ STATE_ML = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Jharkhand
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_JH = {
+  "state": "Jharkhand",
+  "state_code": "JH",
+  "extraction_date": "2025-07-29T14:02:44.596996",
+  "total_rtos": 32,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(25/25)"},
+    {"name":"Authorised Testing  Centre (TUV SUD), Ranchi","code":"JH201","value":"201","full_text":"Authorised Testing  Centre (TUV SUD), Ranchi - JH201( 24-AUG-2018 )"},
+    {"name":"Authorized Fitness Centre(VAHAN),Dhanbad","code":"JH202","value":"202","full_text":"Authorized Fitness Centre(VAHAN),Dhanbad - JH202( 24-SEP-2019 )"},
+    {"name":"BOKARO","code":"JH9","value":"9","full_text":"BOKARO - JH9( 24-JAN-2017 )"},
+    {"name":"CHATRA","code":"JH13","value":"13","full_text":"CHATRA - JH13( 19-JAN-2017 )"},
+    {"name":"DEOGHAR","code":"JH15","value":"15","full_text":"DEOGHAR - JH15( 19-JAN-2017 )"},
+    {"name":"DHANBAD","code":"JH10","value":"10","full_text":"DHANBAD - JH10( 19-JAN-2017 )"},
+    {"name":"DTO OFFICE DUMKA","code":"JH4","value":"4","full_text":"DTO OFFICE DUMKA - JH4( 19-JAN-2017 )"},
+    {"name":"EAST SINGHBHUM (JAMSHEDPUR)","code":"JH5","value":"5","full_text":"EAST SINGHBHUM (JAMSHEDPUR) - JH5( 19-JAN-2017 )"},
+    {"name":"GARHWA","code":"JH14","value":"14","full_text":"GARHWA - JH14( 19-JAN-2017 )"},
+    {"name":"GIRIDIH","code":"JH11","value":"11","full_text":"GIRIDIH - JH11( 19-JAN-2017 )"},
+    {"name":"GODDA","code":"JH17","value":"17","full_text":"GODDA - JH17( 19-JAN-2017 )"},
+    {"name":"GUMLA","code":"JH7","value":"7","full_text":"GUMLA - JH7( 29-JUN-2016 )"},
+    {"name":"HAZARIBAG","code":"JH2","value":"2","full_text":"HAZARIBAG - JH2( 19-JAN-2017 )"},
+    {"name":"JAMTARA","code":"JH21","value":"21","full_text":"JAMTARA - JH21( 19-JAN-2017 )"},
+    {"name":"KHUNTI","code":"JH23","value":"23","full_text":"KHUNTI - JH23( 19-JAN-2017 )"},
+    {"name":"KODERMA","code":"JH12","value":"12","full_text":"KODERMA - JH12( 19-JAN-2017 )"},
+    {"name":"LATEHAR","code":"JH19","value":"19","full_text":"LATEHAR - JH19( 19-JAN-2017 )"},
+    {"name":"LOHARDAGA","code":"JH8","value":"8","full_text":"LOHARDAGA - JH8( 19-JAN-2017 )"},
+    {"name":"M/s Auto Fitness Centre,Ranchi","code":"JH203","value":"203","full_text":"M/s Auto Fitness Centre,Ranchi - JH203( 13-NOV-2019 )"},
+    {"name":"M/s Auto Tech Vehicle Fitness,Ranchi","code":"JH205","value":"205","full_text":"M/s Auto Tech Vehicle Fitness,Ranchi - JH205( 05-AUG-2021 )"},
+    {"name":"M/S Global Automated Fitness,Hazaribag","code":"JH206","value":"206","full_text":"M/S Global Automated Fitness,Hazaribag - JH206( 11-AUG-2023 )"},
+    {"name":"M/s Universal Automated Fitness Centre, East Singhbhum","code":"JH204","value":"204","full_text":"M/s Universal Automated Fitness Centre, East Singhbhum - JH204( 09-MAR-2021 )"},
+    {"name":"PAKUR","code":"JH16","value":"16","full_text":"PAKUR - JH16( 19-JAN-2017 )"},
+    {"name":"PALAMU","code":"JH3","value":"3","full_text":"PALAMU - JH3( 19-JAN-2017 )"},
+    {"name":"RAMGARH","code":"JH24","value":"24","full_text":"RAMGARH - JH24( 14-MAR-2016 )"},
+    {"name":"RANCHI","code":"JH1","value":"1","full_text":"RANCHI - JH1( 19-JAN-2017 )"},
+    {"name":"SAHEBGANJ","code":"JH18","value":"18","full_text":"SAHEBGANJ - JH18( 19-JAN-2017 )"},
+    {"name":"SARAIKELA-KHARSAWAN","code":"JH22","value":"22","full_text":"SARAIKELA-KHARSAWAN - JH22( 19-JAN-2017 )"},
+    {"name":"SIMDEGA","code":"JH20","value":"20","full_text":"SIMDEGA - JH20( 19-JAN-2017 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"JH99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - JH99( 15-FEB-2022 )"},
+    {"name":"WEST SINGHBHUM (CHAIBASA)","code":"JH6","value":"6","full_text":"WEST SINGHBHUM (CHAIBASA) - JH6( 19-JAN-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Mizoram
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_MZ = {
@@ -551,6 +805,106 @@ STATE_MZ = {
     {"name":"SAIHA","code":"MZ3","value":"3","full_text":"SAIHA - MZ3( 29-AUG-2017 )"},
     {"name":"SERCHHIP","code":"MZ6","value":"6","full_text":"SERCHHIP - MZ6( 29-AUG-2017 )"},
     {"name":"STATE TRANSPORT AUTHORITY","code":"MZ99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - MZ99( 30-AUG-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Kerala
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_KL = {
+  "state": "Kerala",
+  "state_code": "KL",
+  "extraction_date": "2025-07-29T14:10:22.203929",
+  "total_rtos": 88,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(87/87)"},
+    {"name":"ADOOR SRTO","code":"KL26","value":"26","full_text":"ADOOR SRTO - KL26( 27-MAR-2019 )"},
+    {"name":"ALAPPUZHA RTO","code":"KL4","value":"4","full_text":"ALAPPUZHA RTO - KL4( 18-MAR-2019 )"},
+    {"name":"ALATHUR SRTO","code":"KL49","value":"49","full_text":"ALATHUR SRTO - KL49( 30-MAR-2019 )"},
+    {"name":"ALUVA SRTO","code":"KL41","value":"41","full_text":"ALUVA SRTO - KL41( 23-MAR-2019 )"},
+    {"name":"ANGAMALI SRTO","code":"KL63","value":"63","full_text":"ANGAMALI SRTO - KL63( 23-MAR-2019 )"},
+    {"name":"ATTINGAL RTO","code":"KL16","value":"16","full_text":"ATTINGAL RTO - KL16( 18-MAR-2019 )"},
+    {"name":"CHADAYAMANGALA SRTO","code":"KL82","value":"82","full_text":"CHADAYAMANGALA SRTO - KL82( 28-SEP-2020 )"},
+    {"name":"CHALAKKUDY SRTO","code":"KL64","value":"64","full_text":"CHALAKKUDY SRTO - KL64( 30-MAR-2019 )"},
+    {"name":"CHANGANACHERRY SRTO","code":"KL33","value":"33","full_text":"CHANGANACHERRY SRTO - KL33( 30-MAR-2019 )"},
+    {"name":"CHENGANNUR SRTO","code":"KL30","value":"30","full_text":"CHENGANNUR SRTO - KL30( 30-MAR-2019 )"},
+    {"name":"CHERTHALA SRTO","code":"KL32","value":"32","full_text":"CHERTHALA SRTO - KL32( 30-MAR-2019 )"},
+    {"name":"CHITTUR SRTO","code":"KL70","value":"70","full_text":"CHITTUR SRTO - KL70( 23-MAR-2019 )"},
+    {"name":"DEVIKULAM SRTO","code":"KL68","value":"68","full_text":"DEVIKULAM SRTO - KL68( 30-MAR-2019 )"},
+    {"name":"ERNAKULAM RTO","code":"KL7","value":"7","full_text":"ERNAKULAM RTO - KL7( 14-MAR-2019 )"},
+    {"name":"GURUVAYUR SRTO","code":"KL46","value":"46","full_text":"GURUVAYUR SRTO - KL46( 30-MAR-2019 )"},
+    {"name":"IDUKKI RTO","code":"KL6","value":"6","full_text":"IDUKKI RTO - KL6( 18-MAR-2019 )"},
+    {"name":"IRINJALAKUDA SRTO","code":"KL45","value":"45","full_text":"IRINJALAKUDA SRTO - KL45( 30-MAR-2019 )"},
+    {"name":"IRITTY SRTO","code":"KL78","value":"78","full_text":"IRITTY SRTO - KL78( 30-MAR-2019 )"},
+    {"name":"KANHANGAD SRTO","code":"KL60","value":"60","full_text":"KANHANGAD SRTO - KL60( 30-MAR-2019 )"},
+    {"name":"KANJIRAPPALLY SRTO","code":"KL34","value":"34","full_text":"KANJIRAPPALLY SRTO - KL34( 30-MAR-2019 )"},
+    {"name":"KANNUR RTO","code":"KL13","value":"13","full_text":"KANNUR RTO - KL13( 18-MAR-2019 )"},
+    {"name":"KARUNAGAPPALLY SRTO","code":"KL23","value":"23","full_text":"KARUNAGAPPALLY SRTO - KL23( 30-MAR-2019 )"},
+    {"name":"KASARGODE RTO","code":"KL14","value":"14","full_text":"KASARGODE RTO - KL14( 18-MAR-2019 )"},
+    {"name":"KATTAKADA SRTO","code":"KL74","value":"74","full_text":"KATTAKADA SRTO - KL74( 29-MAR-2019 )"},
+    {"name":"KAYAMKULAM SRTO","code":"KL29","value":"29","full_text":"KAYAMKULAM SRTO - KL29( 30-MAR-2019 )"},
+    {"name":"KAZHAKUTTOM SRTO","code":"KL22","value":"22","full_text":"KAZHAKUTTOM SRTO - KL22( 29-MAR-2019 )"},
+    {"name":"KODUNGALLUR SRTO","code":"KL47","value":"47","full_text":"KODUNGALLUR SRTO - KL47( 30-MAR-2019 )"},
+    {"name":"KODUVALLY SRTO","code":"KL57","value":"57","full_text":"KODUVALLY SRTO - KL57( 30-MAR-2019 )"},
+    {"name":"KOILANDY SRTO","code":"KL56","value":"56","full_text":"KOILANDY SRTO - KL56( 30-MAR-2019 )"},
+    {"name":"KOLLAM RTO","code":"KL2","value":"2","full_text":"KOLLAM RTO - KL2( 15-MAR-2019 )"},
+    {"name":"KONDOTTY SRTO","code":"KL84","value":"84","full_text":"KONDOTTY SRTO - KL84( 28-SEP-2020 )"},
+    {"name":"KONNI SRTO","code":"KL83","value":"83","full_text":"KONNI SRTO - KL83( 06-JUL-2020 )"},
+    {"name":"KOTHAMANGALAM SRTO","code":"KL44","value":"44","full_text":"KOTHAMANGALAM SRTO - KL44( 23-MAR-2019 )"},
+    {"name":"KOTTARAKKARA SRTO","code":"KL24","value":"24","full_text":"KOTTARAKKARA SRTO - KL24( 30-MAR-2019 )"},
+    {"name":"KOTTAYAM RTO","code":"KL5","value":"5","full_text":"KOTTAYAM RTO - KL5( 18-MAR-2019 )"},
+    {"name":"KOZHIKODE RTO","code":"KL11","value":"11","full_text":"KOZHIKODE RTO - KL11( 15-MAR-2019 )"},
+    {"name":"KUNNATHUR SRTO","code":"KL61","value":"61","full_text":"KUNNATHUR SRTO - KL61( 30-MAR-2019 )"},
+    {"name":"KUTTANADU SRTO","code":"KL66","value":"66","full_text":"KUTTANADU SRTO - KL66( 30-MAR-2019 )"},
+    {"name":"MALAPPURAM RTO","code":"KL10","value":"10","full_text":"MALAPPURAM RTO - KL10( 20-MAR-2019 )"},
+    {"name":"MALLAPPALLY SRTO","code":"KL28","value":"28","full_text":"MALLAPPALLY SRTO - KL28( 27-MAR-2019 )"},
+    {"name":"MANANTHAVADY SRTO","code":"KL72","value":"72","full_text":"MANANTHAVADY SRTO - KL72( 30-MAR-2019 )"},
+    {"name":"MANNARGHAT SRTO","code":"KL50","value":"50","full_text":"MANNARGHAT SRTO - KL50( 30-MAR-2019 )"},
+    {"name":"MATTANCHERRY SRTO","code":"KL43","value":"43","full_text":"MATTANCHERRY SRTO - KL43( 23-MAR-2019 )"},
+    {"name":"MAVELIKKARA SRTO","code":"KL31","value":"31","full_text":"MAVELIKKARA SRTO - KL31( 30-MAR-2019 )"},
+    {"name":"MUVATTUPUZHA RTO","code":"KL17","value":"17","full_text":"MUVATTUPUZHA RTO - KL17( 15-MAR-2019 )"},
+    {"name":"NANMANDA SRTO","code":"KL76","value":"76","full_text":"NANMANDA SRTO - KL76( 30-MAR-2019 )"},
+    {"name":"NATIONALISED SECTOR(TVPM) RTO","code":"KL15","value":"15","full_text":"NATIONALISED SECTOR(TVPM) RTO - KL15( 18-MAR-2019 )"},
+    {"name":"NEDUMANGADU SRTO","code":"KL21","value":"21","full_text":"NEDUMANGADU SRTO - KL21( 29-MAR-2019 )"},
+    {"name":"NEYYATTINKARA SRTO","code":"KL20","value":"20","full_text":"NEYYATTINKARA SRTO - KL20( 29-MAR-2019 )"},
+    {"name":"NILAMBUR SRTO","code":"KL71","value":"71","full_text":"NILAMBUR SRTO - KL71( 30-MAR-2019 )"},
+    {"name":"NORTH PARUR SRTO","code":"KL42","value":"42","full_text":"NORTH PARUR SRTO - KL42( 23-MAR-2019 )"},
+    {"name":"OTTAPPALAM SRTO","code":"KL51","value":"51","full_text":"OTTAPPALAM SRTO - KL51( 30-MAR-2019 )"},
+    {"name":"PALAI SRTO","code":"KL35","value":"35","full_text":"PALAI SRTO - KL35( 30-MAR-2019 )"},
+    {"name":"PALAKKAD RTO","code":"KL9","value":"9","full_text":"PALAKKAD RTO - KL9( 18-MAR-2019 )"},
+    {"name":"PARASSALA SRTO","code":"KL19","value":"19","full_text":"PARASSALA SRTO - KL19( 29-MAR-2019 )"},
+    {"name":"PATHANAMTHITTA RTO","code":"KL3","value":"3","full_text":"PATHANAMTHITTA RTO - KL3( 20-MAR-2019 )"},
+    {"name":"PATHANAPURAM SRTO","code":"KL80","value":"80","full_text":"PATHANAPURAM SRTO - KL80( 28-SEP-2020 )"},
+    {"name":"PATTAMBI SRTO","code":"KL52","value":"52","full_text":"PATTAMBI SRTO - KL52( 30-MAR-2019 )"},
+    {"name":"PAYYANNUR SRTO","code":"KL86","value":"86","full_text":"PAYYANNUR SRTO - KL86( 28-SEP-2020 )"},
+    {"name":"PERAMBRA SRTO","code":"KL77","value":"77","full_text":"PERAMBRA SRTO - KL77( 30-MAR-2019 )"},
+    {"name":"PERINTHALMANNA SRTO","code":"KL53","value":"53","full_text":"PERINTHALMANNA SRTO - KL53( 30-MAR-2019 )"},
+    {"name":"PERUMBAVUR SRTO","code":"KL40","value":"40","full_text":"PERUMBAVUR SRTO - KL40( 23-MAR-2019 )"},
+    {"name":"PONNANI SRTO","code":"KL54","value":"54","full_text":"PONNANI SRTO - KL54( 30-MAR-2019 )"},
+    {"name":"PUNALUR SRTO","code":"KL25","value":"25","full_text":"PUNALUR SRTO - KL25( 30-MAR-2019 )"},
+    {"name":"RAMANATTUKARA (FEROKE) SRTO","code":"KL85","value":"85","full_text":"RAMANATTUKARA (FEROKE) SRTO - KL85( 28-SEP-2020 )"},
+    {"name":"RANNI SRTO","code":"KL62","value":"62","full_text":"RANNI SRTO - KL62( 30-MAR-2019 )"},
+    {"name":"SULTHANBATHERY SRTO","code":"KL73","value":"73","full_text":"SULTHANBATHERY SRTO - KL73( 30-MAR-2019 )"},
+    {"name":"TC OFFICE - STA OFFICE","code":"KL99","value":"99","full_text":"TC OFFICE - STA OFFICE - KL99( 14-MAR-2019 )"},
+    {"name":"THALASSERY SRTO","code":"KL58","value":"58","full_text":"THALASSERY SRTO - KL58( 30-MAR-2019 )"},
+    {"name":"THALIPARAMBA SRTO","code":"KL59","value":"59","full_text":"THALIPARAMBA SRTO - KL59( 30-MAR-2019 )"},
+    {"name":"THIRURANGADI SRTO","code":"KL65","value":"65","full_text":"THIRURANGADI SRTO - KL65( 30-MAR-2019 )"},
+    {"name":"THIRUR SRTO","code":"KL55","value":"55","full_text":"THIRUR SRTO - KL55( 30-MAR-2019 )"},
+    {"name":"THIRUVALLA SRTO","code":"KL27","value":"27","full_text":"THIRUVALLA SRTO - KL27( 27-MAR-2019 )"},
+    {"name":"THODUPUZHA SRTO","code":"KL38","value":"38","full_text":"THODUPUZHA SRTO - KL38( 30-MAR-2019 )"},
+    {"name":"THRIPRAYAR SRTO","code":"KL75","value":"75","full_text":"THRIPRAYAR SRTO - KL75( 30-MAR-2019 )"},
+    {"name":"THRISSUR RTO","code":"KL8","value":"8","full_text":"THRISSUR RTO - KL8( 18-MAR-2019 )"},
+    {"name":"TRIPUNITHURA SRTO","code":"KL39","value":"39","full_text":"TRIPUNITHURA SRTO - KL39( 23-MAR-2019 )"},
+    {"name":"TRIVANDRUM RTO","code":"KL1","value":"1","full_text":"TRIVANDRUM RTO - KL1( 21-FEB-2019 )"},
+    {"name":"UDUMBANCHOLA SRTO","code":"KL69","value":"69","full_text":"UDUMBANCHOLA SRTO - KL69( 30-MAR-2019 )"},
+    {"name":"UZHAVOOR SRTO","code":"KL67","value":"67","full_text":"UZHAVOOR SRTO - KL67( 30-MAR-2019 )"},
+    {"name":"VADAKARA RTO","code":"KL18","value":"18","full_text":"VADAKARA RTO - KL18( 15-MAR-2019 )"},
+    {"name":"VAIKOM SRTO","code":"KL36","value":"36","full_text":"VAIKOM SRTO - KL36( 30-MAR-2019 )"},
+    {"name":"VANDIPERIYAR SRTO","code":"KL37","value":"37","full_text":"VANDIPERIYAR SRTO - KL37( 30-MAR-2019 )"},
+    {"name":"VARKALA SRTO","code":"KL81","value":"81","full_text":"VARKALA SRTO - KL81( 10-JUL-2020 )"},
+    {"name":"VELLARIKUNDU SRTO","code":"KL79","value":"79","full_text":"VELLARIKUNDU SRTO - KL79( 30-MAR-2019 )"},
+    {"name":"WADAKKANCHERRY SRTO","code":"KL48","value":"48","full_text":"WADAKKANCHERRY SRTO - KL48( 30-MAR-2019 )"},
+    {"name":"WAYANAD RTO","code":"KL12","value":"12","full_text":"WAYANAD RTO - KL12( 15-MAR-2019 )"}
   ]
 }
 
@@ -992,21 +1346,54 @@ STATE_UT = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Lakshadweep
+# Odisha
 # ──────────────────────────────────────────────────────────────────────────────
-STATE_LA = {
-  "state": "Lakshadweep",
-  "state_code": "LA",
-  "extraction_date": "2025-07-29T14:12:32.423115",
-  "total_rtos": 7,
+STATE_OD = {
+  "state": "Odisha",
+  "state_code": "OD",
+  "extraction_date": "2025-07-29T14:24:35.944500",
+  "total_rtos": 40,
   "rtos": [
-    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(6/9)"},
-    {"name":"AMINI","code":"LD3","value":"3","full_text":"AMINI - LD3( 23-DEC-2024 )"},
-    {"name":"ANDROTH","code":"LD4","value":"4","full_text":"ANDROTH - LD4( 06-NOV-2024 )"},
-    {"name":"CHETLAT","code":"LD5","value":"5","full_text":"CHETLAT - LD5( 06-FEB-2025 )"},
-    {"name":"KALPENI","code":"LD7","value":"7","full_text":"KALPENI - LD7( 09-MAY-2025 )"},
-    {"name":"KAVARATTI","code":"LD1","value":"1","full_text":"KAVARATTI - LD1( 13-JUN-2024 )"},
-    {"name":"MINICOY","code":"LD9","value":"9","full_text":"MINICOY - LD9( 06-NOV-2024 )"}
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(39/39)"},
+    {"name":"ANGUL RTO","code":"OD19","value":"19","full_text":"ANGUL RTO - OD19( 25-DEC-2017 )"},
+    {"name":"ARTO BARBIL","code":"OD901","value":"901","full_text":"ARTO BARBIL - OD901( 04-DEC-2017 )"},
+    {"name":"BALASORE RTO","code":"OD1","value":"1","full_text":"BALASORE RTO - OD1( 07-NOV-2017 )"},
+    {"name":"BARGARH RTO","code":"OD17","value":"17","full_text":"BARGARH RTO - OD17( 04-DEC-2017 )"},
+    {"name":"BHADRAK RTO","code":"OD22","value":"22","full_text":"BHADRAK RTO - OD22( 04-DEC-2017 )"},
+    {"name":"BHANJANAGAR RTO","code":"OD32","value":"32","full_text":"BHANJANAGAR RTO - OD32( 04-DEC-2017 )"},
+    {"name":"BHUBANESWAR-II RTO","code":"OD33","value":"33","full_text":"BHUBANESWAR-II RTO - OD33( 23-OCT-2017 )"},
+    {"name":"BHUBANESWAR RTO","code":"OD2","value":"2","full_text":"BHUBANESWAR RTO - OD2( 22-JAN-2018 )"},
+    {"name":"BOLANGIR RTO","code":"OD3","value":"3","full_text":"BOLANGIR RTO - OD3( 25-DEC-2017 )"},
+    {"name":"BOUDH RTO","code":"OD27","value":"27","full_text":"BOUDH RTO - OD27( 23-OCT-2017 )"},
+    {"name":"CHANDIKHOLE RTO","code":"OD4","value":"4","full_text":"CHANDIKHOLE RTO - OD4( 23-OCT-2017 )"},
+    {"name":"CUTTACK RTO","code":"OD5","value":"5","full_text":"CUTTACK RTO - OD5( 31-MAY-2017 )"},
+    {"name":"DEOGARH RTO","code":"OD28","value":"28","full_text":"DEOGARH RTO - OD28( 23-OCT-2017 )"},
+    {"name":"DHENKANAL RTO","code":"OD6","value":"6","full_text":"DHENKANAL RTO - OD6( 07-NOV-2017 )"},
+    {"name":"GAJAPATI RTO","code":"OD20","value":"20","full_text":"GAJAPATI RTO - OD20( 07-NOV-2017 )"},
+    {"name":"GANJAM RTO","code":"OD7","value":"7","full_text":"GANJAM RTO - OD7( 04-DEC-2017 )"},
+    {"name":"JAGATSINGHPUR RTO","code":"OD21","value":"21","full_text":"JAGATSINGHPUR RTO - OD21( 04-DEC-2017 )"},
+    {"name":"JAJPUR RTO","code":"OD34","value":"34","full_text":"JAJPUR RTO - OD34( 23-OCT-2017 )"},
+    {"name":"JHARSUGUDA RTO","code":"OD23","value":"23","full_text":"JHARSUGUDA RTO - OD23( 07-NOV-2017 )"},
+    {"name":"KALAHANDI RTO","code":"OD8","value":"8","full_text":"KALAHANDI RTO - OD8( 23-OCT-2017 )"},
+    {"name":"KENDRAPARA RTO","code":"OD29","value":"29","full_text":"KENDRAPARA RTO - OD29( 23-OCT-2017 )"},
+    {"name":"KEONJHAR RTO","code":"OD9","value":"9","full_text":"KEONJHAR RTO - OD9( 04-DEC-2017 )"},
+    {"name":"KHORDHA ARTO","code":"OD201","value":"201","full_text":"KHORDHA ARTO - OD201( 20-JAN-2018 )"},
+    {"name":"KORAPUT RTO","code":"OD10","value":"10","full_text":"KORAPUT RTO - OD10( 25-DEC-2017 )"},
+    {"name":"MALKANAGIRI RTO","code":"OD30","value":"30","full_text":"MALKANAGIRI RTO - OD30( 25-DEC-2017 )"},
+    {"name":"MAYURBHANJ RTO","code":"OD11","value":"11","full_text":"MAYURBHANJ RTO - OD11( 08-NOV-2017 )"},
+    {"name":"NAWARANGPUR RTO","code":"OD24","value":"24","full_text":"NAWARANGPUR RTO - OD24( 07-NOV-2017 )"},
+    {"name":"NAYAGARH RTO","code":"OD25","value":"25","full_text":"NAYAGARH RTO - OD25( 25-DEC-2017 )"},
+    {"name":"NUAPADA RTO","code":"OD26","value":"26","full_text":"NUAPADA RTO - OD26( 06-NOV-2017 )"},
+    {"name":"PHULBANI RTO","code":"OD12","value":"12","full_text":"PHULBANI RTO - OD12( 23-OCT-2017 )"},
+    {"name":"PURI RTO","code":"OD13","value":"13","full_text":"PURI RTO - OD13( 25-DEC-2017 )"},
+    {"name":"RAIRANGPUR ARTO","code":"OD111","value":"111","full_text":"RAIRANGPUR ARTO - OD111( 08-NOV-2017 )"},
+    {"name":"RAYGADA RTO","code":"OD18","value":"18","full_text":"RAYGADA RTO - OD18( 25-DEC-2017 )"},
+    {"name":"ROURKELA RTO","code":"OD14","value":"14","full_text":"ROURKELA RTO - OD14( 25-DEC-2017 )"},
+    {"name":"SAMBALPUR RTO","code":"OD15","value":"15","full_text":"SAMBALPUR RTO - OD15( 04-DEC-2017 )"},
+    {"name":"SONEPUR RTO","code":"OD31","value":"31","full_text":"SONEPUR RTO - OD31( 08-NOV-2017 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"OD99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - OD99( 24-APR-2018 )"},
+    {"name":"SUNDERGARH RTO","code":"OD16","value":"16","full_text":"SUNDERGARH RTO - OD16( 08-NOV-2017 )"},
+    {"name":"TALCHER RTO","code":"OD35","value":"35","full_text":"TALCHER RTO - OD35( 25-DEC-2017 )"}
   ]
 }
 
@@ -1607,6 +1994,9 @@ def run_seed():
         print("🔧 Seeding RTOS for GA (Goa)")
         seed_state_rtos(db, portal_ids, STATE_GA)
 
+        print("🔧 Seeding RTOS for LA (Lakshadweep)")
+        seed_state_rtos(db, portal_ids, STATE_LD)
+
         print("🔧 Seeding RTOS for JK (Jammu & Kashmir)")
         seed_state_rtos(db, portal_ids, STATE_JK)
 
@@ -1616,11 +2006,17 @@ def run_seed():
         print("🔧 Seeding RTOS for AS (Assam)")
         seed_state_rtos(db, portal_ids, STATE_AS)
 
+        print("🔧 Seeding RTOS for KL (Kerala)")
+        seed_state_rtos(db, portal_ids, STATE_KL)
+
         print("🔧 Seeding RTOS for AR (Arunachal Pradesh)")
         seed_state_rtos(db, portal_ids, STATE_AR)
 
         print("🔧 Seeding RTOS for SK (Sikkim)")
         seed_state_rtos(db, portal_ids, STATE_SK)
+
+        print("🔧 Seeding RTOS for OD (Odisha)")
+        seed_state_rtos(db, portal_ids, STATE_OD)
 
         print("🔧 Seeding RTOS for TR (Tripura)")
         seed_state_rtos(db, portal_ids, STATE_TR)
@@ -1631,14 +2027,14 @@ def run_seed():
         print("🔧 Seeding RTOS for RJ (Rajasthan)")
         seed_state_rtos(db, portal_ids, STATE_RJ)
 
+        print("🔧 Seeding RTOS for JH (Jharkhand)")
+        seed_state_rtos(db, portal_ids, STATE_JH)
+
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)
 
         print("🔧 Seeding RTOS for UT (UT of DNH and DD)")
         seed_state_rtos(db, portal_ids, STATE_UT)
-
-        print("🔧 Seeding RTOS for LA (Lakshadweep)")
-        seed_state_rtos(db, portal_ids, STATE_LA)
 
         print("🔧 Seeding RTOS for MH (Maharashtra)")
         seed_state_rtos(db, portal_ids, STATE_MH)
@@ -1657,6 +2053,9 @@ def run_seed():
 
         print("🔧 Seeding RTOS for NL (Nagaland)")
         seed_state_rtos(db, portal_ids, STATE_NL)
+
+        print("🔧 Seeding RTOS for HR (Haryana)")
+        seed_state_rtos(db, portal_ids, STATE_HR)
 
         print("🔧 Seeding RTOS for PY (Puducherry)")
         seed_state_rtos(db, portal_ids, STATE_PY)
