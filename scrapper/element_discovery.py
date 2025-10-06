@@ -519,7 +519,7 @@ def main():
         
         print("\nVerification Results:")
         for field, working in results.items():
-            status = "✓" if working else "✗"
+            status = "[OK]" if working else "[ISSUE]"
             print(f"  {field}: {status}")
             
     elif len(sys.argv) > 1 and sys.argv[1] == "auto":
@@ -529,7 +529,7 @@ def main():
         if results:
             print("\nDiscovery Results:")
             for field, success in results.items():
-                status = "✓" if success else "✗"
+                status = "[OK]" if success else "[ISSUE]"
                 print(f"  {field}: {status}")
         else:
             print("All selectors are up to date!")
@@ -540,7 +540,7 @@ def main():
         
         print("\nDiscovery Results:")
         for field, success in results.items():
-            status = "✓" if success else "✗"
+            status = "[OK]" if success else "[ISSUE]"
             print(f"  {field}: {status}")
 
 

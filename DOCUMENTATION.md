@@ -99,7 +99,7 @@ Independent modules → easy to test and replace if DOM changes.
 
 ## ⚙️ Services Layer (services/)
 
-- Human-like Extraction Service:
+>  Human-like Extraction Service:
 
 - Sequentially loops states → RTOs → filters.
 

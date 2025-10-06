@@ -798,6 +798,78 @@ STATE_GJ = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# West Bengal
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_WB = {
+  "state": "West Bengal",
+  "state_code": "WB",
+  "extraction_date": "2025-07-29T14:48:36.120399",
+  "total_rtos": 60,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(59/59)"},
+    {"name":"ALIPORE RTO","code":"WB19","value":"19","full_text":"ALIPORE RTO - WB19( 13-DEC-2016 )"},
+    {"name":"ALIPURDUAR RTO","code":"WB69","value":"69","full_text":"ALIPURDUAR RTO - WB69( 22-FEB-2017 )"},
+    {"name":"ARAMBAG ARTO","code":"WB18","value":"18","full_text":"ARAMBAG ARTO - WB18( 10-JAN-2017 )"},
+    {"name":"BANGAON ARTO","code":"WB27","value":"27","full_text":"BANGAON ARTO - WB27( 17-JAN-2017 )"},
+    {"name":"BANKURA RTO","code":"WB67","value":"67","full_text":"BANKURA RTO - WB67( 11-APR-2017 )"},
+    {"name":"BARASAT RTO","code":"WB25","value":"25","full_text":"BARASAT RTO - WB25( 17-JAN-2017 )"},
+    {"name":"BARRACKPORE ARTO","code":"WB23","value":"23","full_text":"BARRACKPORE ARTO - WB23( 27-DEC-2016 )"},
+    {"name":"BARUIPUR ARTO","code":"WB95","value":"95","full_text":"BARUIPUR ARTO - WB95( 31-JAN-2017 )"},
+    {"name":"BASIRHAT ARTO","code":"WB21","value":"21","full_text":"BASIRHAT ARTO - WB21( 17-JAN-2017 )"},
+    {"name":"BEHALA ARTO","code":"WB9","value":"9","full_text":"BEHALA ARTO - WB9( 27-DEC-2017 )"},
+    {"name":"BIRBHUM RTO","code":"WB53","value":"53","full_text":"BIRBHUM RTO - WB53( 28-FEB-2017 )"},
+    {"name":"BISHNUPUR ARTO","code":"WB87","value":"87","full_text":"BISHNUPUR ARTO - WB87( 11-APR-2017 )"},
+    {"name":"BOLPUR ARTO","code":"WB47","value":"47","full_text":"BOLPUR ARTO - WB47( 28-FEB-2017 )"},
+    {"name":"BUNIADPUR ARTO","code":"null62","value":"62","full_text":"BUNIADPUR ARTO - null62( 19-MAY-2025 )"},
+    {"name":"CANNING ARTO","code":"null98","value":"98","full_text":"CANNING ARTO - null98( 19-MAY-2025 )"},
+    {"name":"CHANCHOL ARTO","code":"WB83","value":"83","full_text":"CHANCHOL ARTO - WB83( 23-MAR-2017 )"},
+    {"name":"CONTAI ARTO","code":"WB31","value":"31","full_text":"CONTAI ARTO - WB31( 09-FEB-2017 )"},
+    {"name":"COOCHBEHAR RTO","code":"WB63","value":"63","full_text":"COOCHBEHAR RTO - WB63( 28-MAR-2017 )"},
+    {"name":"DAKSHIN DINAJPUR RTO","code":"WB61","value":"61","full_text":"DAKSHIN DINAJPUR RTO - WB61( 06-APR-2017 )"},
+    {"name":"DARJEELING RTO","code":"WB76","value":"76","full_text":"DARJEELING RTO - WB76( 30-MAR-2017 )"},
+    {"name":"DIAMOND HARBOUR ARTO","code":"WB97","value":"97","full_text":"DIAMOND HARBOUR ARTO - WB97( 31-JAN-2017 )"},
+    {"name":"DURGAPORE ARTO","code":"WB39","value":"39","full_text":"DURGAPORE ARTO - WB39( 21-FEB-2017 )"},
+    {"name":"GHATAL ARTO","code":"WB50","value":"50","full_text":"GHATAL ARTO - WB50( 07-MAR-2017 )"},
+    {"name":"HALDIA ARTO","code":"WB32","value":"32","full_text":"HALDIA ARTO - WB32( 10-JUL-2017 )"},
+    {"name":"HOOGHLY RTO","code":"WB15","value":"15","full_text":"HOOGHLY RTO - WB15( 10-JAN-2017 )"},
+    {"name":"HOWRAH RTO","code":"WB11","value":"11","full_text":"HOWRAH RTO - WB11( 20-DEC-2016 )"},
+    {"name":"ISLAMPUR ARTO","code":"WB91","value":"91","full_text":"ISLAMPUR ARTO - WB91( 28-MAR-2017 )"},
+    {"name":"JALPAIGURI RTO","code":"WB71","value":"71","full_text":"JALPAIGURI RTO - WB71( 21-FEB-2017 )"},
+    {"name":"JANGIPUR ARTO","code":"WB93","value":"93","full_text":"JANGIPUR ARTO - WB93( 16-MAR-2017 )"},
+    {"name":"JHARGRAM RTO","code":"WB49","value":"49","full_text":"JHARGRAM RTO - WB49( 07-MAR-2017 )"},
+    {"name":"KALIMPONG RTO","code":"WB78","value":"78","full_text":"KALIMPONG RTO - WB78( 30-MAR-2017 )"},
+    {"name":"KALNA ARTO","code":"WB43","value":"43","full_text":"KALNA ARTO - WB43( 21-FEB-2017 )"},
+    {"name":"KALYANI ARTO","code":"WB89","value":"89","full_text":"KALYANI ARTO - WB89( 16-MAR-2017 )"},
+    {"name":"KANDI","code":"WB99","value":"99","full_text":"KANDI - WB99( 11-JUL-2024 )"},
+    {"name":"KASBA ARTO","code":"WB5","value":"5","full_text":"KASBA ARTO - WB5( 28-SEP-2016 )"},
+    {"name":"KATWA ARTO","code":"WB75","value":"75","full_text":"KATWA ARTO - WB75( 04-SEP-2018 )"},
+    {"name":"KHARAGPUR ARTO","code":"WB35","value":"35","full_text":"KHARAGPUR ARTO - WB35( 07-MAR-2017 )"},
+    {"name":"MALDA RTO","code":"WB65","value":"65","full_text":"MALDA RTO - WB65( 21-MAR-2017 )"},
+    {"name":"MANBAZAR","code":"WB80","value":"80","full_text":"MANBAZAR - WB80( 09-JUN-2023 )"},
+    {"name":"MATHABHANGA ARTO","code":"WB85","value":"85","full_text":"MATHABHANGA ARTO - WB85( 28-MAR-2017 )"},
+    {"name":"MURSHIDABAD RTO","code":"WB57","value":"57","full_text":"MURSHIDABAD RTO - WB57( 23-MAR-2017 )"},
+    {"name":"NADIA RTO","code":"WB51","value":"51","full_text":"NADIA RTO - WB51( 06-APR-2017 )"},
+    {"name":"PASCHIM BURDWAN RTO","code":"WB37","value":"37","full_text":"PASCHIM BURDWAN RTO - WB37( 04-APR-2017 )"},
+    {"name":"PASCHIM MIDNAPORE RTO","code":"WB33","value":"33","full_text":"PASCHIM MIDNAPORE RTO - WB33( 07-MAR-2017 )"},
+    {"name":"PURBA BURDWAN RTO","code":"WB41","value":"41","full_text":"PURBA BURDWAN RTO - WB41( 21-FEB-2017 )"},
+    {"name":"PURULIA RTO","code":"WB55","value":"55","full_text":"PURULIA RTO - WB55( 16-FEB-2017 )"},
+    {"name":"PVD KOLKATA","code":"WB1","value":"1","full_text":"PVD KOLKATA - WB1( 25-JAN-2017 )"},
+    {"name":"RAGHUNATHPUR ARTO","code":"WB81","value":"81","full_text":"RAGHUNATHPUR ARTO - WB81( 16-FEB-2017 )"},
+    {"name":"RAMPURHAT ARTO","code":"WB45","value":"45","full_text":"RAMPURHAT ARTO - WB45( 28-FEB-2017 )"},
+    {"name":"SALTLAKE ARTO","code":"WB7","value":"7","full_text":"SALTLAKE ARTO - WB7( 03-JAN-2017 )"},
+    {"name":"SILIGURI ARTO","code":"WB73","value":"73","full_text":"SILIGURI ARTO - WB73( 30-MAR-2017 )"},
+    {"name":"SRIRAMPUR ARTO","code":"WB17","value":"17","full_text":"SRIRAMPUR ARTO - WB17( 10-JAN-2017 )"},
+    {"name":"STA-Durgapur","code":"WB997","value":"997","full_text":"STA-Durgapur - WB997( 08-MAR-2019 )"},
+    {"name":"STA-North Bengal (Siliguri)","code":"WB998","value":"998","full_text":"STA-North Bengal (Siliguri) - WB998( 13-MAR-2019 )"},
+    {"name":"STA WEST BENGAL","code":"WB999","value":"999","full_text":"STA WEST BENGAL - WB999( 08-AUG-2018 )"},
+    {"name":"TAMLUK RTO","code":"WB29","value":"29","full_text":"TAMLUK RTO - WB29( 09-FEB-2017 )"},
+    {"name":"TEHATTA ARTO","code":"WB52","value":"52","full_text":"TEHATTA ARTO - WB52( 08-JUL-2020 )"},
+    {"name":"ULUBERIA ARTO","code":"WB13","value":"13","full_text":"ULUBERIA ARTO - WB13( 25-JAN-2017 )"},
+    {"name":"UTTAR DINAJPUR RTO","code":"WB59","value":"59","full_text":"UTTAR DINAJPUR RTO - WB59( 04-APR-2017 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Bihar
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_BR = {
