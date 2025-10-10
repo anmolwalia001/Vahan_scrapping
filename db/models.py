@@ -77,24 +77,6 @@ class JobTemplate(Base):
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
 
-# ============================================================
-# 3) Workers / UA / Proxies
-# ============================================================
-
-# class WorkerNode(Base):
-#     __tablename__ = "worker_node"
-
-#     id = Column(BigInteger, primary_key=True, autoincrement=True)
-#     name = Column(String(120), nullable=False, unique=True)
-#     kind = Column(SAEnum("browser", "parser", "orchestrator", name="worker_kind_enum"),
-#                   default="browser", nullable=False)
-#     max_conc = Column(Integer, default=1, nullable=False)
-#     status = Column(SAEnum("active", "draining", "offline", name="worker_status_enum"),
-#                     default="active", nullable=False)
-#     last_heartbeat = Column(DateTime)
-#     created_at = Column(TIMESTAMP, server_default=func.now())
-
-
 class UserAgentPool(Base):
     __tablename__ = "user_agent_pool"
 
@@ -112,27 +94,6 @@ class UserAgent(Base):
     is_mobile = Column(Boolean, nullable=False, default=False)
     weight = Column(Integer, default=1)
     created_at = Column(TIMESTAMP, server_default=func.now())
-
-
-# class ProxyPool(Base):
-#     __tablename__ = "proxy_pool"
-
-#     id = Column(BigInteger, primary_key=True, autoincrement=True)
-#     name = Column(String(120), nullable=False, unique=True)
-#     notes = Column(Text)
-#     created_at = Column(TIMESTAMP, server_default=func.now())
-
-
-# class ProxyEndpoint(Base):
-#     __tablename__ = "proxy_endpoint"
-
-#     id = Column(BigInteger, primary_key=True, autoincrement=True)
-#     pool_id = Column(BigInteger, ForeignKey("proxy_pool.id"), nullable=False)
-#     endpoint = Column(String(300), nullable=False)
-#     region = Column(String(64))
-#     weight = Column(Integer, default=1)
-#     is_active = Column(Boolean, default=True, nullable=False)
-#     last_used_at = Column(DateTime)
 
 # ============================================================
 # 4) States / RTO / Axis / Vehicle Filters
@@ -195,6 +156,13 @@ class File(Base):
     sha256 = Column(String(64))
     downloaded_at = Column(DateTime)
     created_at = Column(TIMESTAMP, server_default=func.now())
+
+    data_records = relationship(
+        "VehicleRegistrationData",
+        back_populates="file",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
 
 
 class ExtractionRTO(Base):
@@ -284,3 +252,47 @@ class ExtractionResult(Base):
     created_at = Column(TIMESTAMP, server_default=func.now())
 
     job = relationship("ExtractionJob", back_populates="results")
+
+class VehicleRegistrationData(Base):
+    """
+    Stores actual data from Excel files - maker-wise monthly registration data
+    Each row represents one maker's monthly registration numbers from one file
+    """
+    __tablename__ = "vehicle_registration_data"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    
+    # Maker information
+    maker_name = Column(String(255), nullable=False)
+    s_no = Column(Integer, nullable=True)  # Serial number from Excel
+    
+    # Monthly data (all nullable as not all months may have data)
+    jan = Column(Integer, nullable=True, default=None)
+    feb = Column(Integer, nullable=True, default=None)
+    mar = Column(Integer, nullable=True, default=None)
+    apr = Column(Integer, nullable=True, default=None)
+    may = Column(Integer, nullable=True, default=None)
+    jun = Column(Integer, nullable=True, default=None)
+    jul = Column(Integer, nullable=True, default=None)
+    aug = Column(Integer, nullable=True, default=None)
+    sep = Column(Integer, nullable=True, default=None)
+    oct = Column(Integer, nullable=True, default=None)
+    nov = Column(Integer, nullable=True, default=None)
+    dec = Column(Integer, nullable=True, default=None)
+    
+    # Total
+    total = Column(Integer, nullable=True, default=None)
+    
+    # Metadata
+    year = Column(Integer, nullable=True)  # Extracted from file header
+    state_code = Column(String(10), nullable=True)  # From filename
+    rto_code = Column(String(32), nullable=True)  # From filename
+    
+    created_at = Column(TIMESTAMP, server_default=func.now())
+    
+    # Relationships
+    file_id = Column(BigInteger, ForeignKey("files.id", ondelete="CASCADE"), nullable=False)
+    file = relationship("File", back_populates="data_records")
+
+    def __repr__(self):
+        return f"<VehicleRegistrationData(id={self.id}, maker={self.maker_name}, total={self.total})>"

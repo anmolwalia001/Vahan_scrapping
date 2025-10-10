@@ -27,8 +27,6 @@ def main():
     
     print("Starting extraction for ALL STATES...")
     print("This will take several hours to complete.")
-    print("You can monitor progress in the console and in 'human_extraction.log'")
-    print("The browser will remain visible so you can see what's happening.")
     print()
     
     try:
@@ -54,14 +52,14 @@ def main():
         print(f"\nFiles saved in: result/{summary.get('output_directory', 'extraction_output')}")
         
         # Summary statistics
-        total_possible = sum(r['total_rtos'] for r in summary['state_results'])
-        total_success = sum(r['files_downloaded'] for r in summary['state_results'])
-        
-        print(f"\nFINAL SUMMARY:")
-        print(f"- Total possible files: {total_possible}")
-        print(f"- Successfully downloaded: {total_success}")
-        print(f"- Overall success rate: {(total_success/total_possible*100):.1f}%")
-        print(f"- Time per state: {summary['duration_minutes']/summary['states_processed']:.1f} minutes average")
+        # total_possible = sum(r['total_rtos'] for r in summary['state_results'])
+        # total_success = sum(r['files_downloaded'] for r in summary['state_results'])
+
+        # print(f"\nFINAL SUMMARY:")
+        # print(f"- Total possible files: {total_possible}")
+        # print(f"- Successfully downloaded: {total_success}")
+        # print(f"- Overall success rate: {(total_success/total_possible*100):.1f}%")
+        # print(f"- Time per state: {summary['duration_minutes']/summary['states_processed']:.1f} minutes average")
         
     except KeyboardInterrupt:
         print("\n\nExtraction stopped by user (Ctrl+C)")
