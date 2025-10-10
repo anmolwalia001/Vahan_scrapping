@@ -3,6 +3,7 @@ import logging
 from db.session import SessionLocal
 from db.models import JobTemplate
 from services.run_human_like_extraction import main as run_human_extraction
+from services.excel_storage_service import process_all_excel_files
 from scrapper.element_discovery import ElementDiscoverer
 from apscheduler.schedulers.blocking import BlockingScheduler
 
@@ -12,7 +13,7 @@ scheduler = BlockingScheduler(timezone="Asia/Kolkata")
 
 def run_extraction_with_discovery():
     """
-    Wrapper function that runs element discovery before extraction
+    Wrapper function that runs element discovery, extraction, and then Excel storage
     """
     try:
         logger.info("=== Starting Element Discovery ===")
@@ -39,9 +40,41 @@ def run_extraction_with_discovery():
         logger.info("=== Starting Extraction ===")
         
         # Run the actual extraction
-        run_human_extraction()
+        extraction_success = False
+        try:
+            run_human_extraction()
+            extraction_success = True
+            logger.info("=== Extraction Complete ===")
+        except Exception as e:
+            logger.error(f"Error during extraction: {e}", exc_info=True)
+            logger.warning("Extraction failed - skipping Excel storage")
         
-        logger.info("=== Extraction Complete ===")
+        # Only run Excel storage if extraction was successful
+        if extraction_success:
+            logger.info("=== Starting Excel Storage Service ===")
+            try:
+                stats = process_all_excel_files()
+                
+                logger.info("=== Excel Storage Complete ===")
+                logger.info(f"Storage Summary:")
+                logger.info(f"  Total files found: {stats.get('total_files_found', 0)}")
+                logger.info(f"  Files processed: {stats.get('files_processed', 0)}")
+                logger.info(f"  Files skipped: {stats.get('files_skipped', 0)}")
+                logger.info(f"  Files failed: {stats.get('files_failed', 0)}")
+                logger.info(f"  Total records created: {stats.get('total_records_created', 0)}")
+                
+                if stats.get('errors'):
+                    logger.warning(f"Errors occurred in {len(stats['errors'])} files:")
+                    for error in stats['errors'][:5]:  # Show first 5 errors
+                        logger.warning(f"  - {error['file']}: {error['error']}")
+                    
+                    if len(stats['errors']) > 5:
+                        logger.warning(f"  ... and {len(stats['errors']) - 5} more errors")
+                        
+            except Exception as e:
+                logger.error(f"Error in Excel storage service: {e}", exc_info=True)
+        
+        logger.info("=== Full Extraction Pipeline Complete ===")
         
     except Exception as e:
         logger.error(f"Error in extraction pipeline: {e}", exc_info=True)
@@ -129,7 +162,6 @@ def run_scheduler():
         scheduler.start()
     except (KeyboardInterrupt, SystemExit):
         logger.info("Scheduler stopped by user")
-
 
 
 if __name__ == "__main__":
