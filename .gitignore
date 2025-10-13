@@ -21,6 +21,8 @@ logs/
 .DS_Store
 Thumbs.db
 
+temp_downloads
+
 # Results and cache
 result/
 *.sqlite3

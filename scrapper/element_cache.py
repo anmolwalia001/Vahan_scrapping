@@ -8,9 +8,10 @@ import logging
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
-
+from selenium.webdriver.common.by import By
 from db.session import SessionLocal
 from db.models import PortalSite, PortalField, PortalFieldOption
+import time
 
 logger = logging.getLogger("app.element_cache")
 
@@ -323,3 +324,312 @@ class ElementCache:
         except Exception as e:
             logger.error(f"Failed to cleanup stale selectors: {e}")
             return 0
+    
+    
+    def get_state_dropdown_id(self) -> str:
+        selector = self.get_selector("state")
+        return selector.selector if selector else None
+
+    def get_rto_dropdown_id(self) -> str:
+        selector = self.get_selector("rto_dropdown")
+        return selector.selector if selector else None
+
+    def get_x_axis_dropdown_id(self) -> str:
+        selector = self.get_selector("x_axis_dropdown")
+        return selector.selector if selector else None
+
+    def get_y_axis_dropdown_id(self) -> str:
+        selector = self.get_selector("y_axis_dropdown")
+        return selector.selector if selector else None
+
+    def get_refresh_button_id(self, driver=None, button_type="main"):
+    # use cached selector instead of driver directly
+        selector = self.get_selector("refresh_button")
+        return selector.selector if selector else None
+
+
+    def get_excel_export_id(self) -> str:
+        selector = self.get_selector("excel_export")
+        return selector.selector if selector else None
+
+def check_data_exists_cached(driver, element_cache: "ElementCache", debug: bool = True) -> bool:
+        """Check if data exists on the page using cached selectors and fallbacks"""
+        try:
+            if debug:
+                print("  DEBUG: Checking for data existence (cached)...")
+
+        # Give the table a chance to load
+            time.sleep(2)
+
+        # First check: "No records found"
+            no_records = driver.find_elements(By.XPATH, "//*[contains(text(), 'No records found')]")
+            if no_records:
+                if debug:
+                    print("  DEBUG: Found 'No records found' message")
+                return False
+
+        # Try common table selectors (cached + generic fallbacks)
+            table_selectors = [
+            "#reportTable tbody tr",     # standard Vahan table
+            ".ui-datatable tbody tr",    # PrimeFaces
+            "table tbody tr",            # generic
+            "#reportTable_data tr",      # alternate
+            ".ui-datatable-data tr"      # another PrimeFaces variant
+            ]
+
+            for selector in table_selectors:
+                try:
+                    rows = driver.find_elements(By.CSS_SELECTOR, selector)
+                    if rows:
+                        if debug:
+                            print(f"  DEBUG: Found {len(rows)} rows using selector: {selector}")
+                    # Check if any row has real data
+                        for row in rows[:2]:
+                            cells = row.find_elements(By.TAG_NAME, "td")
+                            if cells and any(cell.text.strip() for cell in cells):
+                                if debug:
+                                    print(f"  DEBUG: Found valid row with {len(cells)} cells")
+                            return True
+                except Exception as e:
+                    if debug:
+                        print(f"  DEBUG: Selector {selector} failed: {e}")
+                    continue
+
+        # Fallback: check if Excel export button is visible
+            excel_selector = element_cache.get_excel_export_id()
+            if excel_selector:
+                try:
+                    elem = driver.find_element(By.ID, excel_selector)
+                    if elem.is_displayed():
+                        if debug:
+                            print("  DEBUG: Excel export button visible → data exists")
+                        return True
+                except:
+                    pass
+
+            return False
+
+        except Exception as e:
+            if debug:
+                print(f"  DEBUG: Exception in check_data_exists_cached: {e}")
+            return False
+
+def find_and_click_excel_export_cached(driver, wait, element_cache: "ElementCache", debug: bool = False):
+    """Find and return Excel export element using cached selectors and fallbacks"""
+    try:
+        if debug:
+            print("  DEBUG: Finding Excel export button (cached)...")
+
+        # Try cached selector first
+        excel_selector = element_cache.get_excel_export_id()
+        if excel_selector:
+            try:
+                element = driver.find_element(By.ID, excel_selector)
+                if element.is_displayed() and element.is_enabled():
+                    if debug:
+                        print(f"  DEBUG: Found Excel button using cached ID: {excel_selector}")
+                    return element
+            except Exception as e:
+                if debug:
+                    print(f"  DEBUG: Cached Excel selector failed: {e}")
+
+        # Fallback selectors
+        excel_selectors = [
+            "input[value*='Excel']",
+            "input[value*='EXCEL']",
+            "//*[contains(text(), 'Excel')]",
+            "//*[contains(text(), 'EXCEL')]",
+            ".ui-commandlink:contains('Excel')",
+            "[title*='Excel']",
+            "[id*='excel']",
+            "[id*='Excel']"
+        ]
+
+        for selector in excel_selectors:
+            try:
+                if selector.startswith("//"):
+                    elements = driver.find_elements(By.XPATH, selector)
+                else:
+                    elements = driver.find_elements(By.CSS_SELECTOR, selector)
+                
+                for element in elements:
+                    if element.is_displayed() and element.is_enabled():
+                        if debug:
+                            print(f"  DEBUG: Found Excel button using fallback: {selector}")
+                        return element
+                        
+            except Exception as e:
+                if debug:
+                    print(f"  DEBUG: Excel selector {selector} failed: {e}")
+                continue
+
+        if debug:
+            print("  DEBUG: Excel export button not found with any selector")
+        return None
+
+    except Exception as e:
+        if debug:
+            print(f"  DEBUG: Exception in find_and_click_excel_export_cached: {e}")
+        return None
+
+
+def apply_vehicle_filter_cached(driver, wait, element_cache: "ElementCache", vehicle_categories: List[str], debug: bool = False):
+    """Apply vehicle category filter using cached selectors and fallbacks"""
+    try:
+        if debug:
+            print(f"  DEBUG: Applying vehicle filter: {vehicle_categories}")
+
+        success_count = 0
+        
+        for category in vehicle_categories:
+            try:
+                checkbox_found = False
+                
+                # Approach 1: Find by label text and associated checkbox
+                label_xpath = f"//label[normalize-space(text())='{category}']"
+                try:
+                    label = driver.find_element(By.XPATH, label_xpath)
+                    # Try to find associated checkbox
+                    checkbox_id = label.get_attribute('for')
+                    if checkbox_id:
+                        checkbox = driver.find_element(By.ID, checkbox_id)
+                    else:
+                        # Look for checkbox in same container
+                        parent = label.find_element(By.XPATH, './..')
+                        checkbox = parent.find_element(By.CSS_SELECTOR, 'input[type="checkbox"]')
+                    
+                    if not checkbox.is_selected():
+                        driver.execute_script("arguments[0].click();", checkbox)
+                        checkbox_found = True
+                        success_count += 1
+                        
+                except Exception as e:
+                    if debug:
+                        print(f"  DEBUG: Label approach failed for {category}: {e}")
+                
+                # Approach 2: Find checkbox by value attribute
+                if not checkbox_found:
+                    try:
+                        checkbox = driver.find_element(By.CSS_SELECTOR, f'input[type="checkbox"][value="{category}"]')
+                        if not checkbox.is_selected():
+                            driver.execute_script("arguments[0].click();", checkbox)
+                            checkbox_found = True
+                            success_count += 1
+                    except Exception as e:
+                        if debug:
+                            print(f"  DEBUG: Value approach failed for {category}: {e}")
+                
+                # Approach 3: Click on the label itself
+                if not checkbox_found:
+                    try:
+                        label = driver.find_element(By.XPATH, f"//label[contains(text(), '{category}')]")
+                        driver.execute_script("arguments[0].click();", label)
+                        checkbox_found = True
+                        success_count += 1
+                    except Exception as e:
+                        if debug:
+                            print(f"  DEBUG: Label click approach failed for {category}: {e}")
+                
+                if not checkbox_found:
+                    if debug:
+                        print(f"  DEBUG: Could not find checkbox for category: {category}")
+                    
+            except Exception as e:
+                if debug:
+                    print(f"  DEBUG: Error selecting category {category}: {e}")
+        
+        if success_count > 0:
+            if debug:
+                print(f"  DEBUG: Successfully applied {success_count}/{len(vehicle_categories)} vehicle filters")
+            time.sleep(1)  # Wait for filter to apply
+            return True
+        else:
+            if debug:
+                print("  DEBUG: No vehicle filters were successfully applied")
+            return False
+            
+    except Exception as e:
+        if debug:
+            print(f"  DEBUG: Error applying vehicle filter: {e}")
+        return False
+
+
+def apply_vehicle_filter_cached(driver, wait, element_cache: "ElementCache", vehicle_categories: List[str], debug: bool = False):
+    """Apply vehicle category filter using cached selectors and fallbacks"""
+    try:
+        if debug:
+            print(f"  DEBUG: Applying vehicle filter: {vehicle_categories}")
+
+        success_count = 0
+        
+        for category in vehicle_categories:
+            try:
+                checkbox_found = False
+                
+                # Approach 1: Find by label text and associated checkbox
+                label_xpath = f"//label[normalize-space(text())='{category}']"
+                try:
+                    label = driver.find_element(By.XPATH, label_xpath)
+                    # Try to find associated checkbox
+                    checkbox_id = label.get_attribute('for')
+                    if checkbox_id:
+                        checkbox = driver.find_element(By.ID, checkbox_id)
+                    else:
+                        # Look for checkbox in same container
+                        parent = label.find_element(By.XPATH, './..')
+                        checkbox = parent.find_element(By.CSS_SELECTOR, 'input[type="checkbox"]')
+                    
+                    if not checkbox.is_selected():
+                        driver.execute_script("arguments[0].click();", checkbox)
+                        checkbox_found = True
+                        success_count += 1
+                        
+                except Exception as e:
+                    if debug:
+                        print(f"  DEBUG: Label approach failed for {category}: {e}")
+                
+                # Approach 2: Find checkbox by value attribute
+                if not checkbox_found:
+                    try:
+                        checkbox = driver.find_element(By.CSS_SELECTOR, f'input[type="checkbox"][value="{category}"]')
+                        if not checkbox.is_selected():
+                            driver.execute_script("arguments[0].click();", checkbox)
+                            checkbox_found = True
+                            success_count += 1
+                    except Exception as e:
+                        if debug:
+                            print(f"  DEBUG: Value approach failed for {category}: {e}")
+                
+                # Approach 3: Click on the label itself
+                if not checkbox_found:
+                    try:
+                        label = driver.find_element(By.XPATH, f"//label[contains(text(), '{category}')]")
+                        driver.execute_script("arguments[0].click();", label)
+                        checkbox_found = True
+                        success_count += 1
+                    except Exception as e:
+                        if debug:
+                            print(f"  DEBUG: Label click approach failed for {category}: {e}")
+                
+                if not checkbox_found:
+                    if debug:
+                        print(f"  DEBUG: Could not find checkbox for category: {category}")
+                    
+            except Exception as e:
+                if debug:
+                    print(f"  DEBUG: Error selecting category {category}: {e}")
+        
+        if success_count > 0:
+            if debug:
+                print(f"  DEBUG: Successfully applied {success_count}/{len(vehicle_categories)} vehicle filters")
+            time.sleep(1)  # Wait for filter to apply
+            return True
+        else:
+            if debug:
+                print("  DEBUG: No vehicle filters were successfully applied")
+            return False
+            
+    except Exception as e:
+        if debug:
+            print(f"  DEBUG: Error applying vehicle filter: {e}")
+        return False

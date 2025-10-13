@@ -1,5 +1,7 @@
+# db/models.py
 from sqlalchemy import (
-    Column, String, Integer, BigInteger, Text, Enum, DateTime, JSON, ForeignKey, Boolean, TIMESTAMP
+    Column, String, Integer, BigInteger, Text, DateTime, JSON, ForeignKey,
+    Boolean, TIMESTAMP, Float, Enum as SAEnum
 )
 from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy.sql import func
@@ -17,7 +19,8 @@ class PortalSite(Base):
     name = Column(String(120), nullable=False)
     base_url = Column(String(300), nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
-    robots_policy = Column(Enum("unknown", "allowed", "disallowed"), nullable=False, default="unknown")
+    robots_policy = Column(SAEnum("unknown", "allowed", "disallowed", name="robots_policy_enum"),
+                           nullable=False, default="unknown")
     notes = Column(Text, nullable=True)
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
@@ -32,7 +35,8 @@ class PortalField(Base):
     site_id = Column(BigInteger, ForeignKey("portal_site.id"), nullable=False)
     field_name = Column(String(100), nullable=False)  # state, rto, year, x_axis, y_axis, etc.
     selector = Column(String(300))
-    ui_type = Column(Enum("select", "input", "button", "checkbox", "other"), nullable=False, default="select")
+    ui_type = Column(SAEnum("select", "input", "button", "checkbox", "other", name="ui_type_enum"),
+                     nullable=False, default="select")
     depends_on_id = Column(BigInteger, ForeignKey("portal_field.id"))
     version_tag = Column(String(64))
     last_seen_at = Column(DateTime)
@@ -47,7 +51,7 @@ class PortalFieldOption(Base):
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
     field_id = Column(BigInteger, ForeignKey("portal_field.id"), nullable=False)
-    value_code = Column(String(128), nullable=False)   # option value
+    value_code = Column(String(128), nullable=False)
     label = Column(String(200), nullable=False)
     parent_code = Column(String(128))
     is_active = Column(Boolean, default=True, nullable=False)
@@ -73,22 +77,6 @@ class JobTemplate(Base):
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
 
-# ============================================================
-# 3) Workers / UA / Proxies
-# ============================================================
-
-class WorkerNode(Base):
-    __tablename__ = "worker_node"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    name = Column(String(120), nullable=False, unique=True)
-    kind = Column(Enum("browser", "parser", "orchestrator"), default="browser", nullable=False)
-    max_conc = Column(Integer, default=1, nullable=False)
-    status = Column(Enum("active", "draining", "offline"), default="active", nullable=False)
-    last_heartbeat = Column(DateTime)
-    created_at = Column(TIMESTAMP, server_default=func.now())
-
-
 class UserAgentPool(Base):
     __tablename__ = "user_agent_pool"
 
@@ -106,27 +94,6 @@ class UserAgent(Base):
     is_mobile = Column(Boolean, nullable=False, default=False)
     weight = Column(Integer, default=1)
     created_at = Column(TIMESTAMP, server_default=func.now())
-
-
-class ProxyPool(Base):
-    __tablename__ = "proxy_pool"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    name = Column(String(120), nullable=False, unique=True)
-    notes = Column(Text)
-    created_at = Column(TIMESTAMP, server_default=func.now())
-
-
-class ProxyEndpoint(Base):
-    __tablename__ = "proxy_endpoint"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    pool_id = Column(BigInteger, ForeignKey("proxy_pool.id"), nullable=False)
-    endpoint = Column(String(300), nullable=False)
-    region = Column(String(64))
-    weight = Column(Integer, default=1)
-    is_active = Column(Boolean, default=True, nullable=False)
-    last_used_at = Column(DateTime)
 
 # ============================================================
 # 4) States / RTO / Axis / Vehicle Filters
@@ -161,7 +128,7 @@ class AxisFilter(Base):
     __tablename__ = "axis_filter"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    axis = Column(Enum("X", "Y"), nullable=False)
+    axis = Column(SAEnum("X", "Y", name="axis_enum"), nullable=False)
     filter = Column(String(100), nullable=False)
 
 
@@ -174,7 +141,7 @@ class VehicleFilter(Base):
     is_active = Column(Boolean, default=True, nullable=False)
 
 # ============================================================
-# 5) Files + Extraction + Logs
+# 5) Files + Extraction + Logs (low-level extraction artifacts)
 # ============================================================
 
 class File(Base):
@@ -190,6 +157,13 @@ class File(Base):
     downloaded_at = Column(DateTime)
     created_at = Column(TIMESTAMP, server_default=func.now())
 
+    data_records = relationship(
+        "VehicleRegistrationData",
+        back_populates="file",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
+
 
 class ExtractionRTO(Base):
     __tablename__ = "extraction_rto"
@@ -202,47 +176,123 @@ class ExtractionRTO(Base):
     year_value = Column(Integer)
     vehicle_filter_id = Column(Integer, ForeignKey("vehicle_filter.id"))
     extraction_date = Column(DateTime, nullable=False)
-    status = Column(Enum("queued", "running", "success", "error", "rate_limited"), default="queued")
+    status = Column(SAEnum("queued", "running", "success", "error", "rate_limited",
+                           name="extraction_rto_status_enum"),
+                    default="queued")
     file_id = Column(BigInteger, ForeignKey("files.id"))
     extraction_data = Column(JSON)
     created_at = Column(TIMESTAMP, server_default=func.now())
     updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
 
 
-class ExtractionLog(Base):
-    __tablename__ = "extraction_logs"
-
-    id = Column(BigInteger, primary_key=True, autoincrement=True)
-    extraction_rto_id = Column(BigInteger, ForeignKey("extraction_rto.id"), nullable=False)
-    level = Column(Enum("debug", "info", "warn", "error"), default="info")
-    log_info = Column(String(100))
-    message = Column(Text, nullable=False)
-    meta = Column(JSON)
-    created_at = Column(TIMESTAMP, server_default=func.now())
-
 # ============================================================
-# 6) Filter sets + Job Template Mapping
+# 6) High-level Extraction Job & Result (used by services/extraction_service.py)
 # ============================================================
 
-class FilterSet(Base):
-    __tablename__ = "filter_sets"
+class ExtractionJob(Base):
+    """
+    High-level orchestration job. Your services/extraction_service.py:
+      - creates a job row at start
+      - updates end_time/status/counters at finish
+    """
+    __tablename__ = "extraction_jobs"
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    state_id = Column(BigInteger, ForeignKey("states.id"))
-    rto_id = Column(BigInteger, ForeignKey("rtos.id"))
-    vehicle_filter_id = Column(Integer, ForeignKey("vehicle_filter.id"))
-    year_val = Column(Integer)
-    x_axis_id = Column(Integer, ForeignKey("axis_filter.id"))
-    y_axis_id = Column(Integer, ForeignKey("axis_filter.id"))
-    other_filters = Column(JSON)
-    filter_hash = Column(String(64), nullable=False, unique=True)
+    start_time = Column(DateTime, nullable=False, server_default=func.now())
+    end_time = Column(DateTime, nullable=True)
+
+    status = Column(SAEnum(
+        "pending", "in_progress", "completed", "failed", "paused",
+        name="extraction_job_status_enum"
+    ), nullable=False, default="in_progress")
+
+    # arbitrary config blob saved when job starts
+    config = Column(JSON, nullable=True)
+
+    # counters updated at the end
+    total_files_downloaded = Column(Integer, nullable=False, default=0)
+    total_errors = Column(Integer, nullable=False, default=0)
+
+    # overall summary stats (e.g., states_processed, total_rtos, etc.)
+    summary = Column(JSON, nullable=True)
+
+    created_at = Column(TIMESTAMP, server_default=func.now())
+    updated_at = Column(TIMESTAMP, server_default=func.now(), onupdate=func.now())
+
+    # optional: per-state/per-batch results
+    results = relationship(
+        "ExtractionResult",
+        back_populates="job",
+        cascade="all, delete-orphan",
+        passive_deletes=True
+    )
+
+
+class ExtractionResult(Base):
+    """
+    Optional per-state (or per-batch) rollup rows tied to an ExtractionJob.
+    Not strictly required by your current code, but imported and useful.
+    """
+    __tablename__ = "extraction_results"
+
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
+    job_id = Column(BigInteger, ForeignKey("extraction_jobs.id", ondelete="CASCADE"), nullable=False)
+
+    # Useful rollup fields (aligns with summary fields in your service)
+    state_id = Column(BigInteger, ForeignKey("states.id"), nullable=True)
+    state_code = Column(String(10), nullable=True)
+    state_name = Column(String(100), nullable=True)
+
+    rtos_processed = Column(Integer, nullable=False, default=0)
+    files_downloaded = Column(Integer, nullable=False, default=0)
+    failures = Column(Integer, nullable=False, default=0)
+    duration_minutes = Column(Float, nullable=True)
+    errors = Column(JSON, nullable=True)
+
     created_at = Column(TIMESTAMP, server_default=func.now())
 
+    job = relationship("ExtractionJob", back_populates="results")
 
-class JobTemplateFilter(Base):
-    __tablename__ = "job_template_filters"
+class VehicleRegistrationData(Base):
+    """
+    Stores actual data from Excel files - maker-wise monthly registration data
+    Each row represents one maker's monthly registration numbers from one file
+    """
+    __tablename__ = "vehicle_registration_data"
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
-    template_id = Column(BigInteger, ForeignKey("job_template.id"), nullable=False)
-    filter_set_id = Column(BigInteger, ForeignKey("filter_sets.id"), nullable=False)
-    priority = Column(Integer, default=5, nullable=False)
+    
+    # Maker information
+    maker_name = Column(String(255), nullable=False)
+    s_no = Column(Integer, nullable=True)  # Serial number from Excel
+    
+    # Monthly data (all nullable as not all months may have data)
+    jan = Column(Integer, nullable=True, default=None)
+    feb = Column(Integer, nullable=True, default=None)
+    mar = Column(Integer, nullable=True, default=None)
+    apr = Column(Integer, nullable=True, default=None)
+    may = Column(Integer, nullable=True, default=None)
+    jun = Column(Integer, nullable=True, default=None)
+    jul = Column(Integer, nullable=True, default=None)
+    aug = Column(Integer, nullable=True, default=None)
+    sep = Column(Integer, nullable=True, default=None)
+    oct = Column(Integer, nullable=True, default=None)
+    nov = Column(Integer, nullable=True, default=None)
+    dec = Column(Integer, nullable=True, default=None)
+    
+    # Total
+    total = Column(Integer, nullable=True, default=None)
+    
+    # Metadata
+    year = Column(Integer, nullable=True)  # Extracted from file header
+    state_code = Column(String(10), nullable=True)  # From filename
+    rto_code = Column(String(32), nullable=True)  # From filename
+    
+    created_at = Column(TIMESTAMP, server_default=func.now())
+    
+    # Relationships
+    file_id = Column(BigInteger, ForeignKey("files.id", ondelete="CASCADE"), nullable=False)
+    file = relationship("File", back_populates="data_records")
+
+    def __repr__(self):
+        return f"<VehicleRegistrationData(id={self.id}, maker={self.maker_name}, total={self.total})>"

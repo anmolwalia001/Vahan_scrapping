@@ -6,10 +6,12 @@ Feat_Vahan is a modular Python project for extracting, scraping, and managing ve
 
 ```
 Feat_Vahan/
+│
 ├── .env
 ├── .gitignore
 ├── main.py
 ├── requirements.txt
+├── README.md
 ├── configs/
 │   ├── logging.yaml
 │   └── setting.py
@@ -23,17 +25,21 @@ Feat_Vahan/
 │   ├── extract_states.py
 │   ├── extract_vehicle_filter.py
 │   └── __init__.py
-├── logs/
-├── result/
+├── logs/                # (empty)
+├── result/              # (empty)
 ├── scrapper/
 │   ├── browser.py
 │   ├── element_cache.py
 │   ├── element_discovery.py
 │   └── __init__.py
 ├── services/
+│   ├── check_proxy.py
+│   ├── db_extraction_service.py
+│   ├── extraction_service.py
 │   ├── file_handler.py
 │   ├── proxy_manager.py
-│   └── scheduler.py
+│   ├── scheduler.py
+│   └── db_extraction_service.py
 ├── storage/
 │   ├── excel_export.py
 │   └── __init__.py
@@ -44,7 +50,7 @@ Feat_Vahan/
 ├── utils/
 │   ├── constants.py
 │   └── helpers.py
-├── myenv/
+├── myenv/               # (virtual environment)
 ```
 
 ## Setup
@@ -71,7 +77,7 @@ Feat_Vahan/
 
 - Run the main application:
   ```
-  python main.py
+  python -m services.scheduler.py
   ```
 - Run individual modules (example):
   ```
