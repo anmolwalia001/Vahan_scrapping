@@ -347,6 +347,7 @@ class ExtractionConfig:
     skip_existing: bool = True  #Skip already extracted RTOs
     
     def __post_init__(self):
+        # Default vehicle filter categories if not provided
         if self.vehicle_filter_categories is None:
             # Separate filters to apply sequentially
             self.vehicle_filter_categories = [
@@ -1207,7 +1208,5 @@ def start_human_like_extraction(states: List[str] = None) -> Dict:
 
 
 if __name__ == "__main__":
-    print("Starting human-like extraction...")
-    print("This will simulate human behavior with realistic delays and retry logic")
-    
+    print("Starting human-like extraction...")    
     print(f"\nExtraction completed!")

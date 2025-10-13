@@ -199,6 +199,92 @@ STATE_AN = {  # Andaman & Nicobar
   ]
 }
 
+# ──────────────────────────────────────────────────────────────────────────────
+# Karnataka — Python seeder
+# ──────────────────────────────────────────────────────────────────────────────
+
+STATE_KA = {
+  "state": "Karnataka",
+  "state_code": "KA",
+  "extraction_date": "2025-07-29T14:07:04.393550",
+  "total_rtos": 69,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(68/68)"},
+    {"name":"ATHANI ARTO","code":"KA71","value":"71","full_text":"ATHANI ARTO - KA71( 03-AUG-2020 )"},
+    {"name":"BAGALKOT  RTO","code":"KA29","value":"29","full_text":"BAGALKOT  RTO - KA29( 29-SEP-2018 )"},
+    {"name":"BAILHONGAL  RTO","code":"KA24","value":"24","full_text":"BAILHONGAL  RTO - KA24( 13-AUG-2018 )"},
+    {"name":"BANTWALA ARTO","code":"KA70","value":"70","full_text":"BANTWALA ARTO - KA70( 03-MAR-2018 )"},
+    {"name":"BASAVAKALYAN ARTO","code":"KA56","value":"56","full_text":"BASAVAKALYAN ARTO - KA56( 01-AUG-2018 )"},
+    {"name":"BELLARY  RTO","code":"KA34","value":"34","full_text":"BELLARY  RTO - KA34( 31-JUL-2018 )"},
+    {"name":"BENGALURU CENTRAL  RTO","code":"KA1","value":"1","full_text":"BENGALURU CENTRAL  RTO - KA1( 21-JAN-2019 )"},
+    {"name":"BENGALURU EAST  RTO","code":"KA3","value":"3","full_text":"BENGALURU EAST  RTO - KA3( 04-FEB-2019 )"},
+    {"name":"BENGALURU NORTH  RTO","code":"KA4","value":"4","full_text":"BENGALURU NORTH  RTO - KA4( 28-JAN-2019 )"},
+    {"name":"BENGALURU SOUTH  RTO","code":"KA5","value":"5","full_text":"BENGALURU SOUTH  RTO - KA5( 07-JAN-2019 )"},
+    {"name":"BENGALURU WEST  RTO","code":"KA2","value":"2","full_text":"BENGALURU WEST  RTO - KA2( 26-DEC-2018 )"},
+    {"name":"BHALKI  ARTO","code":"KA39","value":"39","full_text":"BHALKI  ARTO - KA39( 31-JUL-2018 )"},
+    {"name":"BIDAR  RTO","code":"KA38","value":"38","full_text":"BIDAR  RTO - KA38( 01-AUG-2018 )"},
+    {"name":"BIJAPUR  RTO","code":"KA28","value":"28","full_text":"BIJAPUR  RTO - KA28( 29-SEP-2018 )"},
+    {"name":"CHAMARAJANAGAR  RTO","code":"KA10","value":"10","full_text":"CHAMARAJANAGAR  RTO - KA10( 23-JUL-2018 )"},
+    {"name":"CHANDAPURA, BENGALURU RTO","code":"KA59","value":"59","full_text":"CHANDAPURA, BENGALURU RTO - KA59( 08-FEB-2018 )"},
+    {"name":"CHICKABALLAPUR  RTO","code":"KA40","value":"40","full_text":"CHICKABALLAPUR  RTO - KA40( 27-JUN-2018 )"},
+    {"name":"CHIKAMANGLUR RTO","code":"KA18","value":"18","full_text":"CHIKAMANGLUR RTO - KA18( 12-JUN-2018 )"},
+    {"name":"CHIKKODI  RTO","code":"KA23","value":"23","full_text":"CHIKKODI  RTO - KA23( 22-SEP-2018 )"},
+    {"name":"CHINTAMANI ARTO","code":"KA67","value":"67","full_text":"CHINTAMANI ARTO - KA67( 16-JUL-2018 )"},
+    {"name":"CHITRADURGA  RTO","code":"KA16","value":"16","full_text":"CHITRADURGA  RTO - KA16( 09-AUG-2018 )"},
+    {"name":"DANDELI ARTO","code":"KA65","value":"65","full_text":"DANDELI ARTO - KA65( 28-SEP-2018 )"},
+    {"name":"DAVANAGERE  RTO","code":"KA17","value":"17","full_text":"DAVANAGERE  RTO - KA17( 02-JUL-2018 )"},
+    {"name":"DEVANAHALLI  ARTO","code":"KA43","value":"43","full_text":"DEVANAHALLI  ARTO - KA43( 28-JUN-2018 )"},
+    {"name":"DHARWAD EAST RTO","code":"KA63","value":"63","full_text":"DHARWAD EAST RTO - KA63( 25-SEP-2018 )"},
+    {"name":"DHARWAD WEST RTO","code":"KA25","value":"25","full_text":"DHARWAD WEST RTO - KA25( 25-SEP-2018 )"},
+    {"name":"ELECTRONIC CITY  RTO","code":"KA51","value":"51","full_text":"ELECTRONIC CITY  RTO - KA51( 31-DEC-2018 )"},
+    {"name":"GADAG  RTO","code":"KA26","value":"26","full_text":"GADAG  RTO - KA26( 25-SEP-2018 )"},
+    {"name":"GOKAK  ARTO","code":"KA49","value":"49","full_text":"GOKAK  ARTO - KA49( 25-SEP-2018 )"},
+    {"name":"HASSAN  RTO","code":"KA13","value":"13","full_text":"HASSAN  RTO - KA13( 09-JUL-2018 )"},
+    {"name":"HAVERI  RTO","code":"KA27","value":"27","full_text":"HAVERI  RTO - KA27( 23-MAR-2018 )"},
+    {"name":"HONNAVAR  ARTO","code":"KA47","value":"47","full_text":"HONNAVAR  ARTO - KA47( 29-SEP-2018 )"},
+    {"name":"HOSPET  RTO","code":"KA35","value":"35","full_text":"HOSPET  RTO - KA35( 28-JUL-2018 )"},
+    {"name":"HUNSUR  ARTO","code":"KA45","value":"45","full_text":"HUNSUR  ARTO - KA45( 11-JUL-2018 )"},
+    {"name":"JAMKHANDI  ARTO","code":"KA48","value":"48","full_text":"JAMKHANDI  ARTO - KA48( 21-DEC-2018 )"},
+    {"name":"JNANABHARATHI  RTO","code":"KA41","value":"41","full_text":"JNANABHARATHI  RTO - KA41( 24-JAN-2019 )"},
+    {"name":"KALABURAGI  RTO","code":"KA32","value":"32","full_text":"KALABURAGI  RTO - KA32( 25-JUL-2018 )"},
+    {"name":"KARWAR  RTO","code":"KA30","value":"30","full_text":"KARWAR  RTO - KA30( 29-SEP-2018 )"},
+    {"name":"K G F  ARTO","code":"KA8","value":"8","full_text":"K G F  ARTO - KA8( 21-JUN-2018 )"},
+    {"name":"KOLAR  RTO","code":"KA7","value":"7","full_text":"KOLAR  RTO - KA7( 21-JUN-2018 )"},
+    {"name":"KOPPAL  RTO","code":"KA37","value":"37","full_text":"KOPPAL  RTO - KA37( 02-AUG-2018 )"},
+    {"name":"KRISHNARAJAPURAM  RTO","code":"KA53","value":"53","full_text":"KRISHNARAJAPURAM  RTO - KA53( 06-FEB-2019 )"},
+    {"name":"MADHUGIRI, TUMAKURU ARTO","code":"KA64","value":"64","full_text":"MADHUGIRI, TUMAKURU ARTO - KA64( 22-FEB-2019 )"},
+    {"name":"MADIKERI  RTO","code":"KA12","value":"12","full_text":"MADIKERI  RTO - KA12( 23-JUL-2018 )"},
+    {"name":"MANDYA  RTO","code":"KA11","value":"11","full_text":"MANDYA  RTO - KA11( 21-JUL-2018 )"},
+    {"name":"MANGALORE  RTO","code":"KA19","value":"19","full_text":"MANGALORE  RTO - KA19( 27-MAR-2018 )"},
+    {"name":"MYSURU  EAST  RTO","code":"KA55","value":"55","full_text":"MYSURU  EAST  RTO - KA55( 12-JUL-2018 )"},
+    {"name":"MYSURU WEST  RTO","code":"KA9","value":"9","full_text":"MYSURU WEST  RTO - KA9( 12-JUL-2018 )"},
+    {"name":"NAGAMANGALA  RTO","code":"KA54","value":"54","full_text":"NAGAMANGALA  RTO - KA54( 23-JUL-2018 )"},
+    {"name":"NELAMANGALA  RTO","code":"KA52","value":"52","full_text":"NELAMANGALA  RTO - KA52( 13-AUG-2018 )"},
+    {"name":"PUTTUR  RTO","code":"KA21","value":"21","full_text":"PUTTUR  RTO - KA21( 27-MAR-2018 )"},
+    {"name":"RAICHUR  RTO","code":"KA36","value":"36","full_text":"RAICHUR  RTO - KA36( 27-JUL-2018 )"},
+    {"name":"RAMANAGAR  RTO","code":"KA42","value":"42","full_text":"RAMANAGAR  RTO - KA42( 02-JAN-2018 )"},
+    {"name":"RAMDURGA ARTO","code":"KA69","value":"69","full_text":"RAMDURGA ARTO - KA69( 19-JUL-2018 )"},
+    {"name":"RANIBENNUR ARTO","code":"KA68","value":"68","full_text":"RANIBENNUR ARTO - KA68( 24-FEB-2018 )"},
+    {"name":"REGIONAL TRANSPORT OFFICE BELAGAVI","code":"KA22","value":"22","full_text":"REGIONAL TRANSPORT OFFICE BELAGAVI - KA22( 20-SEP-2018 )"},
+    {"name":"SAGAR  ARTO","code":"KA15","value":"15","full_text":"SAGAR  ARTO - KA15( 29-JUN-2018 )"},
+    {"name":"SAKALESHPURA  ARTO","code":"KA46","value":"46","full_text":"SAKALESHPURA  ARTO - KA46( 09-JUL-2018 )"},
+    {"name":"SHIMOGA  RTO","code":"KA14","value":"14","full_text":"SHIMOGA  RTO - KA14( 29-JUN-2018 )"},
+    {"name":"SIRSI  RTO","code":"KA31","value":"31","full_text":"SIRSI  RTO - KA31( 29-SEP-2018 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"KA99","value":"99","full_text":"STATE TRANSPORT AUTHORITY - KA99( 15-APR-2021 )"},
+    {"name":"STU AND AUTORIKSHAW,  SHANTHINAGAR RTO","code":"KA57","value":"57","full_text":"STU AND AUTORIKSHAW,  SHANTHINAGAR RTO - KA57( 26-APR-2021 )"},
+    {"name":"TARIKERE, CHIKKAMAGALURU ARTO","code":"KA66","value":"66","full_text":"TARIKERE, CHIKKAMAGALURU ARTO - KA66( 12-JUN-2018 )"},
+    {"name":"TIPTUR  ARTO","code":"KA44","value":"44","full_text":"TIPTUR  ARTO - KA44( 28-JUN-2018 )"},
+    {"name":"TUMKUR  RTO","code":"KA6","value":"6","full_text":"TUMKUR  RTO - KA6( 25-JUN-2018 )"},
+    {"name":"UDUPI  RTO","code":"KA20","value":"20","full_text":"UDUPI  RTO - KA20( 14-JUN-2018 )"},
+    {"name":"YADGIRI  RTO","code":"KA33","value":"33","full_text":"YADGIRI  RTO - KA33( 26-JUL-2018 )"},
+    {"name":"YALAHANKA  RTO","code":"KA50","value":"50","full_text":"YALAHANKA  RTO - KA50( 31-JAN-2019 )"},
+  ]
+}
+
+# Quick sanity check for duplicate RTO codes
+_codes = [rt["code"] for rt in STATE_KA["rtos"]]
+assert len(_codes) == len(set(_codes)), "Duplicate RTO codes detected in KA payload"
+
 STATE_AP = {
   "state": "Andhra Pradesh",
   "state_code": "AP",
@@ -335,6 +421,172 @@ STATE_AR = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# Tamil Nadu — Python seeder
+# ──────────────────────────────────────────────────────────────────────────────
+
+STATE_TN = {
+  "state": "Tamil Nadu",
+  "state_code": "TN",
+  "extraction_date": "2025-07-29T14:40:10.387336",
+  "total_rtos": 149,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(148/148)"},
+    {"name":"ALANGUDI UO","code":"TN641","value":"641","full_text":"ALANGUDI UO - TN641( 04-JUN-2018 )"},
+    {"name":"ALANGULAM UO","code":"TN644","value":"644","full_text":"ALANGULAM UO - TN644( 05-MAR-2024 )"},
+    {"name":"AMBASAMUTHIRAM UO","code":"TN611","value":"611","full_text":"AMBASAMUTHIRAM UO - TN611( 28-AUG-2018 )"},
+    {"name":"AMBATTUR RTO","code":"TN612","value":"612","full_text":"AMBATTUR RTO - TN612( 07-JUN-2018 )"},
+    {"name":"AMBUR UO","code":"TN628","value":"628","full_text":"AMBUR UO - TN628( 11-JUL-2018 )"},
+    {"name":"ARAKKONAM UO","code":"TN609","value":"609","full_text":"ARAKKONAM UO - TN609( 06-JUL-2018 )"},
+    {"name":"ARANI RTO","code":"TN516","value":"516","full_text":"ARANI RTO - TN516( 21-MAY-2018 )"},
+    {"name":"ARANTHANGI UO","code":"TN592","value":"592","full_text":"ARANTHANGI UO - TN592( 19-DEC-2017 )"},
+    {"name":"ARAVAKURICHI UO","code":"TN632","value":"632","full_text":"ARAVAKURICHI UO - TN632( 27-JUN-2018 )"},
+    {"name":"ARIYALUR RTO","code":"TN61","value":"61","full_text":"ARIYALUR RTO - TN61( 14-AUG-2018 )"},
+    {"name":"ARUPPUKOTTAI UO","code":"TN622","value":"622","full_text":"ARUPPUKOTTAI UO - TN622( 25-JUL-2018 )"},
+    {"name":"ATTUR RTO","code":"TN591","value":"591","full_text":"ATTUR RTO - TN591( 08-JAN-2018 )"},
+    {"name":"AVINASHI UO","code":"TN580","value":"580","full_text":"AVINASHI UO - TN580( 14-AUG-2018 )"},
+    {"name":"BATLAGUNDU UO","code":"TN596","value":"596","full_text":"BATLAGUNDU UO - TN596( 20-JUL-2018 )"},
+    {"name":"BHAVANI UO","code":"TN578","value":"578","full_text":"BHAVANI UO - TN578( 30-JUL-2018 )"},
+    {"name":"CHENGALPATTU RTO","code":"TN19","value":"19","full_text":"CHENGALPATTU RTO - TN19( 07-JUN-2018 )"},
+    {"name":"CHENNAI (CENTRAL) RTO","code":"TN1","value":"1","full_text":"CHENNAI (CENTRAL) RTO - TN1( 12-JUN-2018 )"},
+    {"name":"CHENNAI (EAST) RTO","code":"TN4","value":"4","full_text":"CHENNAI (EAST) RTO - TN4( 03-JUL-2018 )"},
+    {"name":"CHENNAI (NORTH-EAST) RTO","code":"TN3","value":"3","full_text":"CHENNAI (NORTH-EAST) RTO - TN3( 03-JUL-2018 )"},
+    {"name":"CHENNAI (NORTH) RTO","code":"TN5","value":"5","full_text":"CHENNAI (NORTH) RTO - TN5( 01-JUL-2018 )"},
+    {"name":"CHENNAI (SOUTH-EAST) RTO","code":"TN6","value":"6","full_text":"CHENNAI (SOUTH-EAST) RTO - TN6( 11-JUN-2018 )"},
+    {"name":"CHENNAI (SOUTH) RTO","code":"TN7","value":"7","full_text":"CHENNAI (SOUTH) RTO - TN7( 01-JUN-2018 )"},
+    {"name":"CHENNAI (SOUTH-WEST) RTO","code":"TN10","value":"10","full_text":"CHENNAI (SOUTH-WEST) RTO - TN10( 03-JUL-2018 )"},
+    {"name":"CHENNAI (WEST) RTO","code":"TN9","value":"9","full_text":"CHENNAI (WEST) RTO - TN9( 28-MAY-2018 )"},
+    {"name":"CHEYYAR UO","code":"TN635","value":"635","full_text":"CHEYYAR UO - TN635( 07-APR-2017 )"},
+    {"name":"CHIDAMBARAM RTO","code":"TN544","value":"544","full_text":"CHIDAMBARAM RTO - TN544( 19-JUN-2018 )"},
+    {"name":"COIMBATORE (CENTRAL) RTO","code":"TN66","value":"66","full_text":"COIMBATORE (CENTRAL) RTO - TN66( 17-JUL-2018 )"},
+    {"name":"COIMBATORE (NORTH) RTO","code":"TN38","value":"38","full_text":"COIMBATORE (NORTH) RTO - TN38( 17-JUL-2018 )"},
+    {"name":"COIMBATORE (SOUTH) RTO","code":"TN37","value":"37","full_text":"COIMBATORE (SOUTH) RTO - TN37( 28-MAY-2018 )"},
+    {"name":"COIMBATORE (WEST) RTO","code":"TN99","value":"99","full_text":"COIMBATORE (WEST) RTO - TN99( 17-JUL-2018 )"},
+    {"name":"CUDDALORE RTO","code":"TN31","value":"31","full_text":"CUDDALORE RTO - TN31( 15-JUN-2018 )"},
+    {"name":"DHARAPURAM RTO","code":"TN594","value":"594","full_text":"DHARAPURAM RTO - TN594( 18-JUL-2018 )"},
+    {"name":"DHARMAPURI RTO","code":"TN29","value":"29","full_text":"DHARMAPURI RTO - TN29( 03-AUG-2018 )"},
+    {"name":"DINDIGUL RTO","code":"TN57","value":"57","full_text":"DINDIGUL RTO - TN57( 19-JUN-2018 )"},
+    {"name":"ERODE RTO","code":"TN33","value":"33","full_text":"ERODE RTO - TN33( 14-AUG-2018 )"},
+    {"name":"ERODE (WEST) RTO","code":"TN86","value":"86","full_text":"ERODE (WEST) RTO - TN86( 10-AUG-2018 )"},
+    {"name":"GINGEE UO","code":"TN627","value":"627","full_text":"GINGEE UO - TN627( 14-JUN-2018 )"},
+    {"name":"GOPICHETTIPALAYAM RTO","code":"TN36","value":"36","full_text":"GOPICHETTIPALAYAM RTO - TN36( 30-JUL-2018 )"},
+    {"name":"GUDALORE UO","code":"TN582","value":"582","full_text":"GUDALORE UO - TN582( 18-JUL-2018 )"},
+    {"name":"GUDIYATHAM UO","code":"TN514","value":"514","full_text":"GUDIYATHAM UO - TN514( 06-JUL-2018 )"},
+    {"name":"GUMMIDIPOONDI UO","code":"TN625","value":"625","full_text":"GUMMIDIPOONDI UO - TN625( 07-JUN-2018 )"},
+    {"name":"HARUR UO","code":"TN527","value":"527","full_text":"HARUR UO - TN527( 03-AUG-2018 )"},
+    {"name":"HOSUR RTO","code":"TN70","value":"70","full_text":"HOSUR RTO - TN70( 06-JUL-2018 )"},
+    {"name":"ILLUPPUR UO","code":"TN629","value":"629","full_text":"ILLUPPUR UO - TN629( 24-MAY-2018 )"},
+    {"name":"KALLAKURICHI RTO","code":"TN615","value":"615","full_text":"KALLAKURICHI RTO - TN615( 15-JUN-2018 )"},
+    {"name":"KANCHEEPURAM RTO","code":"TN21","value":"21","full_text":"KANCHEEPURAM RTO - TN21( 05-JUL-2018 )"},
+    {"name":"KANGEYAM UO","code":"TN593","value":"593","full_text":"KANGEYAM UO - TN593( 17-AUG-2018 )"},
+    {"name":"KARAIKUDI UO","code":"TN602","value":"602","full_text":"KARAIKUDI UO - TN602( 21-AUG-2018 )"},
+    {"name":"KARUR RTO","code":"TN47","value":"47","full_text":"KARUR RTO - TN47( 27-JUN-2018 )"},
+    {"name":"KOVILPATTI RTO","code":"TN607","value":"607","full_text":"KOVILPATTI RTO - TN607( 24-AUG-2018 )"},
+    {"name":"KRISHNAGIRI RTO","code":"TN24","value":"24","full_text":"KRISHNAGIRI RTO - TN24( 06-JUL-2018 )"},
+    {"name":"KULITHALI UO","code":"TN585","value":"585","full_text":"KULITHALI UO - TN585( 27-JUN-2018 )"},
+    {"name":"KUMARAPALAYAM RTO","code":"TN638","value":"638","full_text":"KUMARAPALAYAM RTO - TN638( 28-JAN-2018 )"},
+    {"name":"KUMBAKONAM RTO","code":"TN68","value":"68","full_text":"KUMBAKONAM RTO - TN68( 06-AUG-2018 )"},
+    {"name":"KUNDRATHUR RTO","code":"TN85","value":"85","full_text":"KUNDRATHUR RTO - TN85( 19-JUN-2018 )"},
+    {"name":"LALKUDI UO","code":"TN631","value":"631","full_text":"LALKUDI UO - TN631( 28-JUN-2018 )"},
+    {"name":"MADURAI (CENTRAL) RTO","code":"TN64","value":"64","full_text":"MADURAI (CENTRAL) RTO - TN64( 17-AUG-2018 )"},
+    {"name":"MADURAI (NORTH) RTO","code":"TN59","value":"59","full_text":"MADURAI (NORTH) RTO - TN59( 01-JUN-2018 )"},
+    {"name":"MADURAI (SOUTH) RTO","code":"TN58","value":"58","full_text":"MADURAI (SOUTH) RTO - TN58( 06-JUL-2018 )"},
+    {"name":"MADURANTAGAM UO","code":"TN508","value":"508","full_text":"MADURANTAGAM UO - TN508( 07-JUN-2018 )"},
+    {"name":"MANAPARAI UO","code":"TN584","value":"584","full_text":"MANAPARAI UO - TN584( 30-MAY-2018 )"},
+    {"name":"MANMANGALAM UO","code":"TN637","value":"637","full_text":"MANMANGALAM UO - TN637( 25-JUN-2018 )"},
+    {"name":"MANNARGUDI UO","code":"TN588","value":"588","full_text":"MANNARGUDI UO - TN588( 09-AUG-2018 )"},
+    {"name":"MARTHANDAM RTO","code":"TN75","value":"75","full_text":"MARTHANDAM RTO - TN75( 31-JUL-2018 )"},
+    {"name":"MAYILADUTHURAI RTO","code":"TN589","value":"589","full_text":"MAYILADUTHURAI RTO - TN589( 07-AUG-2018 )"},
+    {"name":"MEENAMBAKKAM RTO","code":"TN22","value":"22","full_text":"MEENAMBAKKAM RTO - TN22( 09-JUL-2018 )"},
+    {"name":"MELUR UO","code":"TN600","value":"600","full_text":"MELUR UO - TN600( 01-JUN-2018 )"},
+    {"name":"METTUPALAYAM RTO","code":"TN40","value":"40","full_text":"METTUPALAYAM RTO - TN40( 18-JUL-2018 )"},
+    {"name":"METTUR RTO","code":"TN590","value":"590","full_text":"METTUR RTO - TN590( 30-AUG-2018 )"},
+    {"name":"MUSURI UO","code":"TN621","value":"621","full_text":"MUSURI UO - TN621( 28-JUN-2018 )"},
+    {"name":"NAGAPATTINAM RTO","code":"TN51","value":"51","full_text":"NAGAPATTINAM RTO - TN51( 07-AUG-2018 )"},
+    {"name":"NAGERCOIL RTO","code":"TN74","value":"74","full_text":"NAGERCOIL RTO - TN74( 28-AUG-2018 )"},
+    {"name":"NAMAKKAL (NORTH) RTO","code":"TN28","value":"28","full_text":"NAMAKKAL (NORTH) RTO - TN28( 30-AUG-2018 )"},
+    {"name":"NAMAKKAL (SOUTH) RTO","code":"TN88","value":"88","full_text":"NAMAKKAL (SOUTH) RTO - TN88( 30-AUG-2018 )"},
+    {"name":"NATHAM UO","code":"TN640","value":"640","full_text":"NATHAM UO - TN640( 04-JUN-2018 )"},
+    {"name":"NEYVELI UO","code":"TN562","value":"562","full_text":"NEYVELI UO - TN562( 20-JUN-2018 )"},
+    {"name":"ODDANCHATRAM  UO","code":"TN595","value":"595","full_text":"ODDANCHATRAM  UO - TN595( 24-JUL-2018 )"},
+    {"name":"OMALURE UO","code":"TN535","value":"535","full_text":"OMALURE UO - TN535( 29-AUG-2018 )"},
+    {"name":"OOTY RTO","code":"TN43","value":"43","full_text":"OOTY RTO - TN43( 18-JUL-2018 )"},
+    {"name":"PALACODE UO","code":"TN616","value":"616","full_text":"PALACODE UO - TN616( 03-AUG-2018 )"},
+    {"name":"PALANI RTO","code":"TN597","value":"597","full_text":"PALANI RTO - TN597( 24-JUL-2018 )"},
+    {"name":"PANRUTI UO","code":"TN626","value":"626","full_text":"PANRUTI UO - TN626( 19-JUN-2018 )"},
+    {"name":"PARAMAKUDI UO","code":"TN603","value":"603","full_text":"PARAMAKUDI UO - TN603( 24-JUL-2018 )"},
+    {"name":"PARAMATHI VELLURE UO","code":"TN517","value":"517","full_text":"PARAMATHI VELLURE UO - TN517( 30-AUG-2018 )"},
+    {"name":"PATTUKOTTAI UNIT OFFICE","code":"TN587","value":"587","full_text":"PATTUKOTTAI UNIT OFFICE - TN587( 06-AUG-2018 )"},
+    {"name":"PERAMBALUR RTO","code":"TN46","value":"46","full_text":"PERAMBALUR RTO - TN46( 14-AUG-2018 )"},
+    {"name":"PERUNDURAI RTO","code":"TN56","value":"56","full_text":"PERUNDURAI RTO - TN56( 14-AUG-2018 )"},
+    {"name":"POLLACHI RTO","code":"TN41","value":"41","full_text":"POLLACHI RTO - TN41( 23-JUL-2018 )"},
+    {"name":"POONAMALLEE RTO","code":"TN511","value":"511","full_text":"POONAMALLEE RTO - TN511( 11-JUN-2018 )"},
+    {"name":"PUDUKOTTAI RTO","code":"TN55","value":"55","full_text":"PUDUKOTTAI RTO - TN55( 28-DEC-2017 )"},
+    {"name":"RAJAPALAYAM UO","code":"TN643","value":"643","full_text":"RAJAPALAYAM UO - TN643( 15-NOV-2023 )"},
+    {"name":"RAMANATHAPURAM RTO","code":"TN65","value":"65","full_text":"RAMANATHAPURAM RTO - TN65( 21-AUG-2018 )"},
+    {"name":"RANIPET RTO","code":"TN73","value":"73","full_text":"RANIPET RTO - TN73( 06-JUL-2018 )"},
+    {"name":"RASIPURAM UO","code":"TN526","value":"526","full_text":"RASIPURAM UO - TN526( 30-AUG-2018 )"},
+    {"name":"REDHILLS RTO","code":"TN18","value":"18","full_text":"REDHILLS RTO - TN18( 07-JUN-2018 )"},
+    {"name":"RTO CHENNAI (NORTH WEST)","code":"TN2","value":"2","full_text":"RTO CHENNAI (NORTH WEST) - TN2( 25-JUN-2018 )"},
+    {"name":"SALEM (EAST) RTO","code":"TN54","value":"54","full_text":"SALEM (EAST) RTO - TN54( 29-AUG-2018 )"},
+    {"name":"SALEM (SOUTH) RTO","code":"TN90","value":"90","full_text":"SALEM (SOUTH) RTO - TN90( 29-AUG-2018 )"},
+    {"name":"SALEM (WEST) RTO","code":"TN30","value":"30","full_text":"SALEM (WEST) RTO - TN30( 29-AUG-2018 )"},
+    {"name":"SANKAGIRI RTO","code":"TN52","value":"52","full_text":"SANKAGIRI RTO - TN52( 30-AUG-2018 )"},
+    {"name":"SANKARANKOVIL RTO","code":"TN610","value":"610","full_text":"SANKARANKOVIL RTO - TN610( 28-AUG-2018 )"},
+    {"name":"SATHYAMANGALAM UO","code":"TN579","value":"579","full_text":"SATHYAMANGALAM UO - TN579( 30-JUL-2018 )"},
+    {"name":"SHOLINGANALLUR RTO","code":"TN512","value":"512","full_text":"SHOLINGANALLUR RTO - TN512( 19-JUN-2018 )"},
+    {"name":"SIRKALI UO","code":"TN623","value":"623","full_text":"SIRKALI UO - TN623( 07-AUG-2018 )"},
+    {"name":"SIVAGANGAI RTO","code":"TN63","value":"63","full_text":"SIVAGANGAI RTO - TN63( 21-AUG-2018 )"},
+    {"name":"SIVAKASI RTO","code":"TN604","value":"604","full_text":"SIVAKASI RTO - TN604( 21-AUG-2018 )"},
+    {"name":"SRIPERUMBUDUR RTO","code":"TN614","value":"614","full_text":"SRIPERUMBUDUR RTO - TN614( 01-AUG-2018 )"},
+    {"name":"SRIRANGAM RTO","code":"TN48","value":"48","full_text":"SRIRANGAM RTO - TN48( 28-JUN-2018 )"},
+    {"name":"SRIVILLIPUTHUR RTO","code":"TN605","value":"605","full_text":"SRIVILLIPUTHUR RTO - TN605( 17-AUG-2018 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"TN999","value":"999","full_text":"STATE TRANSPORT AUTHORITY - TN999( 13-JUN-2018 )"},
+    {"name":"SULUR UO","code":"TN620","value":"620","full_text":"SULUR UO - TN620( 28-MAY-2018 )"},
+    {"name":"TAMBARAM RTO","code":"TN513","value":"513","full_text":"TAMBARAM RTO - TN513( 25-JUN-2018 )"},
+    {"name":"TENKASI RTO","code":"TN76","value":"76","full_text":"TENKASI RTO - TN76( 25-JUL-2018 )"},
+    {"name":"THANJAVUR RTO","code":"TN49","value":"49","full_text":"THANJAVUR RTO - TN49( 06-AUG-2018 )"},
+    {"name":"THENI RTO","code":"TN60","value":"60","full_text":"THENI RTO - TN60( 20-JUL-2018 )"},
+    {"name":"THIRUCHENDUR RTO","code":"TN606","value":"606","full_text":"THIRUCHENDUR RTO - TN606( 28-AUG-2018 )"},
+    {"name":"THIRUKALUKUNTRAM UO","code":"TN639","value":"639","full_text":"THIRUKALUKUNTRAM UO - TN639( 04-JUN-2018 )"},
+    {"name":"THIRUMANGALAM  UO","code":"TN598","value":"598","full_text":"THIRUMANGALAM  UO - TN598( 07-JUL-2018 )"},
+    {"name":"THIRUPATTUR RTO","code":"TN624","value":"624","full_text":"THIRUPATTUR RTO - TN624( 11-JUL-2018 )"},
+    {"name":"THIRUTHURAIPOONDI UO","code":"TN630","value":"630","full_text":"THIRUTHURAIPOONDI UO - TN630( 09-AUG-2018 )"},
+    {"name":"THIRUTTANI UO","code":"TN634","value":"634","full_text":"THIRUTTANI UO - TN634( 11-JUN-2018 )"},
+    {"name":"THOOTHUKUDI RTO","code":"TN69","value":"69","full_text":"THOOTHUKUDI RTO - TN69( 24-AUG-2018 )"},
+    {"name":"THURAIYUR UO","code":"TN586","value":"586","full_text":"THURAIYUR UO - TN586( 28-JUN-2018 )"},
+    {"name":"TINDIVANAM RTO","code":"TN571","value":"571","full_text":"TINDIVANAM RTO - TN571( 14-JUN-2018 )"},
+    {"name":"TIRUCHENGODE RTO","code":"TN34","value":"34","full_text":"TIRUCHENGODE RTO - TN34( 15-MAR-2018 )"},
+    {"name":"TIRUCHI(EAST) RTO","code":"TN81","value":"81","full_text":"TIRUCHI(EAST) RTO - TN81( 06-JUL-2018 )"},
+    {"name":"TIRUCHI RTO","code":"TN45","value":"45","full_text":"TIRUCHI RTO - TN45( 30-MAY-2018 )"},
+    {"name":"TIRUNELVELI RTO","code":"TN72","value":"72","full_text":"TIRUNELVELI RTO - TN72( 25-JUL-2018 )"},
+    {"name":"TIRUPPUR (NORTH) RTO","code":"TN39","value":"39","full_text":"TIRUPPUR (NORTH) RTO - TN39( 25-JUL-2018 )"},
+    {"name":"TIRUPPUR (SOUTH) RTO","code":"TN42","value":"42","full_text":"TIRUPPUR (SOUTH) RTO - TN42( 25-JUL-2018 )"},
+    {"name":"TIRUVALLUR RTO","code":"TN20","value":"20","full_text":"TIRUVALLUR RTO - TN20( 11-JUN-2018 )"},
+    {"name":"TIRUVANNAMALAI RTO","code":"TN25","value":"25","full_text":"TIRUVANNAMALAI RTO - TN25( 21-MAY-2018 )"},
+    {"name":"TIRUVARUR RTO","code":"TN50","value":"50","full_text":"TIRUVARUR RTO - TN50( 09-AUG-2018 )"},
+    {"name":"TIRUVERANBUR UO","code":"TN583","value":"583","full_text":"TIRUVERANBUR UO - TN583( 09-JUL-2018 )"},
+    {"name":"UDUMALPET RTO","code":"TN581","value":"581","full_text":"UDUMALPET RTO - TN581( 17-AUG-2018 )"},
+    {"name":"ULUNDURPET RTO","code":"TN577","value":"577","full_text":"ULUNDURPET RTO - TN577( 15-JUN-2018 )"},
+    {"name":"USILAMPATTI UO","code":"TN636","value":"636","full_text":"USILAMPATTI UO - TN636( 14-AUG-2018 )"},
+    {"name":"UTHAMAPALAYAM UO","code":"TN601","value":"601","full_text":"UTHAMAPALAYAM UO - TN601( 20-JUL-2018 )"},
+    {"name":"VADIPATTI UO","code":"TN599","value":"599","full_text":"VADIPATTI UO - TN599( 05-JUN-2018 )"},
+    {"name":"VALAPPADI UO","code":"TN613","value":"613","full_text":"VALAPPADI UO - TN613( 08-JAN-2018 )"},
+    {"name":"VALLIYUR UO","code":"TN608","value":"608","full_text":"VALLIYUR UO - TN608( 25-JUL-2018 )"},
+    {"name":"VALPARAI UO","code":"TN633","value":"633","full_text":"VALPARAI UO - TN633( 24-JUL-2018 )"},
+    {"name":"VANIYAMBADI RTO","code":"TN515","value":"515","full_text":"VANIYAMBADI RTO - TN515( 11-JUL-2018 )"},
+    {"name":"VEDACHANDUR UO","code":"TN617","value":"617","full_text":"VEDACHANDUR UO - TN617( 20-JUL-2018 )"},
+    {"name":"VELLORE RTO","code":"TN23","value":"23","full_text":"VELLORE RTO - TN23( 05-JUL-2018 )"},
+    {"name":"VILUPPURAM RTO","code":"TN32","value":"32","full_text":"VILUPPURAM RTO - TN32( 14-JUN-2018 )"},
+    {"name":"VIRUDHACHALAM UO","code":"TN553","value":"553","full_text":"VIRUDHACHALAM UO - TN553( 19-JUN-2018 )"},
+    {"name":"VIRUDHUNAGAR RTO","code":"TN67","value":"67","full_text":"VIRUDHUNAGAR RTO - TN67( 25-JUL-2018 )"},
+  ]
+}
+
+# Quick sanity check for duplicate codes
+_codes = [rt["code"] for rt in STATE_TN["rtos"]]
+assert len(_codes) == len(set(_codes)), "Duplicate RTO codes detected in TN payload"
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Lakshadweep
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_LD = {
@@ -350,6 +602,97 @@ STATE_LD = {
     {"name":"KALPENI","code":"LD7","value":"7","full_text":"KALPENI - LD7( 09-MAY-2025 )"},
     {"name":"KAVARATTI","code":"LD1","value":"1","full_text":"KAVARATTI - LD1( 13-JUN-2024 )"},
     {"name":"MINICOY","code":"LD9","value":"9","full_text":"MINICOY - LD9( 06-NOV-2024 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Uttar Pradesh
+# ──────────────────────────────────────────────────────────────────────────────
+STATE_UP = {
+  "state": "Uttar Pradesh",
+  "state_code": "UP",
+  "extraction_date": "2025-07-29T14:46:02.075715",
+  "total_rtos": 79,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(77/77)"},
+    {"name":"Agra RTO","code":"UP80","value":"80","full_text":"Agra RTO - UP80( 23-NOV-2017 )"},
+    {"name":"AKBARPUR(AMBEDKAR NAGAR)","code":"UP45","value":"45","full_text":"AKBARPUR(AMBEDKAR NAGAR) - UP45( 27-DEC-2017 )"},
+    {"name":"ALIGARH RTO","code":"UP81","value":"81","full_text":"ALIGARH RTO - UP81( 20-DEC-2017 )"},
+    {"name":"Amethi ARTO","code":"UP36","value":"36","full_text":"Amethi ARTO - UP36( 28-DEC-2017 )"},
+    {"name":"ARTO OFFICE RAMPUR","code":"UP22","value":"22","full_text":"ARTO OFFICE RAMPUR - UP22( 12-FEB-2018 )"},
+    {"name":"AURAIYA","code":"UP79","value":"79","full_text":"AURAIYA - UP79( 12-OCT-2017 )"},
+    {"name":"AYODHYA RTO","code":"UP42","value":"42","full_text":"AYODHYA RTO - UP42( 26-DEC-2017 )"},
+    {"name":"Azamgarh RTO","code":"UP50","value":"50","full_text":"Azamgarh RTO - UP50( 26-FEB-2018 )"},
+    {"name":"Badaun","code":"UP24","value":"24","full_text":"Badaun - UP24( 12-FEB-2018 )"},
+    {"name":"Baghpat","code":"UP17","value":"17","full_text":"Baghpat - UP17( 14-NOV-2017 )"},
+    {"name":"Bahraich","code":"UP40","value":"40","full_text":"Bahraich - UP40( 11-DEC-2017 )"},
+    {"name":"Ballia","code":"UP60","value":"60","full_text":"Ballia - UP60( 15-JAN-2018 )"},
+    {"name":"Balrampur","code":"UP47","value":"47","full_text":"Balrampur - UP47( 11-DEC-2017 )"},
+    {"name":"BANDARTO","code":"UP90","value":"90","full_text":"BANDARTO - UP90( 22-FEB-2018 )"},
+    {"name":"Barabanki ARTO","code":"UP41","value":"41","full_text":"Barabanki ARTO - UP41( 12-JAN-2016 )"},
+    {"name":"BAREILLY","code":"UP25","value":"25","full_text":"BAREILLY - UP25( 13-FEB-2018 )"},
+    {"name":"BASTI RTO","code":"UP51","value":"51","full_text":"BASTI RTO - UP51( 13-DEC-2017 )"},
+    {"name":"Bhadohi(SANT RAVIDAS NAGAR)","code":"UP66","value":"66","full_text":"Bhadohi(SANT RAVIDAS NAGAR) - UP66( 25-OCT-2017 )"},
+    {"name":"Bijnor","code":"UP20","value":"20","full_text":"Bijnor - UP20( 13-FEB-2018 )"},
+    {"name":"Bulandshahar","code":"UP13","value":"13","full_text":"Bulandshahar - UP13( 22-JAN-2018 )"},
+    {"name":"Chandauli","code":"UP67","value":"67","full_text":"Chandauli - UP67( 17-JAN-2018 )"},
+    {"name":"Chitrakoot","code":"UP96","value":"96","full_text":"Chitrakoot - UP96( 22-FEB-2018 )"},
+    {"name":"DEORIA","code":"UP52","value":"52","full_text":"DEORIA - UP52( 23-JAN-2018 )"},
+    {"name":"Etah","code":"UP82","value":"82","full_text":"Etah - UP82( 27-NOV-2017 )"},
+    {"name":"Etawah","code":"UP75","value":"75","full_text":"Etawah - UP75( 11-OCT-2017 )"},
+    {"name":"Farrukhabad","code":"UP76","value":"76","full_text":"Farrukhabad - UP76( 29-JAN-2018 )"},
+    {"name":"FATHEHPUR","code":"UP71","value":"71","full_text":"FATHEHPUR - UP71( 24-JAN-2018 )"},
+    {"name":"FEROZABAD","code":"UP83","value":"83","full_text":"FEROZABAD - UP83( 25-OCT-2017 )"},
+    {"name":"GHAZIABAD","code":"UP14","value":"14","full_text":"GHAZIABAD - UP14( 23-JAN-2018 )"},
+    {"name":"Ghazipur","code":"UP61","value":"61","full_text":"Ghazipur - UP61( 29-JAN-2018 )"},
+    {"name":"GONDA","code":"UP43","value":"43","full_text":"GONDA - UP43( 14-DEC-2017 )"},
+    {"name":"Gorakhpur RTO","code":"UP53","value":"53","full_text":"Gorakhpur RTO - UP53( 08-NOV-2017 )"},
+    {"name":"HAMIRPUR(UP)","code":"UP91","value":"91","full_text":"HAMIRPUR(UP) - UP91( 24-FEB-2018 )"},
+    {"name":"Hapur","code":"UP37","value":"37","full_text":"Hapur - UP37( 23-JAN-2018 )"},
+    {"name":"HARDOI","code":"UP30","value":"30","full_text":"HARDOI - UP30( 11-SEP-2017 )"},
+    {"name":"HATHRAS","code":"UP86","value":"86","full_text":"HATHRAS - UP86( 18-DEC-2017 )"},
+    {"name":"JAUNPUR","code":"UP62","value":"62","full_text":"JAUNPUR - UP62( 18-JAN-2018 )"},
+    {"name":"JhansiRTO","code":"UP93","value":"93","full_text":"JhansiRTO - UP93( 19-DEC-2017 )"},
+    {"name":"JPNAGAR","code":"UP23","value":"23","full_text":"JPNAGAR - UP23( 17-NOV-2017 )"},
+    {"name":"Kannauj","code":"UP74","value":"74","full_text":"Kannauj - UP74( 13-FEB-2018 )"},
+    {"name":"Kanpur Dehat","code":"UP77","value":"77","full_text":"Kanpur Dehat - UP77( 11-DEC-2017 )"},
+    {"name":"KANPUR NAGAR","code":"UP78","value":"78","full_text":"KANPUR NAGAR - UP78( 05-DEC-2016 )"},
+    {"name":"Kasganj(kashi ram nagar)","code":"UP87","value":"87","full_text":"Kasganj(kashi ram nagar) - UP87( 29-NOV-2017 )"},
+    {"name":"Kaushambi","code":"UP73","value":"73","full_text":"Kaushambi - UP73( 11-OCT-2017 )"},
+    {"name":"LAKHIMPUR KHERI","code":"UP31","value":"31","full_text":"LAKHIMPUR KHERI - UP31( 29-JAN-2018 )"},
+    {"name":"Lalitpur","code":"UP94","value":"94","full_text":"Lalitpur - UP94( 26-OCT-2017 )"},
+    {"name":"MAHANAGAR ARTO LUCKNOW (","code":"UP321","value":"321","full_text":"MAHANAGAR ARTO LUCKNOW (UP321) - UP321( 22-NOV-2017 )"},
+    {"name":"Maharajganj","code":"UP56","value":"56","full_text":"Maharajganj - UP56( 18-SEP-2017 )"},
+    {"name":"Mahoba","code":"UP95","value":"95","full_text":"Mahoba - UP95( 23-FEB-2018 )"},
+    {"name":"Mainpuri","code":"UP84","value":"84","full_text":"Mainpuri - UP84( 20-FEB-2018 )"},
+    {"name":"MATHURA","code":"UP85","value":"85","full_text":"MATHURA - UP85( 22-FEB-2018 )"},
+    {"name":"Mau","code":"UP54","value":"54","full_text":"Mau - UP54( 23-JAN-2018 )"},
+    {"name":"MEERUT RTO","code":"UP15","value":"15","full_text":"MEERUT RTO - UP15( 15-JAN-2018 )"},
+    {"name":"MIRZAPUR RTO","code":"UP63","value":"63","full_text":"MIRZAPUR RTO - UP63( 20-DEC-2017 )"},
+    {"name":"MORADABAD","code":"UP21","value":"21","full_text":"MORADABAD - UP21( 17-NOV-2017 )"},
+    {"name":"M/S Sai Dham Super Srv Soln Pvt Ltd Ghaziabad","code":"UP214","value":"214","full_text":"M/S Sai Dham Super Srv Soln Pvt Ltd Ghaziabad - UP214( 20-JAN-2021 )"},
+    {"name":"MuzaffarNagar","code":"UP12","value":"12","full_text":"MuzaffarNagar - UP12( 19-FEB-2018 )"},
+    {"name":"Noida","code":"UP16","value":"16","full_text":"Noida - UP16( 13-NOV-2017 )"},
+    {"name":"Orai","code":"UP92","value":"92","full_text":"Orai - UP92( 18-DEC-2017 )"},
+    {"name":"PADRAUNA(KUSHI NAGAR)","code":"UP57","value":"57","full_text":"PADRAUNA(KUSHI NAGAR) - UP57( 08-NOV-2017 )"},
+    {"name":"Pilibhit","code":"UP26","value":"26","full_text":"Pilibhit - UP26( 12-FEB-2018 )"},
+    {"name":"PRATAPGARH","code":"UP72","value":"72","full_text":"PRATAPGARH - UP72( 09-FEB-2018 )"},
+    {"name":"Prayagraj RTO","code":"UP70","value":"70","full_text":"Prayagraj RTO - UP70( 29-JAN-2018 )"},
+    {"name":"Raibareilly","code":"UP33","value":"33","full_text":"Raibareilly - UP33( 23-AUG-2017 )"},
+    {"name":"SAHARANPUR RTO","code":"UP11","value":"11","full_text":"SAHARANPUR RTO - UP11( 18-JAN-2018 )"},
+    {"name":"SAHJAHANPUR","code":"UP27","value":"27","full_text":"SAHJAHANPUR - UP27( 15-FEB-2018 )"},
+    {"name":"Sambhal ARTO","code":"UP38","value":"38","full_text":"Sambhal ARTO - UP38( 30-NOV-2017 )"},
+    {"name":"Sant Kabir Nagar","code":"UP58","value":"58","full_text":"Sant Kabir Nagar - UP58( 12-DEC-2017 )"},
+    {"name":"SHAMLI ARTO","code":"UP19","value":"19","full_text":"SHAMLI ARTO - UP19( 08-FEB-2018 )"},
+    {"name":"Shravasti","code":"UP46","value":"46","full_text":"Shravasti - UP46( 14-DEC-2017 )"},
+    {"name":"Siddharth Nagar(naugarh)","code":"UP55","value":"55","full_text":"Siddharth Nagar(naugarh) - UP55( 19-SEP-2017 )"},
+    {"name":"Sitapur","code":"UP34","value":"34","full_text":"Sitapur - UP34( 18-DEC-2017 )"},
+    {"name":"SONBHADRA","code":"UP64","value":"64","full_text":"SONBHADRA - UP64( 18-DEC-2017 )"},
+    {"name":"STATE TRANSPORT AUTHORITY","code":"UP999","value":"999","full_text":"STATE TRANSPORT AUTHORITY - UP999( 20-FEB-2019 )"},
+    {"name":"Sultanpur","code":"UP44","value":"44","full_text":"Sultanpur - UP44( 11-OCT-2017 )"},
+    {"name":"TRANSPORT NAGAR RTO LUCKNOW (","code":"UP32","value":"32","full_text":"TRANSPORT NAGAR RTO LUCKNOW (UP32) - UP32( 19-JUL-2016 )"},
+    {"name":"Unnao","code":"UP35","value":"35","full_text":"Unnao - UP35( 12-SEP-2017 )"},
+    {"name":"VARANASI RTO","code":"UP65","value":"65","full_text":"VARANASI RTO - UP65( 17-JAN-2018 )"}
   ]
 }
 
@@ -742,6 +1085,101 @@ STATE_ML = {
 }
 
 # ──────────────────────────────────────────────────────────────────────────────
+# West Bengal — Python seeder
+# Notes:
+# - A couple of WB ARTOs arrived with code like "null62"/"null98".
+#   We normalize any code that starts with "null" to f"WB{value}".
+# ──────────────────────────────────────────────────────────────────────────────
+
+STATE_WB_RAW = {
+  "state": "West Bengal",
+  "state_code": "WB",
+  "extraction_date": "2025-07-29T14:48:36.120399",
+  "total_rtos": 60,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(59/59)"},
+    {"name":"ALIPORE RTO","code":"WB19","value":"19","full_text":"ALIPORE RTO - WB19( 13-DEC-2016 )"},
+    {"name":"ALIPURDUAR RTO","code":"WB69","value":"69","full_text":"ALIPURDUAR RTO - WB69( 22-FEB-2017 )"},
+    {"name":"ARAMBAG ARTO","code":"WB18","value":"18","full_text":"ARAMBAG ARTO - WB18( 10-JAN-2017 )"},
+    {"name":"BANGAON ARTO","code":"WB27","value":"27","full_text":"BANGAON ARTO - WB27( 17-JAN-2017 )"},
+    {"name":"BANKURA RTO","code":"WB67","value":"67","full_text":"BANKURA RTO - WB67( 11-APR-2017 )"},
+    {"name":"BARASAT RTO","code":"WB25","value":"25","full_text":"BARASAT RTO - WB25( 17-JAN-2017 )"},
+    {"name":"BARRACKPORE ARTO","code":"WB23","value":"23","full_text":"BARRACKPORE ARTO - WB23( 27-DEC-2016 )"},
+    {"name":"BARUIPUR ARTO","code":"WB95","value":"95","full_text":"BARUIPUR ARTO - WB95( 31-JAN-2017 )"},
+    {"name":"BASIRHAT ARTO","code":"WB21","value":"21","full_text":"BASIRHAT ARTO - WB21( 17-JAN-2017 )"},
+    {"name":"BEHALA ARTO","code":"WB9","value":"9","full_text":"BEHALA ARTO - WB9( 27-DEC-2017 )"},
+    {"name":"BIRBHUM RTO","code":"WB53","value":"53","full_text":"BIRBHUM RTO - WB53( 28-FEB-2017 )"},
+    {"name":"BISHNUPUR ARTO","code":"WB87","value":"87","full_text":"BISHNUPUR ARTO - WB87( 11-APR-2017 )"},
+    {"name":"BOLPUR ARTO","code":"WB47","value":"47","full_text":"BOLPUR ARTO - WB47( 28-FEB-2017 )"},
+    {"name":"BUNIADPUR ARTO","code":"null62","value":"62","full_text":"BUNIADPUR ARTO - null62( 19-MAY-2025 )"},
+    {"name":"CANNING ARTO","code":"null98","value":"98","full_text":"CANNING ARTO - null98( 19-MAY-2025 )"},
+    {"name":"CHANCHOL ARTO","code":"WB83","value":"83","full_text":"CHANCHOL ARTO - WB83( 23-MAR-2017 )"},
+    {"name":"CONTAI ARTO","code":"WB31","value":"31","full_text":"CONTAI ARTO - WB31( 09-FEB-2017 )"},
+    {"name":"COOCHBEHAR RTO","code":"WB63","value":"63","full_text":"COOCHBEHAR RTO - WB63( 28-MAR-2017 )"},
+    {"name":"DAKSHIN DINAJPUR RTO","code":"WB61","value":"61","full_text":"DAKSHIN DINAJPUR RTO - WB61( 06-APR-2017 )"},
+    {"name":"DARJEELING RTO","code":"WB76","value":"76","full_text":"DARJEELING RTO - WB76( 30-MAR-2017 )"},
+    {"name":"DIAMOND HARBOUR ARTO","code":"WB97","value":"97","full_text":"DIAMOND HARBOUR ARTO - WB97( 31-JAN-2017 )"},
+    {"name":"DURGAPORE ARTO","code":"WB39","value":"39","full_text":"DURGAPORE ARTO - WB39( 21-FEB-2017 )"},
+    {"name":"GHATAL ARTO","code":"WB50","value":"50","full_text":"GHATAL ARTO - WB50( 07-MAR-2017 )"},
+    {"name":"HALDIA ARTO","code":"WB32","value":"32","full_text":"HALDIA ARTO - WB32( 10-JUL-2017 )"},
+    {"name":"HOOGHLY RTO","code":"WB15","value":"15","full_text":"HOOGHLY RTO - WB15( 10-JAN-2017 )"},
+    {"name":"HOWRAH RTO","code":"WB11","value":"11","full_text":"HOWRAH RTO - WB11( 20-DEC-2016 )"},
+    {"name":"ISLAMPUR ARTO","code":"WB91","value":"91","full_text":"ISLAMPUR ARTO - WB91( 28-MAR-2017 )"},
+    {"name":"JALPAIGURI RTO","code":"WB71","value":"71","full_text":"JALPAIGURI RTO - WB71( 21-FEB-2017 )"},
+    {"name":"JANGIPUR ARTO","code":"WB93","value":"93","full_text":"JANGIPUR ARTO - WB93( 16-MAR-2017 )"},
+    {"name":"JHARGRAM RTO","code":"WB49","value":"49","full_text":"JHARGRAM RTO - WB49( 07-MAR-2017 )"},
+    {"name":"KALIMPONG RTO","code":"WB78","value":"78","full_text":"KALIMPONG RTO - WB78( 30-MAR-2017 )"},
+    {"name":"KALNA ARTO","code":"WB43","value":"43","full_text":"KALNA ARTO - WB43( 21-FEB-2017 )"},
+    {"name":"KALYANI ARTO","code":"WB89","value":"89","full_text":"KALYANI ARTO - WB89( 16-MAR-2017 )"},
+    {"name":"KANDI","code":"WB99","value":"99","full_text":"KANDI - WB99( 11-JUL-2024 )"},
+    {"name":"KASBA ARTO","code":"WB5","value":"5","full_text":"KASBA ARTO - WB5( 28-SEP-2016 )"},
+    {"name":"KATWA ARTO","code":"WB75","value":"75","full_text":"KATWA ARTO - WB75( 04-SEP-2018 )"},
+    {"name":"KHARAGPUR ARTO","code":"WB35","value":"35","full_text":"KHARAGPUR ARTO - WB35( 07-MAR-2017 )"},
+    {"name":"MALDA RTO","code":"WB65","value":"65","full_text":"MALDA RTO - WB65( 21-MAR-2017 )"},
+    {"name":"MANBAZAR","code":"WB80","value":"80","full_text":"MANBAZAR - WB80( 09-JUN-2023 )"},
+    {"name":"MATHABHANGA ARTO","code":"WB85","value":"85","full_text":"MATHABHANGA ARTO - WB85( 28-MAR-2017 )"},
+    {"name":"MURSHIDABAD RTO","code":"WB57","value":"57","full_text":"MURSHIDABAD RTO - WB57( 23-MAR-2017 )"},
+    {"name":"NADIA RTO","code":"WB51","value":"51","full_text":"NADIA RTO - WB51( 06-APR-2017 )"},
+    {"name":"PASCHIM BURDWAN RTO","code":"WB37","value":"37","full_text":"PASCHIM BURDWAN RTO - WB37( 04-APR-2017 )"},
+    {"name":"PASCHIM MIDNAPORE RTO","code":"WB33","value":"33","full_text":"PASCHIM MIDNAPORE RTO - WB33( 07-MAR-2017 )"},
+    {"name":"PURBA BURDWAN RTO","code":"WB41","value":"41","full_text":"PURBA BURDWAN RTO - WB41( 21-FEB-2017 )"},
+    {"name":"PURULIA RTO","code":"WB55","value":"55","full_text":"PURULIA RTO - WB55( 16-FEB-2017 )"},
+    {"name":"PVD KOLKATA","code":"WB1","value":"1","full_text":"PVD KOLKATA - WB1( 25-JAN-2017 )"},
+    {"name":"RAGHUNATHPUR ARTO","code":"WB81","value":"81","full_text":"RAGHUNATHPUR ARTO - WB81( 16-FEB-2017 )"},
+    {"name":"RAMPURHAT ARTO","code":"WB45","value":"45","full_text":"RAMPURHAT ARTO - WB45( 28-FEB-2017 )"},
+    {"name":"SALTLAKE ARTO","code":"WB7","value":"7","full_text":"SALTLAKE ARTO - WB7( 03-JAN-2017 )"},
+    {"name":"SILIGURI ARTO","code":"WB73","value":"73","full_text":"SILIGURI ARTO - WB73( 30-MAR-2017 )"},
+    {"name":"SRIRAMPUR ARTO","code":"WB17","value":"17","full_text":"SRIRAMPUR ARTO - WB17( 10-JAN-2017 )"},
+    {"name":"STA-Durgapur","code":"WB997","value":"997","full_text":"STA-Durgapur - WB997( 08-MAR-2019 )"},
+    {"name":"STA-North Bengal (Siliguri)","code":"WB998","value":"998","full_text":"STA-North Bengal (Siliguri) - WB998( 13-MAR-2019 )"},
+    {"name":"STA WEST BENGAL","code":"WB999","value":"999","full_text":"STA WEST BENGAL - WB999( 08-AUG-2018 )"},
+    {"name":"TAMLUK RTO","code":"WB29","value":"29","full_text":"TAMLUK RTO - WB29( 09-FEB-2017 )"},
+    {"name":"TEHATTA ARTO","code":"WB52","value":"52","full_text":"TEHATTA ARTO - WB52( 08-JUL-2020 )"},
+    {"name":"ULUBERIA ARTO","code":"WB13","value":"13","full_text":"ULUBERIA ARTO - WB13( 25-JAN-2017 )"},
+    {"name":"UTTAR DINAJPUR RTO","code":"WB59","value":"59","full_text":"UTTAR DINAJPUR RTO - WB59( 04-APR-2017 )"}
+  ]
+}
+
+def _normalize_wb_code(item):
+    code = item.get("code", "")
+    if isinstance(code, str) and code.lower().startswith("null"):
+        # Fall back to WB + value when code is malformed
+        return f"WB{item.get('value')}"
+    return code
+
+STATE_WB = {
+    **{k: v for k, v in STATE_WB_RAW.items() if k != "rtos"},
+    "rtos": [
+        {**rt, "code": _normalize_wb_code(rt)}
+        for rt in STATE_WB_RAW["rtos"]
+    ],
+}
+
+# Optional: quick sanity check on unique codes
+_codes = [rt["code"] for rt in STATE_WB["rtos"]]
+assert len(_codes) == len(set(_codes)), "Duplicate RTO codes detected in WB payload"
+
+# ──────────────────────────────────────────────────────────────────────────────
 # Jharkhand
 # ──────────────────────────────────────────────────────────────────────────────
 STATE_JH = {
@@ -1014,6 +1452,134 @@ STATE_PY = {
     {"name":"PUDUCHERRY","code":"PY1","value":"1","full_text":"PUDUCHERRY - PY1( 28-MAY-2018 )"},
     {"name":"VILLIANUR","code":"PY51","value":"51","full_text":"VILLIANUR - PY51( 27-JUN-2017 )"},
     {"name":"YANAM","code":"PY4","value":"4","full_text":"YANAM - PY4( 03-MAR-2018 )"}
+  ]
+}
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Himachal Pradesh — Python seeder
+# ──────────────────────────────────────────────────────────────────────────────
+
+STATE_HP = {
+  "state": "Himachal Pradesh",
+  "state_code": "HP",
+  "extraction_date": "2025-07-29T13:55:06.367548",
+  "total_rtos": 115,
+  "rtos": [
+    {"name":"All Vahan4 Running Office","code":"ALL","value":"-1","full_text":"All Vahan4 Running Office(96/96)"},
+    {"name":"HRTC BAIJNATH","code":"HP113","value":"113","full_text":"HRTC BAIJNATH - HP113( 18-DEC-2017 )"},
+    {"name":"HRTC BILASPUR","code":"HP105","value":"105","full_text":"HRTC BILASPUR - HP105( 18-DEC-2017 )"},
+    {"name":"HRTC CHAMBA","code":"HP115","value":"115","full_text":"HRTC CHAMBA - HP115( 18-DEC-2017 )"},
+    {"name":"HRTC DEHRA","code":"HP114","value":"114","full_text":"HRTC DEHRA - HP114( 11-DEC-2017 )"},
+    {"name":"HRTC DHARAMSHALA","code":"HP111","value":"111","full_text":"HRTC DHARAMSHALA - HP111( 20-NOV-2017 )"},
+    {"name":"HRTC HAMIRPUR","code":"HP119","value":"119","full_text":"HRTC HAMIRPUR - HP119( 11-DEC-2017 )"},
+    {"name":"HRTC JASSUR","code":"HP107","value":"107","full_text":"HRTC JASSUR - HP107( 18-DEC-2017 )"},
+    {"name":"HRTC KULLU","code":"HP104","value":"104","full_text":"HRTC KULLU - HP104( 18-DEC-2017 )"},
+    {"name":"HRTC MANDI","code":"HP106","value":"106","full_text":"HRTC MANDI - HP106( 18-DEC-2017 )"},
+    {"name":"HRTC NAHAN","code":"HP110","value":"110","full_text":"HRTC NAHAN - HP110( 18-DEC-2017 )"},
+    {"name":"HRTC NALAGARH","code":"HP109","value":"109","full_text":"HRTC NALAGARH - HP109( 11-DEC-2017 )"},
+    {"name":"HRTC PALAMPUR","code":"HP112","value":"112","full_text":"HRTC PALAMPUR - HP112( 18-DEC-2017 )"},
+    {"name":"HRTC RAMPUR","code":"HP122","value":"122","full_text":"HRTC RAMPUR - HP122( 18-DEC-2017 )"},
+    {"name":"HRTC SARKAGHAT","code":"HP116","value":"116","full_text":"HRTC SARKAGHAT - HP116( 18-DEC-2017 )"},
+    {"name":"HRTC SHIMLA(RURAL)","code":"HP121","value":"121","full_text":"HRTC SHIMLA(RURAL) - HP121( 18-DEC-2017 )"},
+    {"name":"HRTC SUNDERNAGAR","code":"HP117","value":"117","full_text":"HRTC SUNDERNAGAR - HP117( 18-DEC-2017 )"},
+    {"name":"HRTC TARADEVI","code":"HP103","value":"103","full_text":"HRTC TARADEVI - HP103( 18-DEC-2017 )"},
+    {"name":"HRTC UNA","code":"HP108","value":"108","full_text":"HRTC UNA - HP108( 11-DEC-2017 )"},
+    {"name":"RLA AMB","code":"HP19","value":"19","full_text":"RLA AMB - HP19( 07-JUL-2017 )"},
+    {"name":"RLA ANI","code":"HP35","value":"35","full_text":"RLA ANI - HP35( 15-JUL-2017 )"},
+    {"name":"RLA ARKI","code":"HP11","value":"11","full_text":"RLA ARKI - HP11( 07-JUL-2017 )"},
+    {"name":"RLA BADDI","code":"HP127","value":"127","full_text":"RLA BADDI - HP127( 26-OCT-2024 )"},
+    {"name":"RLA BAIJNATH","code":"HP53","value":"53","full_text":"RLA BAIJNATH - HP53( 30-JUN-2017 )"},
+    {"name":"RLA BALH","code":"HP82","value":"82","full_text":"RLA BALH - HP82( 19-JUL-2017 )"},
+    {"name":"RLA BALICHOWKI","code":"HP123","value":"123","full_text":"RLA BALICHOWKI - HP123( 25-JUN-2022 )"},
+    {"name":"RLA BANGANA","code":"HP78","value":"78","full_text":"RLA BANGANA - HP78( 22-JUL-2017 )"},
+    {"name":"RLA BANJAR","code":"HP49","value":"49","full_text":"RLA BANJAR - HP49( 15-JUL-2017 )"},
+    {"name":"RLA BARSAR","code":"HP21","value":"21","full_text":"RLA BARSAR - HP21( 10-JUL-2017 )"},
+    {"name":"RLA BHARMOUR","code":"HP46","value":"46","full_text":"RLA BHARMOUR - HP46( 12-JUL-2017 )"},
+    {"name":"RLA BHORANJ","code":"HP74","value":"74","full_text":"RLA BHORANJ - HP74( 10-JUL-2017 )"},
+    {"name":"RLA BILASPUR","code":"HP24","value":"24","full_text":"RLA BILASPUR - HP24( 12-JUN-2017 )"},
+    {"name":"RLA CHAMBA","code":"HP48","value":"48","full_text":"RLA CHAMBA - HP48( 12-JUN-2017 )"},
+    {"name":"RLA CHOPAL","code":"HP8","value":"8","full_text":"RLA CHOPAL - HP8( 21-JUN-2017 )"},
+    {"name":"RLA CHURAH","code":"HP44","value":"44","full_text":"RLA CHURAH - HP44( 07-JUL-2017 )"},
+    {"name":"RLA CHUWARI","code":"HP57","value":"57","full_text":"RLA CHUWARI - HP57( 07-JUL-2017 )"},
+    {"name":"RLA DALHOUSIE","code":"HP47","value":"47","full_text":"RLA DALHOUSIE - HP47( 05-JUL-2017 )"},
+    {"name":"RLA DEHRA","code":"HP36","value":"36","full_text":"RLA DEHRA - HP36( 12-JUL-2017 )"},
+    {"name":"RLA DHARAMPUR","code":"HP86","value":"86","full_text":"RLA DHARAMPUR - HP86( 19-JUL-2017 )"},
+    {"name":"RLA DHARAMSHALA","code":"HP39","value":"39","full_text":"RLA DHARAMSHALA - HP39( 22-MAY-2017 )"},
+    {"name":"RLA DHEERA","code":"HP96","value":"96","full_text":"RLA DHEERA  - HP96( 05-MAR-2018 )"},
+    {"name":"RLA DODRA KAWAR","code":"HP77","value":"77","full_text":"RLA DODRA KAWAR - HP77( 21-JUN-2017 )"},
+    {"name":"RLA FATHEPUR","code":"HP88","value":"88","full_text":"RLA FATHEPUR - HP88( 26-DEC-2016 )"},
+    {"name":"RLA GAGRET","code":"HP101","value":"101","full_text":"RLA GAGRET - HP101( 19-NOV-2019 )"},
+    {"name":"RLA GHUMARVI","code":"HP23","value":"23","full_text":"RLA GHUMARVI - HP23( 05-JUL-2017 )"},
+    {"name":"RLA GOHAR","code":"HP32","value":"32","full_text":"RLA GOHAR - HP32( 15-JUL-2017 )"},
+    {"name":"RLA HAMIRPUR","code":"HP22","value":"22","full_text":"RLA HAMIRPUR - HP22( 12-JUN-2017 )"},
+    {"name":"RLA HAROLI","code":"HP80","value":"80","full_text":"RLA HAROLI - HP80( 15-JUL-2017 )"},
+    {"name":"RLA INDORA","code":"HP97","value":"97","full_text":"RLA INDORA  - HP97( 19-FEB-2018 )"},
+    {"name":"RLA JAISINGPUR","code":"HP56","value":"56","full_text":"RLA JAISINGPUR - HP56( 30-JUN-2017 )"},
+    {"name":"RLA JAWALAJI","code":"HP83","value":"83","full_text":"RLA JAWALAJI - HP83( 19-JUL-2017 )"},
+    {"name":"RLA JAWALI","code":"HP54","value":"54","full_text":"RLA JAWALI - HP54( 15-JUL-2017 )"},
+    {"name":"RLA JHANDUTTA","code":"HP89","value":"89","full_text":"RLA JHANDUTTA - HP89( 13-JUN-2017 )"},
+    {"name":"RLA JOGINDER NAGAR","code":"HP29","value":"29","full_text":"RLA JOGINDER NAGAR - HP29( 15-JUL-2017 )"},
+    {"name":"RLA JUBBAL","code":"HP75","value":"75","full_text":"RLA JUBBAL - HP75( 10-FEB-2023 )"},
+    {"name":"RLA KAFFOTA","code":"HP125","value":"125","full_text":"RLA KAFFOTA - HP125( 25-NOV-2022 )"},
+    {"name":"RLA KALPA","code":"HP25","value":"25","full_text":"RLA KALPA - HP25( 12-JUN-2017 )"},
+    {"name":"RLA KANDAGHAT","code":"HP13","value":"13","full_text":"RLA KANDAGHAT - HP13( 19-JUL-2017 )"},
+    {"name":"RLA KANGRA","code":"HP40","value":"40","full_text":"RLA KANGRA - HP40( 01-JUL-2017 )"},
+    {"name":"RLA KARSOG","code":"HP30","value":"30","full_text":"RLA KARSOG - HP30( 15-JUL-2017 )"},
+    {"name":"RLA KASAULI","code":"HP98","value":"98","full_text":"RLA KASAULI - HP98( 25-JUN-2021 )"},
+    {"name":"RLA KAZA","code":"HP41","value":"41","full_text":"RLA KAZA - HP41( 17-JUL-2017 )"},
+    {"name":"RLA KELANG","code":"HP42","value":"42","full_text":"RLA KELANG - HP42( 12-JUN-2017 )"},
+    {"name":"RLA KOTKHAI","code":"HP99","value":"99","full_text":"RLA KOTKHAI - HP99( 10-FEB-2023 )"},
+    {"name":"RLA KOTLI","code":"HP102","value":"102","full_text":"RLA KOTLI - HP102( 12-MAR-2022 )"},
+    {"name":"RLA KULU","code":"HP34","value":"34","full_text":"RLA KULU - HP34( 12-JUN-2017 )"},
+    {"name":"RLA KUMARSAIN","code":"HP95","value":"95","full_text":"RLA KUMARSAIN - HP95( 26-JUL-2017 )"},
+    {"name":"RLA KUPVI","code":"HP126","value":"126","full_text":"RLA KUPVI - HP126( 10-FEB-2023 )"},
+    {"name":"RLA MANALI","code":"HP58","value":"58","full_text":"RLA MANALI - HP58( 05-JUL-2017 )"},
+    {"name":"RLA MANDI","code":"HP33","value":"33","full_text":"RLA MANDI - HP33( 12-JUN-2017 )"},
+    {"name":"RLA NADAUN","code":"HP55","value":"55","full_text":"RLA NADAUN - HP55( 05-JUL-2017 )"},
+    {"name":"RLA NAGROTA BAGWAN","code":"HP94","value":"94","full_text":"RLA NAGROTA BAGWAN - HP94( 29-SEP-2017 )"},
+    {"name":"RLA NAHAN","code":"HP18","value":"18","full_text":"RLA NAHAN - HP18( 12-JUN-2017 )"},
+    {"name":"RLA NALAGARH","code":"HP12","value":"12","full_text":"RLA NALAGARH - HP12( 21-JUN-2017 )"},
+    {"name":"RLA NICHAR","code":"HP26","value":"26","full_text":"RLA NICHAR - HP26( 21-JUN-2017 )"},
+    {"name":"RLA NIRMAND","code":"HP124","value":"124","full_text":"RLA NIRMAND - HP124( 05-SEP-2022 )"},
+    {"name":"RLA NURPUR","code":"HP38","value":"38","full_text":"RLA NURPUR - HP38( 12-JUL-2017 )"},
+    {"name":"RLA PACHHAD","code":"HP100","value":"100","full_text":"RLA PACHHAD - HP100( 19-NOV-2019 )"},
+    {"name":"RLA PADDHAR","code":"HP76","value":"76","full_text":"RLA PADDHAR - HP76( 05-JUL-2017 )"},
+    {"name":"RLA PALAMPUR","code":"HP37","value":"37","full_text":"RLA PALAMPUR - HP37( 01-JUL-2017 )"},
+    {"name":"RLA PANGI","code":"HP45","value":"45","full_text":"RLA PANGI - HP45( 22-JUL-2017 )"},
+    {"name":"RLA PAONTA SAHIB","code":"HP17","value":"17","full_text":"RLA PAONTA SAHIB - HP17( 05-JUL-2017 )"},
+    {"name":"RLA PARWANOO","code":"HP15","value":"15","full_text":"RLA PARWANOO - HP15( 22-JUL-2017 )"},
+    {"name":"RLA POOH","code":"HP27","value":"27","full_text":"RLA POOH - HP27( 21-JUN-2017 )"},
+    {"name":"RLA RAJGARH","code":"HP16","value":"16","full_text":"RLA RAJGARH - HP16( 10-JUL-2017 )"},
+    {"name":"RLA RAMPUR BUSHAR","code":"HP6","value":"6","full_text":"RLA RAMPUR BUSHAR - HP6( 21-JUN-2017 )"},
+    {"name":"RLA ROHRU","code":"HP10","value":"10","full_text":"RLA ROHRU - HP10( 21-JUN-2017 )"},
+    {"name":"RLA SALOONI","code":"HP81","value":"81","full_text":"RLA SALOONI - HP81( 20-JUN-2017 )"},
+    {"name":"RLA SANGRAH","code":"HP79","value":"79","full_text":"RLA SANGRAH - HP79( 10-JUL-2017 )"},
+    {"name":"RLA SARKAGHAT","code":"HP28","value":"28","full_text":"RLA SARKAGHAT - HP28( 15-JUL-2017 )"},
+    {"name":"RLA SHAHPUR","code":"HP90","value":"90","full_text":"RLA SHAHPUR - HP90( 15-MAR-2017 )"},
+    {"name":"RLA SHILLAI","code":"HP85","value":"85","full_text":"RLA SHILLAI - HP85( 10-JUL-2017 )"},
+    {"name":"RLA SHIMLA HP-03/HP-07(URBAN)","code":"HP3","value":"3","full_text":"RLA SHIMLA HP-03/HP-07(URBAN) - HP3( 22-MAY-2017 )"},
+    {"name":"RLA SHIMLA(RURAL)","code":"HP51","value":"51","full_text":"RLA SHIMLA(RURAL) - HP51( 12-JUN-2017 )"},
+    {"name":"RLA SHRI NAINA DEVI JI SWARGHAT","code":"HP91","value":"91","full_text":"RLA SHRI NAINA DEVI JI SWARGHAT - HP91( 28-JUL-2017 )"},
+    {"name":"RLA SOLAN","code":"HP14","value":"14","full_text":"RLA SOLAN - HP14( 12-JUN-2017 )"},
+    {"name":"RLA SUJANPUR","code":"HP84","value":"84","full_text":"RLA SUJANPUR - HP84( 10-JUL-2017 )"},
+    {"name":"RLA SUNDARNAGAR","code":"HP31","value":"31","full_text":"RLA SUNDARNAGAR - HP31( 15-JUL-2017 )"},
+    {"name":"RLA THEOG","code":"HP9","value":"9","full_text":"RLA THEOG - HP9( 21-JUN-2017 )"},
+    {"name":"RLA THUNAG","code":"HP87","value":"87","full_text":"RLA THUNAG - HP87( 02-MAY-2017 )"},
+    {"name":"RLA UDAIPUR","code":"HP43","value":"43","full_text":"RLA UDAIPUR - HP43( 05-JUL-2017 )"},
+    {"name":"RLA UNA","code":"HP20","value":"20","full_text":"RLA UNA - HP20( 12-JUN-2017 )"},
+    {"name":"RTO BADDI(NALAGARH)","code":"HP93","value":"93","full_text":"RTO BADDI(NALAGARH) - HP93( 05-JUN-2017 )"},
+    {"name":"RTO BILASPUR","code":"HP69","value":"69","full_text":"RTO BILASPUR - HP69( 11-OCT-2017 )"},
+    {"name":"RTO CHAMBA","code":"HP73","value":"73","full_text":"RTO CHAMBA - HP73( 13-OCT-2017 )"},
+    {"name":"RTO DHARAMSHALA","code":"HP68","value":"68","full_text":"RTO DHARAMSHALA - HP68( 29-SEP-2017 )"},
+    {"name":"RTO HAMIRPUR","code":"HP67","value":"67","full_text":"RTO HAMIRPUR - HP67( 06-OCT-2017 )"},
+    {"name":"RTO KULLU","code":"HP66","value":"66","full_text":"RTO KULLU - HP66( 20-SEP-2017 )"},
+    {"name":"RTO MANDI","code":"HP65","value":"65","full_text":"RTO MANDI - HP65( 22-SEP-2017 )"},
+    {"name":"RTO NAHAN","code":"HP71","value":"71","full_text":"RTO NAHAN - HP71( 18-OCT-2017 )"},
+    {"name":"RTO RAMPUR","code":"HP92","value":"92","full_text":"RTO RAMPUR - HP92( 30-MAY-2017 )"},
+    {"name":"RTO SHIMLA","code":"HP63","value":"63","full_text":"RTO SHIMLA - HP63( 14-AUG-2017 )"},
+    {"name":"RTO SOLAN","code":"HP64","value":"64","full_text":"RTO SOLAN - HP64( 27-SEP-2017 )"},
+    {"name":"RTO UNA","code":"HP72","value":"72","full_text":"RTO UNA - HP72( 25-OCT-2017 )"},
+    {"name":"STA SHIMLA","code":"HP62","value":"62","full_text":"STA SHIMLA - HP62( 21-JUN-2017 )"}
   ]
 }
 
@@ -1979,14 +2545,23 @@ def run_seed():
         print("🔧 Seeding RTOS for AP (Andhra Pradesh)")
         seed_state_rtos(db, portal_ids, STATE_AP)
 
+        print("🔧 Seeding RTOS for KA (Karnataka)")
+        seed_state_rtos(db, portal_ids, STATE_KA)
+
         print("🔧 Seeding RTOS for BR (Bihar)")
         seed_state_rtos(db, portal_ids, STATE_BR)
 
         print("🔧 Seeding RTOS for CG (Chhattisgarh)")
         seed_state_rtos(db, portal_ids, STATE_CG)
 
+        print("🔧 Seeding RTOS for UP (Uttar Pradesh)")
+        seed_state_rtos(db, portal_ids, STATE_UP)
+
         print("🔧 Seeding RTO for PB (PUNJAB)")
         seed_state_rtos(db, portal_ids, STATE_PB)
+
+        print("🔧 Seeding RTOS for WB (West Bengal)")
+        seed_state_rtos(db, portal_ids, STATE_WB)
 
         print("🔧 Seeding RTOS for DL (Delhi)")
         seed_state_rtos(db, portal_ids, STATE_DL)
@@ -2024,11 +2599,17 @@ def run_seed():
         print("🔧 Seeding RTOS for UK (Uttarakhand)")
         seed_state_rtos(db, portal_ids, STATE_UK)
 
+        print("🔧 Seeding RTOS for HP (Himachal Pradesh)")
+        seed_state_rtos(db, portal_ids, STATE_HP)
+
         print("🔧 Seeding RTOS for RJ (Rajasthan)")
         seed_state_rtos(db, portal_ids, STATE_RJ)
 
         print("🔧 Seeding RTOS for JH (Jharkhand)")
         seed_state_rtos(db, portal_ids, STATE_JH)
+
+        print("🔧 Seeding RTOS for TN (Tamil Nadu)")
+        seed_state_rtos(db, portal_ids, STATE_TN)
 
         print("🔧 Seeding RTOS for CH (Chandigarh)")
         seed_state_rtos(db, portal_ids, STATE_CH)
